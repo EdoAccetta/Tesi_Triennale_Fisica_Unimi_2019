@@ -1,5 +1,5 @@
 import json
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt #library used for simple plots 
 from datetime import datetime, timedelta
 
 # Apriamo il file
@@ -9,11 +9,12 @@ first_time = datetime.strptime("00:00.0", "%M:%S.%f")
 one_hour = datetime.strptime("01", "%M")
 gravita = 9.80665
 
-#path_iphone_data = "../data/iphone/"
-#with open(path_iphone_data + "csv/example.csv","r") as file_iphone:
+path_iphone_data = "../data/iphone/"    #This is for the old example file
+with open(path_iphone_data + "csv/example.csv","r") as file_iphone:
 
-path_iphone_data = "../data/iphone/"
-with open(path_iphone_data + "csv/0001 - (1) - IPH.csv","r") as file_iphone:
+
+#path_iphone_data = "../data/iphone/"    #This is ok for the new files, but they are formatted differently and need a different approach ||
+#with open(path_iphone_data + "csv/0001 - (1) - IPH.csv","r") as file_iphone:   # || ValueError: time data 'time,gFx,gFy,gFz,gFTotal\n' does not match format '%M:%S.%f'
 
     # Leggiamo
     for line in file_iphone:
@@ -44,15 +45,16 @@ with open(path_iphone_data + "csv/0001 - (1) - IPH.csv","r") as file_iphone:
         tempi.append(linea)
         i = i+1
 
-#numero = len(tempi)
-#for n in range (0, tempi[numero-1]["step"])
+#numero = len(tempi)    #in future we'll surely need to know the vector lenght to do stuff
+#for n in range (0, tempi[numero-1]["step"])    #tried to go for a cycle to fill the plot but i don't think it works, it needs the full vector
+#   plt.plot(int(tempi[n]["step"]), float(tempi[n]["gFy"]))
 
-plt.plot(int(tempi["step"]), float(tempi["gFy"]))
+plt.plot(int(tempi["step"]), float(tempi["gFy"]))   #TypeError: list indices must be integers or slices, not str || I don't get why these would still be considered strings
 
-plt.xlabel('Step')
-plt.ylabel('gFy  value')
-plt.title('Acceleration on Y axes (Vertical)')
-plt.show()
+plt.xlabel('Step')  #gives x-axis a label
+plt.ylabel('gFy  value') #gives y-axis a label
+plt.title('Acceleration on Y axes (Vertical)')  #gives a title to the plot
+plt.show()  #actually shows the plot on screen
 
 
 with open(path_iphone_data + "json/example.json","w") as file_iphone:
