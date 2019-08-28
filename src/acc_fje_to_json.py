@@ -53,8 +53,7 @@ for file in list_files:
 
             linea = {}
 
-            #Acc X	Acc Y	Acc Z	V ang X	V ang Y	V ang Z	Latitudine	Longitudine	Timestamp
-
+            # Acc X	Acc Y	Acc Z	V ang X	V ang Y	V ang Z	Latitudine	Longitudine	Timestamp
             linea["step"] = i
             linea["gFx"] = float(valori[0]) - 9.948443643
             linea["gFy"] = float(valori[1])

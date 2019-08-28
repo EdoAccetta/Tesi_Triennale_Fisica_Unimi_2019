@@ -12,6 +12,13 @@ list_files = [
     if isfile(join(path_acc_data_json, f))
 ]
 
+# Carico in values_to_skip il numero di valori da saltare per ogni tipello
+values_to_skip = []
+
+with open(path_acc_data + "/utility/Escludere_Pre_Avg3.csv",
+          "r") as file_utility:
+    for line in file_utility:
+        values_to_skip.append(int(line.replace("\n", "")))
 
 def is_val_min(val_to_check, test_values):
     for value in test_values:
@@ -19,26 +26,26 @@ def is_val_min(val_to_check, test_values):
             return False
     return True
 
+
 # Funzione ignoranta per trovare il primo minimo
 def find_first_minimo(tempi):
     accuracy = 11
-    accuracy_half = int(accuracy/2)
+    accuracy_half = int(accuracy / 2)
     for x in range(accuracy_half, len(tempi) - 1):
         test_values = []
         for j in range(accuracy_half, 0, -1):
-            test_values.append(tempi[x-j])
+            test_values.append(tempi[x - j])
         for j in range(1, accuracy_half + 1):
-            test_values.append(tempi[x+j])
-        
+            test_values.append(tempi[x + j])
+
         val_to_check = tempi[x]
 
         if is_val_min(val_to_check, test_values):
             return x
     return -1
 
-
-
 def parse_file():
+    omino = 0
     for file in list_files:
         print("Processing " + file)
         with open(path_acc_data_json + file, "r") as file_acc:
@@ -54,7 +61,8 @@ def parse_file():
                 step = int(tempo["step"])
                 gfz = float(tempo["gFz"])
 
-                start_keep = start_keep or (step > 700 and gfz < -3)
+                start_keep = start_keep or (step > values_to_skip[omino]
+                                            and gfz < -3)
 
                 if start_keep:
                     steps.append(step)
@@ -72,10 +80,11 @@ def parse_file():
             # Adesso conto solamente n minimi dopo quello che ho trovato
             index_last_minimo = 0
             for x in range(0, json_object["into"]):
-                index_last_minimo += find_first_minimo(gfzs[index_last_minimo:])
+                index_last_minimo += find_first_minimo(
+                    gfzs[index_last_minimo:])
                 if index_last_minimo < 0:
                     break
-            
+
             steps = steps[index_minimo:index_last_minimo]
             gfzs = gfzs[index_minimo:index_last_minimo]
 
@@ -91,10 +100,12 @@ def parse_file():
                               xaxis_title='Steps',
                               yaxis_title='GfZs')
 
-            # plt.show()
-            # break
-            plt.write_image(path_acc_data_graphics + str.replace(file, "json", "pdf"))
+            plt.show()
+            break
+            plt.write_image(path_acc_data_graphics +
+                            str.replace(file, "json", "pdf"))
         print("End processing " + file)
+        omino += 1
 
 
 if __name__ == "__main__":

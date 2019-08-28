@@ -12,13 +12,13 @@ list_files = [f for f in listdir(path_acc_data_json) if isfile(join(path_acc_dat
 for file in  list_files:
     print("Processing " + file)
     with open(path_acc_data_json + file,"r") as file_acc:
-        tempi = json.load(file_acc)
+        tempi = json.load(file_acc)["tempi"]
 
         steps = np.array([])
         gfzs = np.array([])
 
         for tempo in tempi:
-            steps = np.append(steps, int(tempo["step"]))
+            steps = np.append(steps, tempo["step"])
             gfzs = np.append(gfzs, float(tempo["gFz"]))
 
         plt = go.Figure()
