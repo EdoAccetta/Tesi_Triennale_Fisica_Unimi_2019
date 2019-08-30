@@ -27,12 +27,14 @@ for file in  list_files:
             y=gfzs,
             mode='lines+markers'))
 
+        plt.show()
+        input("Premere INVIO per passare al prossimo grafico...\n")
+        # break
+
         # Edit the layout
         plt.update_layout(title='Test {0}'.format(str.replace(file, ".json", "")),
                         xaxis_title='Steps',
                         yaxis_title='GfZs')
 
-        # plt.show()
-        # break
-        plt.write_image(path_acc_data_graphics + str.replace(file, "json", "pdf"))
+       
     print("End processing " + file)
