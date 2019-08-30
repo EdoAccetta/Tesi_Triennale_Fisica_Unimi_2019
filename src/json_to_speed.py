@@ -19,7 +19,7 @@ list_files = [
 # Carico in values_to_skip il numero di valori da saltare per ogni tipello
 values_to_skip = []
 
-with open(path_acc_data + "/utility/Escludere_Pre_All.csv",
+with open(path_acc_data + "/utility/Escludere_Pre_Custom12.csv",
           "r") as file_utility:
     for line in file_utility:
         values_to_skip.append(int(line.replace("\n", "")))

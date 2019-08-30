@@ -19,7 +19,7 @@ list_files = [
 # Carico in values_to_skip il numero di valori da saltare per ogni tipello
 values_to_skip = []
 
-with open(path_acc_data + "/utility/Escludere_Pre_All.csv",
+with open(path_acc_data + "/utility/Escludere_Pre_Custom12.csv",
           "r") as file_utility:
     for line in file_utility:
         values_to_skip.append(int(line.replace("\n", "")))
@@ -33,7 +33,7 @@ def is_val_min(val_to_check, test_values):
 
 # Funzione ignoranta per trovare il primo minimo
 def find_first_minimo(tempi):
-    accuracy = 11
+    accuracy = 25
     accuracy_half = int(accuracy / 2)
     for x in range(accuracy_half, len(tempi) - 1):
         test_values = []
