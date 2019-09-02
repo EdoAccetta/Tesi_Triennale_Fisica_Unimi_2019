@@ -10,7 +10,7 @@ os.system('color')
 
 path_acc_data = "E:/Scuola/Università/Tesi/Python/data/acc"
 path_acc_data_json = path_acc_data + "/json/"
-path_acc_data_json_grandezze = path_acc_data + "/json_grandezze/"
+path_acc_data_json_grandezze = path_acc_data + "/json_grandezze/grandezze_y/"
 list_files = [
     f for f in listdir(path_acc_data_json)
     if isfile(join(path_acc_data_json, f))
@@ -61,26 +61,26 @@ def parse_file():
             tempi = json_object["tempi"]
 
             steps = []
-            gfzs = []
+            gfys = []
 
             start_keep = False
             for tempo in tempi:
                 step = int(tempo["step"])
-                gfz = float(tempo["gFz"])
+                gfy = float(tempo["gFy"])
 
                 start_keep = start_keep or (step > values_to_skip[omino]
-                                            and gfz < -3)
+                                            and gfy < -3)
 
                 if start_keep:
                     steps.append(step)
-                    gfzs.append(gfz)
+                    gfys.append(gfy)
 
             # Una volta creati gli arrays escludiamo n minimi
             for x in range(0, json_object["pre"]):
-                index_minimo = find_first_minimo(gfzs)
+                index_minimo = find_first_minimo(gfys)
                 if index_minimo > 0:
                     steps = steps[index_minimo:]
-                    gfzs = gfzs[index_minimo:]
+                    gfys = gfys[index_minimo:]
                 else:
                     break
 
@@ -88,14 +88,14 @@ def parse_file():
             index_last_minimo = 0
             for x in range(0, json_object["into"]):
                 index_last_minimo += find_first_minimo(
-                    gfzs[index_last_minimo:])
+                    gfys[index_last_minimo:])
                 minimi_array_index.append(index_last_minimo)
                 minimi_array.append(tempi[steps[index_last_minimo] - 1])
                 if index_last_minimo < 0:
                     break
 
             # steps = steps[index_minimo:index_last_minimo]
-            # gfzs = gfzs[index_minimo:index_last_minimo]
+            # gfys = gfys[index_minimo:index_last_minimo]
 
             # Possiamo trovare i massimi come punto più alto tra due minimi
             for x in range(0, len(minimi_array_index) - 2):
@@ -103,8 +103,8 @@ def parse_file():
                 index_massimo = 0
                 # print("minimi_array_index {}, minimi_array_index + 1 {}".format(minimi_array_index[x], minimi_array_index[x+1]))
                 for j in range(minimi_array_index[x], minimi_array_index[x+1]):
-                    if(massimo < gfzs[j]):
-                        massimo = gfzs[j]
+                    if(massimo < gfys[j]):
+                        massimo = gfys[j]
                         index_massimo = j
                 massimi_array.append(tempi[steps[index_massimo] - 1])
                 
