@@ -55,9 +55,9 @@ for file in list_files:
 
             # Acc X	Acc Y	Acc Z	V ang X	V ang Y	V ang Z	Latitudine	Longitudine	Timestamp
             linea["step"] = i
-            linea["gFx"] = float(valori[0]) - 9.948443643
-            linea["gFy"] = float(valori[1])
-            linea["gFz"] = float(valori[2])
+            linea["gFx"] = float(valori[0]) - 9.947830
+            linea["gFy"] = float(valori[1]) - 0.026476
+            linea["gFz"] = float(valori[2]) - 0.238222
             linea["Vax"] = float(valori[3])
             linea["Vay"] = float(valori[4])
             linea["Vaz"] = float(valori[5])
