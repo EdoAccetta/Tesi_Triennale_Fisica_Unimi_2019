@@ -37,17 +37,27 @@ def parse_file():
         # Calcolo la prima parte della formula
         jsello = []
         for x in range(0, len(tempi) - 2):
-            velocita_no_step = ((tempi[x]["gFz"] + tempi[x + 1]["gFz"]) *
+            velocita_z_no_step = ((tempi[x]["gFz"] + tempi[x + 1]["gFz"]) *
+                        (tempi[x + 1]["time"] - tempi[x]["time"])) / 2
+            velocita_x_no_step = ((tempi[x]["gFx"] + tempi[x + 1]["gFx"]) *
+                        (tempi[x + 1]["time"] - tempi[x]["time"])) / 2
+            velocita_y_no_step = ((tempi[x]["gFy"] + tempi[x + 1]["gFy"]) *
                         (tempi[x + 1]["time"] - tempi[x]["time"])) / 2
             node = {
-                "velocita_no_step": velocita_no_step,
+                "velocita_z_no_step": velocita_z_no_step,
+                "velocita_x_no_step": velocita_x_no_step,
+                "velocita_y_no_step": velocita_y_no_step,
                 "time": tempi[x]["time"],
                 "step": tempi[x]["step"]
             }
             if x > 0:
-                node["velocita_step"] = node["velocita_no_step"] + jsello[x-1]["velocita_no_step"]
+                node["velocita_z_step"] = node["velocita_z_no_step"] + jsello[x-1]["velocita_z_no_step"]
+                node["velocita_x_step"] = node["velocita_x_no_step"] + jsello[x-1]["velocita_x_no_step"]
+                node["velocita_y_step"] = node["velocita_y_no_step"] + jsello[x-1]["velocita_y_no_step"]
             else:
-                node["velocita_step"] = velocita_no_step
+                node["velocita_z_step"] = velocita_z_no_step
+                node["velocita_x_step"] = velocita_x_no_step
+                node["velocita_y_step"] = velocita_y_no_step
             jsello.append(node)
 
         with open(path_acc_data_json_speed + file, "w") as file_speed:
