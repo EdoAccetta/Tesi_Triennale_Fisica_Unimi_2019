@@ -51,9 +51,9 @@ def parse_file():
                 "step": tempi[x]["step"]
             }
             if x > 0:
-                node["velocita_z_step"] = node["velocita_z_no_step"] + jsello[x-1]["velocita_z_no_step"]
-                node["velocita_x_step"] = node["velocita_x_no_step"] + jsello[x-1]["velocita_x_no_step"]
-                node["velocita_y_step"] = node["velocita_y_no_step"] + jsello[x-1]["velocita_y_no_step"]
+                node["velocita_z_step"] = node["velocita_z_no_step"] + jsello[x-1]["velocita_z_step"]
+                node["velocita_x_step"] = node["velocita_x_no_step"] + jsello[x-1]["velocita_x_step"]
+                node["velocita_y_step"] = node["velocita_y_no_step"] + jsello[x-1]["velocita_y_step"]
             else:
                 node["velocita_z_step"] = velocita_z_no_step
                 node["velocita_x_step"] = velocita_x_no_step
