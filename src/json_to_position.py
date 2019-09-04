@@ -26,22 +26,38 @@ def parse_file():
         # Calcolo la prima parte della formula
         jsello = { "positions" : []}
         for x in range(0, len(tempi) - 2):
-            posizione_no_step = (
-                (tempi[x]["velocita_step"] + tempi[x + 1]["velocita_step"]) *
+            posizione_z_no_step = (
+                (tempi[x]["velocita_z_step"] + tempi[x + 1]["velocita_z_step"]) *
+                (tempi[x + 1]["time"] - tempi[x]["time"])) / 2
+            posizione_x_no_step = (
+                (tempi[x]["velocita_x_step"] + tempi[x + 1]["velocita_x_step"]) *
+                (tempi[x + 1]["time"] - tempi[x]["time"])) / 2
+            posizione_y_no_step = (
+                (tempi[x]["velocita_y_step"] + tempi[x + 1]["velocita_y_step"]) *
                 (tempi[x + 1]["time"] - tempi[x]["time"])) / 2
             
             node = {
-                "posizione_no_step": posizione_no_step,
+                "posizione_z_no_step": posizione_z_no_step,
+                "posizione_x_no_step": posizione_x_no_step,
+                "posizione_y_no_step": posizione_y_no_step,
                 "time": tempi[x]["time"],
                 "step": tempi[x]["step"],
-                "posizione_step": 0 
+                "posizione_z_step": 0,
+                "posizione_x_step": 0,
+                "posizione_y_step": 0
             }
 
             if x >= 1:
-                node["posizione_step"] = node["posizione_no_step"] + jsello["positions"][
-                    x - 1]["posizione_no_step"]
+                node["posizione_z_step"] = node["posizione_z_no_step"] + jsello["positions"][
+                    x - 1]["posizione_z_step"]
+                node["posizione_x_step"] = node["posizione_x_no_step"] + jsello["positions"][
+                    x - 1]["posizione_x_step"]
+                node["posizione_y_step"] = node["posizione_y_no_step"] + jsello["positions"][
+                    x - 1]["posizione_y_step"]
             else:
-                node["posizione_step"] = node["posizione_no_step"]
+                node["posizione_z_step"] = node["posizione_z_no_step"]
+                node["posizione_x_step"] = node["posizione_x_no_step"]
+                node["posizione_y_step"] = node["posizione_y_no_step"]
 
             jsello["positions"].append(node)
 
@@ -59,7 +75,7 @@ def parse_file():
                         print("asd")
                 jsello["posizioni_minimi"].append(jsello["positions"][last_index_minimo])
                 if len(jsello["posizioni_minimi"])> 0:
-                    jsello["posizioni_minimi_delta"].append(jsello["positions"][last_index_minimo]["posizione_step"] - jsello["posizioni_minimi"][len(jsello["posizioni_minimi"]) - 2]["posizione_step"])
+                    jsello["posizioni_minimi_delta"].append(jsello["positions"][last_index_minimo]["posizione_z_step"] - jsello["posizioni_minimi"][len(jsello["posizioni_minimi"]) - 2]["posizione_z_step"])
 
 
 
