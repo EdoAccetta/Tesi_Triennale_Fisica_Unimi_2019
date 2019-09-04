@@ -11,7 +11,7 @@ os.system('color')
 path_acc_data = "E:/Scuola/Università/Tesi/Python/data/acc"
 path_acc_data_json = path_acc_data + "/json_speed/"
 path_acc_data_json_position = path_acc_data + "/json_position/"
-path_acc_data_json_grandezze = path_acc_data + "/json_grandezze/"
+path_acc_data_json_grandezze = path_acc_data + "/json_grandezze/grandezze_z/"
 list_files = [
     f for f in listdir(path_acc_data_json)
     if isfile(join(path_acc_data_json, f))
@@ -77,24 +77,12 @@ def parse_file():
                 if len(jsello["posizioni_minimi"])> 0:
                     jsello["posizioni_minimi_delta"].append(jsello["positions"][last_index_minimo]["posizione_z_step"] - jsello["posizioni_minimi"][len(jsello["posizioni_minimi"]) - 2]["posizione_z_step"])
 
+            media_minimi_delta = 0
+            for pos_min_delta in jsello["posizioni_minimi_delta"]:
+                media_minimi_delta += pos_min_delta
+            media_minimi_delta /= len(jsello["posizioni_minimi_delta"])
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            jsello["posizioni_minimi_delta_media"] = media_minimi_delta
 
 
         with open(path_acc_data_json_position + file, "w") as file_posizione:

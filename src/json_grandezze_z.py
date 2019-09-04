@@ -32,8 +32,7 @@ def is_val_min(val_to_check, test_values):
 
 
 # Funzione ignoranta per trovare il primo minimo
-def find_first_minimo(tempi):
-    accuracy = 27
+def _find_first_minimo(tempi, accuracy):
     accuracy_half = int(accuracy / 2)
     for x in range(accuracy_half, len(tempi) - 1):
         test_values = []
@@ -47,6 +46,12 @@ def find_first_minimo(tempi):
         if is_val_min(val_to_check, test_values):
             return x
     return -1
+
+def find_first_minimo(tempi):
+    return _find_first_minimo(tempi, 27)
+
+def find_first_minimo_locale(tempi):
+    return _find_first_minimo(tempi, 3)
 
 def parse_file():
     omino = 0
@@ -102,11 +107,22 @@ def parse_file():
                 massimo = 0
                 index_massimo = 0
                 # print("minimi_array_index {}, minimi_array_index + 1 {}".format(minimi_array_index[x], minimi_array_index[x+1]))
-                for j in range(minimi_array_index[x], minimi_array_index[x+1]):
-                    if(massimo < gfzs[j]):
-                        massimo = gfzs[j]
-                        index_massimo = j
-                massimi_array.append(tempi[steps[index_massimo] - 1])
+                # for j in range(minimi_array_index[x], minimi_array_index[x+1]):
+                    # if(massimo < gfzs[j]):
+                        # massimo = gfzs[j]
+                        # index_massimo = j
+                array_in_campione = gfzs[minimi_array_index[x]:minimi_array_index[x+1]]
+                massimo = find_first_minimo_locale(array_in_campione)
+                print("Index minimo: {}".format(index_minimo))
+                print("minimi_array_index: {}".format(minimi_array_index))
+                print("steps[minimi_array_index[x]]: {}".format(steps[minimi_array_index[x]]))
+                print("steps[minimi_array_index[x+1]]: {}".format(steps[minimi_array_index[x+1]]))
+                print("len(gfzs): {}".format(len(gfzs)))
+                print("len(steps): {}".format(len(steps)))
+                print("Nell'array: {}".format(array_in_campione))
+                print("Massimo è: {}".format(massimo))
+                print("Valore massimo è: {}".format(array_in_campione[massimo]))
+                massimi_array.append(tempi[steps[minimi_array_index[x]]:][massimo])
                 
         # print("minimi_array: {}".format(minimi_array))
         # print("massimi_array: {}".format(massimi_array))

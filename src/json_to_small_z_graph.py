@@ -100,8 +100,8 @@ def parse_file():
                               xaxis_title='Steps',
                               yaxis_title='GfZs')
 
-            # plt.show()
-            # input("Premere INVIO per passare al prossimo grafico...\n")
+            plt.show()
+            input("Premere INVIO per passare al prossimo grafico...\n")
             # break
             plt.write_image(path_acc_data_graphics + str.replace(file, "json", "pdf"))
         print("End processing " + file)
