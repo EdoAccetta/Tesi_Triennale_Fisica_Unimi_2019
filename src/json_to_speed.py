@@ -25,17 +25,54 @@ with open(path_acc_data + "/utility/Escludere_Pre_Custom12.csv",
         values_to_skip.append(int(line.replace("\n", "")))
 
 
+def is_val_min(val_to_check, test_values):
+    for value in test_values:
+        if val_to_check >= value:
+            return False
+    return True
+
+# Funzione ignoranta per trovare il primo minimo
+def _find_first_minimo(tempi, accuracy):
+    accuracy_half = int(accuracy / 2)
+    for x in range(accuracy_half, len(tempi) - accuracy_half):
+        test_values = []
+        for j in range(accuracy_half, 0, -1):
+            test_values.append(tempi[x - j])
+        for j in range(1, accuracy_half + 1):
+            test_values.append(tempi[x + j])
+
+        val_to_check = tempi[x]
+
+        if is_val_min(val_to_check, test_values):
+            return x
+    return -1
+
+def find_first_minimo(tempi):
+    return _find_first_minimo(tempi, 27)
+
+
 def parse_file():
     omino = 0
     for file in list_files:
         print(colored("Processing " + file, "red"))
         tempi = []
+        minimi_da_escludere = 0
+        minimi_da_tenere = 0
+        steps = []
+        gfzs = []
         with open(path_acc_data_json + file, "r") as file_acc:
             json_object = json.load(file_acc)
             tempi = json_object["tempi"][values_to_skip[omino] - 1:]
+            minimi_da_escludere = json_object["pre"]
+            minimi_da_tenere = json_object["into"]
+            #Prepariamo steps e gfzs per dopo
+            for tempo in tempi:
+                steps.append(tempo["step"])
+                gfzs.append(tempo["gFz"])
 
         # Calcolo la prima parte della formula
-        jsello = []
+        jsello = {}
+        velocita = []
         for x in range(0, len(tempi) - 2):
             velocita_z_no_step = ((tempi[x]["gFz"] + tempi[x + 1]["gFz"]) *
                         (tempi[x + 1]["time"] - tempi[x]["time"])) / 2
@@ -51,14 +88,45 @@ def parse_file():
                 "step": tempi[x]["step"]
             }
             if x > 0:
-                node["velocita_z_step"] = node["velocita_z_no_step"] + jsello[x-1]["velocita_z_step"]
-                node["velocita_x_step"] = node["velocita_x_no_step"] + jsello[x-1]["velocita_x_step"]
-                node["velocita_y_step"] = node["velocita_y_no_step"] + jsello[x-1]["velocita_y_step"]
+                node["velocita_z_step"] = node["velocita_z_no_step"] + velocita[x-1]["velocita_z_step"]
+                node["velocita_x_step"] = node["velocita_x_no_step"] + velocita[x-1]["velocita_x_step"]
+                node["velocita_y_step"] = node["velocita_y_no_step"] + velocita[x-1]["velocita_y_step"]
             else:
                 node["velocita_z_step"] = velocita_z_no_step
                 node["velocita_x_step"] = velocita_x_no_step
                 node["velocita_y_step"] = velocita_y_no_step
-            jsello.append(node)
+
+            velocita.append(node)
+
+        # Una volta creati gli arrays escludiamo n minimi
+        minimi_esclusi = 0
+        for x in range(0, minimi_da_escludere):
+            index_minimo = find_first_minimo(gfzs)
+            minimi_esclusi += index_minimo
+            if index_minimo > 0:
+                steps = steps[index_minimo:]
+                gfzs = gfzs[index_minimo:]
+            else:
+                break
+
+        # Adesso conto solamente n minimi dopo quello che ho trovato
+        index_last_minimo = 0
+        for x in range(0, minimi_da_tenere):
+            index_last_minimo += find_first_minimo(
+                gfzs[index_last_minimo:])
+            if index_last_minimo < 0:
+                break
+
+        da_step = minimi_esclusi
+        a_step = da_step + index_last_minimo
+
+        velocita_z_media = 0
+        for x in range(da_step, a_step):
+            velocita_z_media += velocita[x]["velocita_z_step"]
+
+        velocita_z_media /= (index_last_minimo)
+
+        jsello = { "velocita" : velocita, "velocita_z_media" : velocita_z_media}
 
         with open(path_acc_data_json_speed + file, "w") as file_speed:
             json.dump(jsello, file_speed)
