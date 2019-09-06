@@ -34,7 +34,7 @@ def is_val_min(val_to_check, test_values):
 # Funzione ignoranta per trovare il primo minimo
 def _find_first_minimo(tempi, accuracy):
     accuracy_half = int(accuracy / 2)
-    for x in range(accuracy_half, len(tempi) - 1):
+    for x in range(accuracy_half, len(tempi) - accuracy_half):
         test_values = []
         for j in range(accuracy_half, 0, -1):
             test_values.append(tempi[x - j])

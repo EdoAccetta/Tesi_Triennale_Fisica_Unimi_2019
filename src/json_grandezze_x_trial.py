@@ -34,7 +34,7 @@ def is_val_min(val_to_check, test_values):
 # Funzione ignoranta per trovare il primo minimo
 def _find_first_minimo(tempi, accuracy):
     accuracy_half = int(accuracy / 2)
-    for x in range(accuracy_half, len(tempi) - 1):
+    for x in range(accuracy_half, len(tempi) - accuracy_half):
         test_values = []
         for j in range(accuracy_half, 0, -1):
             test_values.append(tempi[x - j])
@@ -44,6 +44,7 @@ def _find_first_minimo(tempi, accuracy):
         val_to_check = tempi[x]
 
         if is_val_min(val_to_check, test_values):
+            print("Trovato in {}".format(x))
             return x
     return -1
 
@@ -51,7 +52,7 @@ def find_first_minimo(tempi):
     return _find_first_minimo(tempi, 27)
 
 def find_first_minimo_locale(tempi):
-    return _find_first_minimo(tempi, 3)
+    return _find_first_minimo(tempi, 5)
 
 def parse_file():
     omino = 0
@@ -115,52 +116,65 @@ def parse_file():
 
                 conto = 0       # Con questa variabile vorrò contare quanti minimi locali ci sono tra due minimi assoluti
                 local_min_steps = []     # Qui dentro metterò gli step relativi ai minimi locali
-                array_in_barone = array_in_campione     # PROBABILMENTE NON SERVE E POTREI USARE DIRETTAMENTE ARRAY_IN CAMPIONE, MA VEDI RIGA 124
-                for y in range(0, len(array_in_campione)-1):    # CICLO DA 0 ALLA FINE DI ARRAY_IN_BARONE (CHE CAMBIA OGNI CICLO)
-                    
-                    check_value = find_first_minimo_locale(array_in_barone)
-                    if check_value > 0:
-                        local_min_steps.append(check_value)   # QUESTO VA OUT OF RANGE, MA IO SO CHE AD UN CERTO PUNTO ARRIVO PER FORZA AL LIMITE, COME FACCIO A FERMARLO?
-                        array_in_barone = array_in_barone[array_in_campione[y]:array_in_campione[len(array_in_campione)]]   # RESTRINGO IL SEGMENTO DA CONTROLLARE ELIMINANDO LA PRIMA PARTE
+                array_in_barone = array_in_campione     # PROBABILMENTE NON SERVE E POTREI USARE DIRETTAMENTE ARRAY_IN CAMPIONE, MA VEDI RIGA 12
+                last_position = 0
+                check_value = 0
+                while check_value >= 0:    # CICLO DA 0 ALLA FINE DI ARRAY_IN_BARONE (CHE CAMBIA OGNI CICLO)
+
+                    check_value = find_first_minimo_locale(array_in_barone)      # OGNI VOLTA DEVO RIPARTIRE DAL MINIMO TROVATO
+                    if check_value > 0: 
+                        last_position += check_value
+                        local_min_steps.append(last_position)     # Metto lo step del minimo locale trovato nel vettore local_min_steps
+                        array_in_barone = array_in_campione[last_position:]
+                        # print("check value {}".format(check_value))
+                        # print("Primo punto array {}".format(minimi_array_index[0]))
+                        # print("Last_min {}".format(check_value))
+                        check_value = 0
                         conto += 1
                 
+                print("Minimi trovati {}".format(conto))
+                # Se non trovo minimi vado al prossimo
+                if conto == 0:
+                    continue
+
                 if conto % 2 == 0:  # DATO CHE CONTO HA DENTRO IL NUMERO DI MINIMI, MA LOCAL_MIN_STEPS PARTE DA 0, vado da conto/2 -1 e conto/2
-                    for j in range(local_min_steps[conto/2 -1], local_min_steps[(conto/2)]):
-                        if(massimo < gfxs[j]):
-                            massimo = gfxs[j]
-                            index_massimo = j
+                    for j in range(local_min_steps[int((conto/2) -1)], local_min_steps[int((conto/2))]):       # devo assicurarmi che arrotndi per...?
+                        real_value = minimi_array_index[x] + j
+                        if(massimo < gfxs[real_value]):
+                            massimo = gfxs[real_value]
+                            index_massimo = real_value
                 else:
+                    massimo = gfxs[minimi_array_index[x] + local_min_steps[int((conto) / 2)]]   # DATO CHE CONTO HA DENTRO IL NUMERO DI MINIMI, MA LOCAL_MIN_STEPS PARTE DA 0, IL MINIMO CENTRALE è IN (CONTO+1)/2
+                    index_massimo = minimi_array_index[x] + local_min_steps[int((conto) / 2)]
                     
-                    massimo = gfxs[local_min_steps[(conto+1) / 2]]   # DATO CHE CONTO HA DENTRO IL NUMERO DI MINIMI, MA LOCAL_MIN_STEPS PARTE DA 0, IL MINIMO CENTRALE è IN (CONTO+1)/2
-                    index_massimo = local_min_steps[(conto+1) / 2]
-                    
-                massimi_array.append(tempi[steps[minimi_array_index[x]]:][massimo])
+                massimi_array.append(tempi[steps[minimi_array_index[x]]:][index_massimo])
                 
         # print("minimi_array: {}".format(minimi_array))
         # print("massimi_array: {}".format(massimi_array))
         
         # Adesso che abbiamo tutta questa porcheria cerchiamo di calcolare altri tempi
-        print(colored("Calcolo tempo di contatto", "green"))
+        # print(colored("Calcolo tempo di contatto", "green"))
         tempo_contatto = 0
-        for x in range(0, len(minimi_array_index) - 2):
-            print("Differenza tra: {} e {} fa {}".format(massimi_array[x]["time"], minimi_array[x]["time"], massimi_array[x]["time"] - minimi_array[x]["time"]))
+        for x in range(0, len(massimi_array) - 2):
+            #
+            # print("Differenza tra: {} e {} fa {}".format(massimi_array[x]["time"], minimi_array[x]["time"], massimi_array[x]["time"] - minimi_array[x]["time"]))
             tempo_contatto += massimi_array[x]["time"] - minimi_array[x]["time"]
 
         tempo_contatto /= len(massimi_array)
 
         print(colored("Tempo di contatto: {}".format(tempo_contatto), "yellow"))
 
-        print(colored("Calcolo tempo di volo", "green"))
+        # print(colored("Calcolo tempo di volo", "green"))
         tempo_volo = 0
-        for x in range(1, len(minimi_array_index) - 1):
-            print("Differenza tra: {} e {} fa {}".format(minimi_array[x]["time"], massimi_array[x-1]["time"], minimi_array[x]["time"] - massimi_array[x-1]["time"]))
+        for x in range(1, len(massimi_array) - 2):
+            # print("Differenza tra: {} e {} fa {}".format(minimi_array[x]["time"], massimi_array[x-1]["time"], minimi_array[x]["time"] - massimi_array[x-1]["time"]))
             tempo_volo += minimi_array[x]["time"] - massimi_array[x-1]["time"]
 
         tempo_volo /= len(massimi_array)
 
         print(colored("Tempo di volo: {}".format(tempo_volo), "yellow"))
 
-        print(colored("Calcolo tempo totale e ritmo", "green"))
+        # print(colored("Calcolo tempo totale e ritmo", "green"))
         tempo_totale = minimi_array[len(minimi_array) - 1]["time"] - minimi_array[0]["time"]
         ritmo = len(minimi_array) / tempo_totale
 
