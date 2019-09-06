@@ -113,26 +113,26 @@ def parse_file():
                 # massimi_array.append(tempi[steps[index_massimo] - 1])
                 array_in_campione = gfxs[minimi_array_index[x]:minimi_array_index[x+1]]
 
-                conto = 0
-                minxes = []
-                array_in_barone = array_in_campione
-                for y in range(0, len(array_in_barone)):
+                conto = 0       # Con questa variabile vorrò contare quanti minimi locali ci sono tra due minimi assoluti
+                local_min_steps = []     # Qui dentro metterò gli step relativi ai minimi locali
+                array_in_barone = array_in_campione     # PROBABILMENTE NON SERVE E POTREI USARE DIRETTAMENTE ARRAY_IN CAMPIONE, MA VEDI RIGA 124
+                for y in range(0, len(array_in_campione)-1):    # CICLO DA 0 ALLA FINE DI ARRAY_IN_BARONE (CHE CAMBIA OGNI CICLO)
                     
-                    if y == len(array_in_campione)-1:
-                        break
-                    minxes[y] = find_first_minimo_locale(array_in_barone)   # QUESTO VA OUT OF RANGE, MA IO SO CHE AD UN CERTO PUNTO ARRIVO PER FORZA AL LIMITE, COME FACCIO A FERMARLO?
-                    array_in_barone = array_in_barone[array_in_campione[y]:array_in_campione[len(array_in_campione)]]
-                    conto += 1
+                    check_value = find_first_minimo_locale(array_in_barone)
+                    if check_value > 0:
+                        local_min_steps.append(check_value)   # QUESTO VA OUT OF RANGE, MA IO SO CHE AD UN CERTO PUNTO ARRIVO PER FORZA AL LIMITE, COME FACCIO A FERMARLO?
+                        array_in_barone = array_in_barone[array_in_campione[y]:array_in_campione[len(array_in_campione)]]   # RESTRINGO IL SEGMENTO DA CONTROLLARE ELIMINANDO LA PRIMA PARTE
+                        conto += 1
                 
-                if conto % 2 == 0:  # DATO CHE CONTO HA DENTRO IL NUMERO DI MINIMI, MA MINXES PARTE DA 0, vado da conto/2 -1 e conto/2
-                    for j in range(minxes[conto/2 -1], minxes[(conto/2)]):
+                if conto % 2 == 0:  # DATO CHE CONTO HA DENTRO IL NUMERO DI MINIMI, MA LOCAL_MIN_STEPS PARTE DA 0, vado da conto/2 -1 e conto/2
+                    for j in range(local_min_steps[conto/2 -1], local_min_steps[(conto/2)]):
                         if(massimo < gfxs[j]):
                             massimo = gfxs[j]
                             index_massimo = j
                 else:
                     
-                    massimo = gfxs[minxes[(conto+1) / 2]]   # DATO CHE CONTO HA DENTRO IL NUMERO DI MINIMI, MA MINXES PARTE DA 0, IL MINIMO CENTRALE è IN (CONTO+1)/2
-                    index_massimo = minxes[(conto+1) / 2]
+                    massimo = gfxs[local_min_steps[(conto+1) / 2]]   # DATO CHE CONTO HA DENTRO IL NUMERO DI MINIMI, MA LOCAL_MIN_STEPS PARTE DA 0, IL MINIMO CENTRALE è IN (CONTO+1)/2
+                    index_massimo = local_min_steps[(conto+1) / 2]
                     
                 massimi_array.append(tempi[steps[minimi_array_index[x]]:][massimo])
                 
