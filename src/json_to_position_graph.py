@@ -12,14 +12,14 @@ list_files = [f for f in listdir(path_acc_data_json) if isfile(join(path_acc_dat
 for file in  list_files:
     print("Processing " + file)
     with open(path_acc_data_json + file,"r") as file_acc:
-        tempi = json.load(file_acc)
+        positions = json.load(file_acc)
 
         steps = np.array([])
         posz = np.array([])
 
-        for tempo in tempi:
-            steps = np.append(steps, tempo["positions"]["step"])
-            posz = np.append(posz, float(tempo["posizione_z_step"]))
+        for pos in positions["positions"]:
+            steps = np.append(steps, pos["step"])
+            posz = np.append(posz, float(pos["posizione_z_step"]))
 
         plt = go.Figure()
         plt.add_trace(go.Scatter(
@@ -32,8 +32,8 @@ for file in  list_files:
                         xaxis_title='Steps',
                         yaxis_title='Position_z')
 
-        plt.show()
-        input("Premere INVIO per passare al prossimo grafico...\n")
+        # plt.show()
+        # input("Premere INVIO per passare al prossimo grafico...\n")
         # break
         plt.write_image(path_acc_data_graphics + str.replace(file, "json", "pdf"))
               
