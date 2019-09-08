@@ -1,3 +1,5 @@
+# grandezze_x sono io che cerco di usare il secondo sistema di ricerca dei massimi per confrontare quale sia il migliore
+# MASSIMO = minimo locale tra i due minimi
 import json
 import plotly.graph_objects as go
 import numpy as np
@@ -105,7 +107,7 @@ def parse_file():
             # Possiamo trovare i massimi come punto più alto tra due minimi
             for x in range(0, len(minimi_array_index) - 2):
                 massimo = 0
-                index_massimo = 0
+                # index_massimo = 0
                 # print("minimi_array_index {}, minimi_array_index + 1 {}".format(minimi_array_index[x], minimi_array_index[x+1]))
                 # for j in range(minimi_array_index[x], minimi_array_index[x+1]):
                 #     if(massimo < gfxs[j]):
@@ -114,42 +116,44 @@ def parse_file():
                 # massimi_array.append(tempi[steps[index_massimo] - 1])
                 array_in_campione = gfxs[minimi_array_index[x]:minimi_array_index[x+1]]
                 massimo = find_first_minimo_locale(array_in_campione)
-                print("Index minimo: {}".format(index_minimo))
-                print("minimi_array_index: {}".format(minimi_array_index))
-                print("steps[minimi_array_index[x]]: {}".format(steps[minimi_array_index[x]]))
-                print("steps[minimi_array_index[x+1]]: {}".format(steps[minimi_array_index[x+1]]))
-                print("len(gfxs): {}".format(len(gfxs)))
-                print("len(steps): {}".format(len(steps)))
-                print("Nell'array: {}".format(array_in_campione))
-                print("Massimo è: {}".format(massimo))
-                print("Valore massimo è: {}".format(array_in_campione[massimo]))
+                # print("Index minimo: {}".format(index_minimo))
+                # print("minimi_array_index: {}".format(minimi_array_index))
+                # print("steps[minimi_array_index[x]]: {}".format(steps[minimi_array_index[x]]))
+                # print("steps[minimi_array_index[x+1]]: {}".format(steps[minimi_array_index[x+1]]))
+                # print("len(gfxs): {}".format(len(gfxs)))
+                # print("len(steps): {}".format(len(steps)))
+                # print("Nell'array: {}".format(array_in_campione))
+                # print("Massimo è: {}".format(massimo))
+                # print("Valore massimo è: {}".format(array_in_campione[massimo]))
+                # for t in range(0, 9):
+                    # print("Minimo inizio {} e minimo finale {}".format(minimi_array_index[t], minimi_array_index[t+1]))
                 massimi_array.append(tempi[steps[minimi_array_index[x]]:][massimo])
                 
         # print("minimi_array: {}".format(minimi_array))
         # print("massimi_array: {}".format(massimi_array))
         
         # Adesso che abbiamo tutta questa porcheria cerchiamo di calcolare altri tempi
-        print(colored("Calcolo tempo di contatto", "green"))
+        # print(colored("Calcolo tempo di contatto", "green"))
         tempo_contatto = 0
         for x in range(0, len(minimi_array_index) - 2):
-            print("Differenza tra: {} e {} fa {}".format(massimi_array[x]["time"], minimi_array[x]["time"], massimi_array[x]["time"] - minimi_array[x]["time"]))
+            # print("Differenza tra: {} e {} fa {}".format(massimi_array[x]["time"], minimi_array[x]["time"], massimi_array[x]["time"] - minimi_array[x]["time"]))
             tempo_contatto += massimi_array[x]["time"] - minimi_array[x]["time"]
 
         tempo_contatto /= len(massimi_array)
 
         print(colored("Tempo di contatto: {}".format(tempo_contatto), "yellow"))
 
-        print(colored("Calcolo tempo di volo", "green"))
+        # print(colored("Calcolo tempo di volo", "green"))
         tempo_volo = 0
         for x in range(1, len(minimi_array_index) - 1):
-            print("Differenza tra: {} e {} fa {}".format(minimi_array[x]["time"], massimi_array[x-1]["time"], minimi_array[x]["time"] - massimi_array[x-1]["time"]))
+            # print("Differenza tra: {} e {} fa {}".format(minimi_array[x]["time"], massimi_array[x-1]["time"], minimi_array[x]["time"] - massimi_array[x-1]["time"]))
             tempo_volo += minimi_array[x]["time"] - massimi_array[x-1]["time"]
 
         tempo_volo /= len(massimi_array)
 
         print(colored("Tempo di volo: {}".format(tempo_volo), "yellow"))
 
-        print(colored("Calcolo tempo totale e ritmo", "green"))
+        # print(colored("Calcolo tempo totale e ritmo", "green"))
         tempo_totale = minimi_array[len(minimi_array) - 1]["time"] - minimi_array[0]["time"]
         ritmo = len(minimi_array) / tempo_totale
 

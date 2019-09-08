@@ -1,5 +1,5 @@
-# grandezze_trial sono io che cerco di creare un mix tra due sistemi di ricerca dei massimi per trovare una sintesi con grande fallimento
-# MASSIMO = minimo locale centrale se trovo "dispari" minimi locali, massimo centrale se trovo "pari" minimi locali
+# grandezze_firstmax sono io che sfrutto un sistema disperato di trovare i massimi sperando che in qualche caso sia meglio degli altri
+# MASSIMO = secondo massimo locale
 import json
 import plotly.graph_objects as go
 import numpy as np
@@ -12,7 +12,7 @@ os.system('color')
 
 path_acc_data = "E:/Scuola/Università/Tesi/Python/data/acc"
 path_acc_data_json = path_acc_data + "/json/"
-path_acc_data_json_grandezze = path_acc_data + "/json_grandezze_trial/grandezze_x_trial/"
+path_acc_data_json_grandezze = path_acc_data + "/json_grandezze_firstmax/grandezze_x_firstmax/"
 list_files = [
     f for f in listdir(path_acc_data_json)
     if isfile(join(path_acc_data_json, f))
@@ -55,6 +55,32 @@ def find_first_minimo(tempi):
 
 def find_first_minimo_locale(tempi):
     return _find_first_minimo(tempi, 5)
+
+def is_val_max(val_to_check, test_values):
+    for value in test_values:
+        if val_to_check <= value:
+            return False
+    return True
+
+# Funzione ignoranta per trovare il primo minimo
+def _find_first_massimo(tempi, accuracy):
+    accuracy_half = int(accuracy / 2)
+    for x in range(accuracy_half, len(tempi) - accuracy_half):
+        test_values = []
+        for j in range(accuracy_half, 0, -1):
+            test_values.append(tempi[x - j])
+        for j in range(1, accuracy_half + 1):
+            test_values.append(tempi[x + j])
+
+        val_to_control = tempi[x]
+
+        if is_val_max(val_to_control, test_values):
+            print("Trovato in {}".format(x))
+            return x
+    return -1
+
+def find_first_massimo_locale(tempi):
+    return _find_first_massimo(tempi, 5)
 
 def parse_file():
     omino = 0
@@ -106,50 +132,19 @@ def parse_file():
             # gfxs = gfxs[index_minimo:index_last_minimo]
 
             # Possiamo trovare i massimi come punto più alto tra due minimi
+            # Possiamo trovare i massimi come punto più alto tra due minimi
             for x in range(0, len(minimi_array_index) - 2):
+                loc_min = 0
                 massimo = 0
-                index_massimo = 0
-                # for j in range(minimi_array_index[x], minimi_array_index[x+1]):
-                #     if(massimo < gfxs[j]):
-                #         massimo = gfxs[j]
-                #         index_massimo = j
-                # massimi_array.append(tempi[steps[index_massimo] - 1])
+                # index_massimo = 0
+               
                 array_in_campione = gfxs[minimi_array_index[x]:minimi_array_index[x+1]]
-
-                conto = 0       # Con questa variabile vorrò contare quanti minimi locali ci sono tra due minimi assoluti
-                local_min_steps = []     # Qui dentro metterò gli step relativi ai minimi locali
-                array_in_barone = array_in_campione     # PROBABILMENTE NON SERVE E POTREI USARE DIRETTAMENTE ARRAY_IN CAMPIONE, MA VEDI RIGA 12
-                last_position = 0
-                check_value = 0
-                while check_value >= 0:    # CICLO DA 0 ALLA FINE DI ARRAY_IN_BARONE (CHE CAMBIA OGNI CICLO)
-
-                    check_value = find_first_minimo_locale(array_in_barone)      # OGNI VOLTA DEVO RIPARTIRE DAL MINIMO TROVATO
-                    if check_value > 0: 
-                        last_position += check_value
-                        local_min_steps.append(last_position)     # Metto lo step del minimo locale trovato nel vettore local_min_steps
-                        array_in_barone = array_in_campione[last_position:]
-                        # print("check value {}".format(check_value))
-                        # print("Primo punto array {}".format(minimi_array_index[0]))
-                        # print("Last_min {}".format(check_value))
-                        check_value = 0
-                        conto += 1
+                loc_min = find_first_minimo_locale(array_in_campione)
+                array_in_barone = gfxs[minimi_array_index[x]+loc_min:minimi_array_index[x+1]]
+                massimo = find_first_massimo_locale(array_in_barone)
                 
-                print("Minimi trovati {}".format(conto))
-                # Se non trovo minimi vado al prossimo
-                if conto == 0:
-                    continue
-
-                if conto % 2 == 0:  # DATO CHE CONTO HA DENTRO IL NUMERO DI MINIMI, MA LOCAL_MIN_STEPS PARTE DA 0, vado da conto/2 -1 e conto/2
-                    for j in range(local_min_steps[int((conto/2) -1)], local_min_steps[int((conto/2))]):       # devo assicurarmi che arrotndi per...?
-                        real_value = minimi_array_index[x] + j
-                        if(massimo < gfxs[real_value]):
-                            massimo = gfxs[real_value]
-                            index_massimo = real_value
-                else:
-                    massimo = gfxs[minimi_array_index[x] + local_min_steps[int((conto) / 2)]]   # DATO CHE CONTO HA DENTRO IL NUMERO DI MINIMI, MA LOCAL_MIN_STEPS PARTE DA 0, IL MINIMO CENTRALE è IN (CONTO+1)/2
-                    index_massimo = minimi_array_index[x] + local_min_steps[int((conto) / 2)]
-                    
-                massimi_array.append(tempi[steps[minimi_array_index[x]]:][index_massimo])
+                massimi_array.append(tempi[steps[minimi_array_index[x]]:][massimo])
+                
                 
         # print("minimi_array: {}".format(minimi_array))
         # print("massimi_array: {}".format(massimi_array))
