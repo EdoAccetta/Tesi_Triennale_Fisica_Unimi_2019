@@ -1,1104 +1,1472 @@
 0001 - (1) - ACC.json
 Lunghezza Passo;-1,9966992408558162
- T. Contatto in x;0,11124992374999998
- T. Volo in x;0,1475000375000004
  T. Totale in x;2,3699989300000013
  Ritmo in x;4,219411187666652
- T. Contatto in z;5,2637495987500005
- T. Volo in z;-4,998749255000001
-T. Totale in z;2,390003209999996
- Ritmo in z;4,18409479876808
-Velocita in z;-7,823773560742542
+ Velocita in z;-7,823773560742542
+ T. Contatto in basics;0,07875013125000141
+ T. Volo in basics;0,17999982999999897
+ T. Contatto in x;0,11124992374999998
+ T. Volo in x;0,1475000375000004
+ T. Contatto in s_min;0,09874963625000088
+ T. Volo in s_min;0,1600003249999995
+ T. Contatto in f_max;0,03999995875000195
+ T. Volo in f_max;0,12999963999999853
+ T. Contatto in s_max;0,048749920000002334
+ T. Volo in s_max;0,12249994624999783
 
 0001 - (2) - ACC.json
 Lunghezza Passo;-1,2046419059664368
- T. Contatto in x;0,08000087749999985
- T. Volo in x;0,24874877875000045
  T. Totale in x;2,919998160000006
  Ritmo in x;3,424659692251306
- T. Contatto in z;0,11124944500000122
- T. Volo in z;0,21000051749999837
-T. Totale in z;2,7200012200000003
- Ritmo in z;3,676468939230843
-Velocita in z;-4,331843139958264
+ Velocita in z;-4,331843139958264
+ T. Contatto in basics;0,09000062999999958
+ T. Volo in basics;0,23874902625000072
+ T. Contatto in x;0,08000087749999985
+ T. Volo in x;0,24874877875000045
+ T. Contatto in s_min;0,0925006874999994
+ T. Volo in s_min;0,2362489687500009
+ T. Contatto in f_max;0,0425000187500002
+ T. Volo in f_max;0,1612496375000001
+ T. Contatto in s_max;0,059999943749999396
+ T. Volo in s_max;0,14624977000000072
 
 0001 - (3) - ACC.json
 Lunghezza Passo;-1,0808455359032982
- T. Contatto in x;0,09624981750000039
- T. Volo in x;0,14999985749999967
  T. Totale in x;2,239997859999999
  Ritmo in x;4,464289979277035
- T. Contatto in z;0,1187491400000007
- T. Volo in z;0,13000106999999916
-T. Totale in z;2,240001679999999
- Ritmo in z;4,464282366073942
-Velocita in z;-4,480910292037612
+ Velocita in z;-4,480910292037612
+ T. Contatto in basics;0,06624984624999986
+ T. Volo in basics;0,1799998287500002
+ T. Contatto in x;0,09624981750000039
+ T. Volo in x;0,14999985749999967
+ T. Contatto in s_min;12,54874992125
+ T. Volo in s_min;-12,302500246250002
+ T. Contatto in f_max;0,041249986250001314
+ T. Volo in f_max;0,11874985999999899
+ T. Contatto in s_max;0,05875038875000049
+ T. Volo in s_max;0,10499930499999977
 
 0001 - (4) - ACC.json
 Lunghezza Passo;-1,6909793888736402
- T. Contatto in x;0,10000133375000075
- T. Volo in x;0,14499855249999882
  T. Totale in x;2,2200012200000003
  Ritmo in x;4,504502029057443
- T. Contatto in z;0,13124895249999913
- T. Volo in z;0,11750078125000041
-T. Totale in z;2,369998939999995
- Ritmo in z;4,219411169863233
-Velocita in z;-6,596569756257897
+ Velocita in z;-6,596569756257897
+ T. Contatto in basics;0,07375002249999785
+ T. Volo in basics;0,17124986375000173
+ T. Contatto in x;0,10000133375000075
+ T. Volo in x;0,14499855249999882
+ T. Contatto in s_min;5,8050007825
+ T. Volo in s_min;-5,56000089625
+ T. Contatto in f_max;0,04499960124999891
+ T. Volo in f_max;0,12125062750000115
+ T. Contatto in s_max;0,051249984999997444
+ T. Volo in s_max;0,11250018750000201
 
 0001 - (5) - ACC.json
 Lunghezza Passo;-1,8756574955005725
- T. Contatto in x;0,11250019000000044
- T. Volo in x;0,23124980999999956
  T. Totale in x;3,060001370000002
  Ritmo in x;3,2679723930973252
- T. Contatto in z;0,12750005749999982
- T. Volo in z;0,1825003624999999
-T. Totale in z;2,7200012200000003
- Ritmo in z;3,676468939230843
-Velocita in z;-6,414878871899426
+ Velocita in z;-6,414878871899426
+ T. Contatto in basics;0,06999969250000149
+ T. Volo in basics;0,2737503074999985
+ T. Contatto in x;0,11250019000000044
+ T. Volo in x;0,23124980999999956
+ T. Contatto in s_min;3,2749991412500004
+ T. Volo in s_min;-2,9312491412500004
+ T. Contatto in f_max;0,042499540000001446
+ T. Volo in f_max;0,16750049749999896
+ T. Contatto in s_max;0,06874942625000102
+ T. Volo in s_max;0,14625072624999902
 
 0002 - (1) - ACC.json
 Lunghezza Passo;2,261385894539532
- T. Contatto in x;0,05375027749999983
- T. Volo in x;0,18374967500000006
  T. Totale in x;2,13999939
  Ritmo in x;4,672898528256123
- T. Contatto in z;0,07749986499999961
- T. Volo in z;0,27000022000000046
-T. Totale in z;2,960000990000001
- Ritmo in z;3,3783772484481487
-Velocita in z;7,05838878904269
+ Velocita in z;7,05838878904269
+ T. Contatto in basics;0,042500258750000075
+ T. Volo in basics;0,19499969374999981
+ T. Contatto in x;0,05375027749999983
+ T. Volo in x;0,18374967500000006
+ T. Contatto in s_min;0,05625009624999899
+ T. Volo in s_min;0,1812498562500009
+ T. Contatto in f_max;0,06124997125000009
+ T. Volo in f_max;0,10625004749999967
+ T. Contatto in s_max;0,04625034500000025
+ T. Volo in s_max;0,10499977874999988
 
 0002 - (2) - ACC.json
 Lunghezza Passo;0,5597031610114664
- T. Contatto in x;0,0750007637500012
- T. Volo in x;0,17749929374999862
  T. Totale in x;2,2700004599999986
  Ritmo in x;4,405285450911321
- T. Contatto in z;3,06374979125
- T. Volo in z;-2,8374996187499995
-T. Totale in z;2,0300006900000014
- Ritmo in z;4,926106699993285
-Velocita in z;2,2957067415874466
+ Velocita in z;2,2957067415874466
+ T. Contatto in basics;0,05250048625000092
+ T. Volo in basics;0,1999995712499989
+ T. Contatto in x;0,0750007637500012
+ T. Volo in x;0,17749929374999862
+ T. Contatto in s_min;2,977500440000001
+ T. Volo in s_min;-2,725000382500001
+ T. Contatto in f_max;0,06500029375000071
+ T. Volo in f_max;0,11624980124999951
+ T. Contatto in s_max;0,043750285000000666
+ T. Volo in s_max;0,1349997524999993
 
 0002 - (3) - ACC.json
 Lunghezza Passo;1,1222684555377351
- T. Contatto in x;0,05999994124999919
- T. Volo in x;0,16875005000000076
  T. Totale in x;2,0299987799999997
  Ritmo in x;4,92611133490435
- T. Contatto in z;0,11624979875000063
- T. Volo in z;0,11250019124999922
-T. Totale in z;2,039998999999998
- Ritmo in z;4,901963187236861
-Velocita in z;4,811011940259226
+ Velocita in z;4,811011940259226
+ T. Contatto in basics;0,04749989499999918
+ T. Volo in basics;0,18125009625000077
+ T. Contatto in x;0,05999994124999919
+ T. Volo in x;0,16875005000000076
+ T. Contatto in s_min;3,332499742499999
+ T. Volo in s_min;-3,103749751249999
+ T. Contatto in f_max;0,07500004874999977
+ T. Volo in f_max;0,08374976999999983
+ T. Contatto in s_max;0,03750014374999955
+ T. Volo in s_max;0,10749983750000025
 
 0002 - (4) - ACC.json
 Lunghezza Passo;1,911782072255809
- T. Contatto in x;0,07499933000000159
- T. Volo in x;0,1525006312499988
  T. Totale in x;2,259998320000001
  Ritmo in x;4,42478205028046
- T. Contatto in z;0,10874986749999938
- T. Volo in z;0,11750030375000087
-T. Totale in z;2,030002599999996
- Ritmo in z;4,926102065090961
-Velocita in z;8,308637410200408
+ Velocita in z;8,308637410200408
+ T. Contatto in basics;0,04125022875000006
+ T. Volo in basics;0,18624973250000032
+ T. Contatto in x;0,07499933000000159
+ T. Volo in x;0,1525006312499988
+ T. Contatto in s_min;3,209999560000001
+ T. Volo in s_min;-2,9824995987500005
+ T. Contatto in f_max;0,0587496750000005
+ T. Volo in f_max;0,1000003812500001
+ T. Contatto in s_max;0,046249865000000945
+ T. Volo in s_max;0,09875011499999964
 
 0002 - (5) - ACC.json
 Lunghezza Passo;1,8993856165208514
- T. Contatto in x;0,07124948500000006
- T. Volo in x;0,14625024750000026
  T. Totale in x;1,939998629999998
  Ritmo in x;5,154642815392096
- T. Contatto in z;0,10499954374999909
- T. Volo in z;0,11250019000000044
-T. Totale in z;1,930000309999997
- Ritmo in z;5,181346318022102
-Velocita in z;8,765512811082413
+ Velocita in z;8,765512811082413
+ T. Contatto in basics;0,04000043750000071
+ T. Volo in basics;0,1774992949999996
+ T. Contatto in x;0,07124948500000006
+ T. Volo in x;0,14625024750000026
+ T. Contatto in s_min;10,965000628750001
+ T. Volo in s_min;-10,747500896250001
+ T. Contatto in f_max;0,0687503812500001
+ T. Volo in f_max;0,07749938999999983
+ T. Contatto in s_max;0,03624963625000088
+ T. Volo in s_max;0,10375022999999928
 
 0003 - (1) - ACC.json
 Lunghezza Passo;-1,4918118893044654
- T. Contatto in x;0,08500003999999883
- T. Volo in x;0,16875028500000067
  T. Totale in x;2,330001839999994
  Ritmo in x;4,291842104296375
- T. Contatto in z;0,12625074125000157
- T. Volo in z;0,13499927749999863
-T. Totale in z;2,240001679999999
- Ritmo in z;4,464282366073942
-Velocita in z;-6,53197584064719
+ Velocita in z;-6,53197584064719
+ T. Contatto in basics;0,07124901124999816
+ T. Volo in basics;0,18250131375000134
+ T. Contatto in x;0,08500003999999883
+ T. Volo in x;0,16875028500000067
+ T. Contatto in s_min;14,73999929625
+ T. Volo in s_min;-14,48624897125
+ T. Contatto in f_max;0,05375099624999713
+ T. Volo in f_max;0,11374902375000229
+ T. Contatto in s_max;0,06500101499999733
+ T. Volo in s_max;0,10499906125000269
 
 0003 - (2) - ACC.json
 Lunghezza Passo;-1,2629448863045876
- T. Contatto in x;0,08499955750000021
- T. Volo in x;0,16250038499999953
  T. Totale in x;2,299999230000001
  Ritmo in x;4,347827542533567
- T. Contatto in z;0,10374998999999896
- T. Volo in z;0,14499998125000113
-T. Totale in z;2,4099998499999984
- Ritmo in z;4,149377851621031
-Velocita in z;-4,960826694573548
+ Velocita in z;-4,960826694573548
+ T. Contatto in basics;0,07124948000000053
+ T. Volo in basics;0,1762504624999992
+ T. Contatto in x;0,08499955750000021
+ T. Volo in x;0,16250038499999953
+ T. Contatto in s_min;0,11499929249999985
+ T. Volo in s_min;0,1325006499999999
+ T. Contatto in f_max;0,042499299999999796
+ T. Volo in f_max;0,11625051875000025
+ T. Contatto in s_max;0,059999462499999545
+ T. Volo in s_max;0,10000038375000031
 
 0003 - (3) - ACC.json
 Lunghezza Passo;-1,8597212574912774
- T. Contatto in x;0,09125089500000083
- T. Volo in x;0,1574988374999995
  T. Totale in x;2,259998320000001
  Ritmo in x;4,42478205028046
- T. Contatto in z;0,10499859124999844
- T. Volo in z;0,14375161875000142
-T. Totale in z;2,1500015299999973
- Ritmo in z;4,651159480802794
-Velocita in z;-8,26661146479102
+ Velocita in z;-8,26661146479102
+ T. Contatto in basics;0,06125211500000116
+ T. Volo in basics;0,18749761749999916
+ T. Contatto in x;0,09125089500000083
+ T. Volo in x;0,1574988374999995
+ T. Contatto in s_min;0,11000061000000017
+ T. Volo in s_min;0,13874912250000015
+ T. Contatto in f_max;0,048750875000001415
+ T. Volo in f_max;0,11499929624999883
+ T. Contatto in s_max;0,03250169500000144
+ T. Volo in s_max;0,12874841874999898
 
 0003 - (4) - ACC.json
 Lunghezza Passo;-0,4708419805005287
- T. Contatto in x;0,08874964500000049
- T. Volo in x;0,14875030749999985
  T. Totale in x;2,1499996200000027
  Ritmo in x;4,651163612763796
- T. Contatto in z;0,0925002100000003
- T. Volo in z;0,16999983749999936
-T. Totale in z;2,5
- Ritmo in z;4,0
-Velocita in z;-1,8237624373036752
+ Velocita in z;-1,8237624373036752
+ T. Contatto in basics;0,05999970500000096
+ T. Volo in basics;0,17750024749999938
+ T. Contatto in x;0,08874964500000049
+ T. Volo in x;0,14875030749999985
+ T. Contatto in s_min;2,6849999425
+ T. Volo in s_min;-2,44749999
+ T. Contatto in f_max;0,049999712500000015
+ T. Volo in f_max;0,10375023125000027
+ T. Contatto in s_max;0,046249627500000834
+ T. Volo in s_max;0,10750031624999945
 
 0003 - (5) - ACC.json
 Lunghezza Passo;-1,226736998278252
- T. Contatto in x;0,0787496575000004
- T. Volo in x;0,1612503524999993
  T. Totale in x;2,179998399999999
  Ritmo in x;4,587159330025199
- T. Contatto in z;3,616249082500001
- T. Volo in z;-3,379999397500001
-T. Totale in z;2,1799983900000015
- Ritmo in z;4,587159351067224
-Velocita in z;-5,284550825151917
+ Velocita in z;-5,284550825151917
+ T. Contatto in basics;0,06250047875000053
+ T. Volo in basics;0,17749953124999918
+ T. Contatto in x;0,0787496575000004
+ T. Volo in x;0,1612503524999993
+ T. Contatto in s_min;7,365000246250001
+ T. Volo in s_min;-7,125000236250002
+ T. Contatto in f_max;0,0475001349999995
+ T. Volo in f_max;0,10625004625000045
+ T. Contatto in s_max;0,038749933750000576
+ T. Volo in s_max;0,1137499799999997
 
 0004 - (1) - ACC.json
 Lunghezza Passo;-1,2438714366528825
- T. Contatto in x;0,05749988249999971
- T. Volo in x;0,21375012750000044
  T. Totale in x;2,460000990000001
  Ritmo in x;4,0650390144761674
- T. Contatto in z;5,8700001212499995
- T. Volo in z;-5,653750178749999
-T. Totale in z;1,8799991600000006
- Ritmo in z;5,319151312812287
-Velocita in z;-6,343357602723349
+ Velocita in z;-6,343357602723349
+ T. Contatto in basics;0,03499984499999975
+ T. Volo in basics;0,2362501650000004
+ T. Contatto in x;0,05749988249999971
+ T. Volo in x;0,21375012750000044
+ T. Contatto in s_min;0,0950000274999998
+ T. Volo in s_min;0,17624998250000035
+ T. Contatto in f_max;0,0525000074999995
+ T. Volo in f_max;0,12000012625000034
+ T. Contatto in s_max;0,0449998362499997
+ T. Volo in s_max;0,1312501450000001
 
 0004 - (2) - ACC.json
 Lunghezza Passo;-1,3732980962478587
- T. Contatto in x;0,06374931374999981
- T. Volo in x;0,1775007237500006
  T. Totale in x;2,2000007600000018
  Ritmo in x;4,545452975207151
- T. Contatto in z;4,973749641249998
- T. Volo in z;-4,724999431249998
-T. Totale in z;2,25
- Ritmo in z;4,444444444444445
-Velocita in z;-5,985911138508986
+ Velocita in z;-5,985911138508986
+ T. Contatto in basics;0,03999948500000006
+ T. Volo in basics;0,20125055250000035
+ T. Contatto in x;0,06374931374999981
+ T. Volo in x;0,1775007237500006
+ T. Contatto in s_min;5,01874971375
+ T. Volo in s_min;-4,77749967625
+ T. Contatto in f_max;0,04624891125000108
+ T. Volo in f_max;0,1075010312499991
+ T. Contatto in s_max;0,058749673750001286
+ T. Volo in s_max;0,10500049749999896
 
 0004 - (3) - ACC.json
 Lunghezza Passo;-1,8211983996246535
- T. Contatto in x;0,062499998750000785
- T. Volo in x;0,17999982999999897
  T. Totale in x;2,4699974099999977
  Ritmo in x;4,04858724123116
- T. Contatto in z;0,12374925749999921
- T. Volo in z;0,14000082000000003
-T. Totale in z;2,490001679999999
- Ritmo in z;4,016061547396227
-Velocita in z;-7,2266569341925635
+ Velocita in z;-7,2266569341925635
+ T. Contatto in basics;0,03999948375000084
+ T. Volo in basics;0,20250034499999892
+ T. Contatto in x;0,062499998750000785
+ T. Volo in x;0,17999982999999897
+ T. Contatto in s_min;5,87624931375
+ T. Volo in s_min;-5,633749485
+ T. Contatto in f_max;0,03749990375000056
+ T. Volo in f_max;0,11749982874999976
+ T. Contatto in s_max;0,03374958000000028
+ T. Volo in s_max;0,12375020999999986
 
 0004 - (4) - ACC.json
 Lunghezza Passo;-1,9704380152639698
- T. Contatto in x;0,06624984499999931
- T. Volo in x;0,17625022125000056
  T. Totale in x;2,190000529999999
  Ritmo in x;4,566208940597838
- T. Contatto in z;0,10749959875000092
- T. Volo in z;0,20375037249999917
-T. Totale in z;2,760000230000003
- Ritmo in z;3,6231881038647558
-Velocita in z;-6,807184228241255
+ Velocita in z;-6,807184228241255
+ T. Contatto in basics;0,04124998750000053
+ T. Volo in basics;0,20125007874999934
+ T. Contatto in x;0,06624984499999931
+ T. Volo in x;0,17625022125000056
+ T. Contatto in s_min;9,21500015
+ T. Volo in s_min;-8,97250008375
+ T. Contatto in f_max;0,04874992250000032
+ T. Volo in f_max;0,10750007749999968
+ T. Contatto in s_max;0,04624986374999995
+ T. Volo in s_max;0,11750006875000008
 
 0004 - (5) - ACC.json
 Lunghezza Passo;-1,2674141376334718
- T. Contatto in x;3,6924996399999985
- T. Volo in x;-3,4599995637499985
  T. Totale in x;2,0999984799999964
  Ritmo in x;4,761908208619283
- T. Contatto in z;0,12624979124999935
- T. Volo in z;0,18249988375000115
-T. Totale in z;2,63999939
- Ritmo in z;3,787879663108559
-Velocita in z;-4,721179147130731
+ Velocita in z;-4,721179147130731
+ T. Contatto in basics;0,04874992624999841
+ T. Volo in basics;0,1837501500000016
+ T. Contatto in x;3,6924996399999985
+ T. Volo in x;-3,4599995637499985
+ T. Contatto in s_min;0,06750011624999885
+ T. Volo in s_min;0,16499996000000117
+ T. Contatto in f_max;0,058749676249999716
+ T. Volo in f_max;0,09000015250000004
+ T. Contatto in s_max;0,049999714999999334
+ T. Volo in s_max;0,09750032375000028
 
 0005 - (1) - ACC.json
 Lunghezza Passo;-2,0983306576893437
- T. Contatto in x;0,07750034624999991
- T. Volo in x;0,18499994000000042
  T. Totale in x;2,400001530000001
  Ritmo in x;4,1666640104183585
- T. Contatto in z;0,09750008624999973
- T. Volo in z;0,17624974125000037
-T. Totale in z;2,349998469999999
- Ritmo in z;4,255321919422357
-Velocita in z;-8,606184819890911
+ Velocita in z;-8,606184819890911
+ T. Contatto in basics;0,05375003874999962
+ T. Volo in basics;0,2087502475000007
+ T. Contatto in x;0,07750034624999991
+ T. Volo in x;0,18499994000000042
+ T. Contatto in s_min;2,51250028625
+ T. Volo in s_min;-2,2499999999999996
+ T. Contatto in f_max;0,03750038375000031
+ T. Volo in f_max;0,12874984624999986
+ T. Contatto in s_max;0,05250024874999992
+ T. Volo in s_max;0,12124991375000027
 
 0005 - (2) - ACC.json
 Lunghezza Passo;-1,094359715031311
- T. Contatto in x;0,07874989875000127
- T. Volo in x;0,17750000624999895
  T. Totale in x;2,3300018399999978
  Ritmo in x;4,291842104296368
- T. Contatto in z;0,1149997712499995
- T. Volo in z;0,18000030500000053
-T. Totale in z;2,509998320000001
- Ritmo in z;3,9840664116460425
-Velocita in z;-4,350148869919475
+ Velocita in z;-4,350148869919475
+ T. Contatto in basics;0,051249982500000346
+ T. Volo in basics;0,20499992249999988
+ T. Contatto in x;0,07874989875000127
+ T. Volo in x;0,17750000624999895
+ T. Contatto in s_min;4,609999420000001
+ T. Volo in s_min;-4,3537495150000005
+ T. Contatto in f_max;2,271250010000001
+ T. Volo in f_max;0,14124989499999918
+ T. Contatto in s_max;0,04625034375000059
+ T. Volo in s_max;0,13124966624999956
 
 0005 - (3) - ACC.json
 Lunghezza Passo;-0,05312448487664101
- T. Contatto in x;0,09875035125000053
- T. Volo in x;0,13624954374999954
  T. Totale in x;2,170000080000001
  Ritmo in x;4,608294760984522
- T. Contatto in z;0,10625004749999922
- T. Volo in z;0,1462500100000006
-T. Totale in z;2,280000689999998
- Ritmo in z;4,385963584949621
-Velocita in z;-0,6340662072550933
+ Velocita in z;-0,6340662072550933
+ T. Contatto in basics;0,055000067499999084
+ T. Volo in basics;0,179999827500001
+ T. Contatto in x;0,09875035125000053
+ T. Volo in x;0,13624954374999954
+ T. Contatto in s_min;9,96624970375
+ T. Volo in s_min;-9,73124980875
+ T. Contatto in f_max;0,031249999999999112
+ T. Volo in f_max;0,1199998850000008
+ T. Contatto in s_max;0,05625009749999954
+ T. Volo in s_max;0,10124993125000037
 
 0005 - (4) - ACC.json
 Lunghezza Passo;-0,19239722377828442
- T. Contatto in x;0,09250068625000019
- T. Volo in x;0,15374946624999986
  T. Totale in x;2,1199989300000013
  Ritmo in x;4,716983512817148
- T. Contatto in z;0,11625051624999916
- T. Volo in z;0,1237497312500011
-T. Totale in z;2,180000300000003
- Ritmo in z;4,587155332042838
-Velocita in z;-1,232372676887604
+ Velocita in z;-1,232372676887604
+ T. Contatto in basics;0,048750400000000305
+ T. Volo in basics;0,19749975249999974
+ T. Contatto in x;0,09250068625000019
+ T. Volo in x;0,15374946624999986
+ T. Contatto in s_min;3,51000022875
+ T. Volo in s_min;-3,26375007625
+ T. Contatto in f_max;0,03625106750000029
+ T. Volo in f_max;0,12124919999999939
+ T. Contatto in s_max;0,03999996000000117
+ T. Volo in s_max;0,12125015499999847
 
 0005 - (5) - ACC.json
 Lunghezza Passo;0,08078152383876284
- T. Contatto in x;0,0937500012500001
- T. Volo in x;0,1399998649999996
  T. Totale in x;2,1199989299999977
  Ritmo in x;4,716983512817156
- T. Contatto in z;0,11750006624999898
- T. Volo in z;0,12249994250000107
-T. Totale in z;2,1900005300000025
- Ritmo in z;4,566208940597831
-Velocita in z;-0,1910979333254065
+ Velocita in z;-0,1910979333254065
+ T. Contatto in basics;0,05374980124999995
+ T. Volo in basics;0,18000006499999976
+ T. Contatto in x;0,0937500012500001
+ T. Volo in x;0,1399998649999996
+ T. Contatto in s_min;3,8312499537500004
+ T. Volo in s_min;-3,5975000875000007
+ T. Contatto in f_max;0,03624987874999963
+ T. Volo in f_max;0,12250017875000019
+ T. Contatto in s_max;0,04624986874999948
+ T. Volo in s_max;0,11375021750000025
 
 0006 - (1) - ACC.json
 Lunghezza Passo;-2,1802964361802672
- T. Contatto in x;0,05124949999999995
- T. Volo in x;0,21250057625000007
  T. Totale in x;2,4300002999999997
  Ritmo in x;4,115225829395989
- T. Contatto in z;0,1362497825000002
- T. Volo in z;0,15250015124999994
-T. Totale in z;2,599998469999999
- Ritmo in z;3,846156109468789
-Velocita in z;-7,993123095197127
+ Velocita in z;-7,993123095197127
+ T. Contatto in basics;0,0612494925
+ T. Volo in basics;0,20250058375000002
+ T. Contatto in x;0,05124949999999995
+ T. Volo in x;0,21250057625000007
+ T. Contatto in s_min;6,9612500637500005
+ T. Volo in s_min;-6,6974999875000005
+ T. Contatto in f_max;0,03999948125000019
+ T. Volo in f_max;0,1262505087500001
+ T. Contatto in s_max;0,0699994537499995
+ T. Volo in s_max;0,0962505362500008
 
 0006 - (2) - ACC.json
 Lunghezza Passo;-2,1782882808044732
- T. Contatto in x;0,049999239999998224
- T. Volo in x;0,23250055000000192
  T. Totale in x;2,5599975599999993
  Ritmo in x;3,906253723148081
- T. Contatto in z;6,97374916125
- T. Volo in z;-6,65374946625
-T. Totale in z;2,7099990899999966
- Ritmo in z;3,6900381394593063
-Velocita in z;-7,706013352076333
+ Velocita in z;-7,706013352076333
+ T. Contatto in basics;0,04874849374999979
+ T. Volo in basics;0,23375129625000035
+ T. Contatto in x;0,049999239999998224
+ T. Volo in x;0,23250055000000192
+ T. Contatto in s_min;0,0912480387499981
+ T. Volo in s_min;0,19125175125000204
+ T. Contatto in f_max;0,03749895249999913
+ T. Volo in f_max;0,1262507425000008
+ T. Contatto in s_max;0,0799980199999979
+ T. Volo in s_max;0,0900015800000018
 
 0006 - (3) - ACC.json
 Lunghezza Passo;-2,1744766990887756
- T. Contatto in x;0,048750161250000534
- T. Volo in x;0,2474999437499994
  T. Totale in x;2,6300010700000023
  Ritmo in x;3,802279821886153
- T. Contatto in z;5,52749943625
- T. Volo in z;-5,26374936
-T. Totale in z;2,3700008399999994
- Ritmo in z;4,219407787214118
-Velocita in z;-8,771356397277755
+ Velocita in z;-8,771356397277755
+ T. Contatto in basics;0,062499998750000785
+ T. Volo in basics;0,23375010624999915
+ T. Contatto in x;0,048750161250000534
+ T. Volo in x;0,2474999437499994
+ T. Contatto in s_min;0,09750032500000039
+ T. Volo in s_min;0,19874977999999954
+ T. Contatto in f_max;0,05500006500000021
+ T. Volo in f_max;0,1462500112499998
+ T. Contatto in s_max;0,0800001637500003
+ T. Volo in s_max;0,12749981749999995
 
 0006 - (4) - ACC.json
 Lunghezza Passo;-3,3885836547192683
- T. Contatto in x;0,07124900999999895
- T. Volo in x;0,17625093250000123
  T. Totale in x;2,5199966400000022
  Ritmo in x;3,9682592592663104
- T. Contatto in z;3,241250515
- T. Volo in z;-2,9137506475000006
-T. Totale in z;2,7799987799999997
- Ritmo in z;3,597123880752207
-Velocita in z;-11,657164587492037
+ Velocita in z;-11,657164587492037
+ T. Contatto in basics;0,0649991074999976
+ T. Volo in basics;0,18250083500000258
+ T. Contatto in x;0,07124900999999895
+ T. Volo in x;0,17625093250000123
+ T. Contatto in s_min;3,136248593749997
+ T. Volo in s_min;-2,8887486512499967
+ T. Contatto in f_max;0,03874921999999881
+ T. Volo in f_max;0,1262507425000008
+ T. Contatto in s_max;0,0749983824999978
+ T. Volo in s_max;0,09250116000000208
 
 0006 - (5) - ACC.json
 Lunghezza Passo;-1,3947359563580315
- T. Contatto in x;0,06875014374999999
- T. Volo in x;0,20499992374999998
  T. Totale in x;2,4699993099999986
  Ritmo in x;4,04858412693241
- T. Contatto in z;3,787499903750001
- T. Volo in z;-3,5437498075000007
-T. Totale in z;2,320001610000002
- Ritmo in z;4,310341836357601
-Velocita in z;-5,915890979104401
+ Velocita in z;-5,915890979104401
+ T. Contatto in basics;0,06875014624999976
+ T. Volo in basics;0,20499992125000022
+ T. Contatto in x;0,06875014374999999
+ T. Volo in x;0,20499992374999998
+ T. Contatto in s_min;7,587499858749998
+ T. Volo in s_min;-7,3137497912499985
+ T. Contatto in f_max;0,043750049999999874
+ T. Volo in f_max;0,11124992125000022
+ T. Contatto in s_max;0,05999994249999974
+ T. Volo in s_max;0,10250020125000026
 
 0007 - (1) - ACC.json
 Lunghezza Passo;-0,9762066901216828
- T. Contatto in x;0,09250020999999942
- T. Volo in x;0,17874980000000074
  T. Totale in x;2,5
  Ritmo in x;4,0
- T. Contatto in z;0,10000014374999999
- T. Volo in z;0,16374993250000003
-T. Totale in z;2,4099998399999976
- Ritmo in z;4,149377868838369
-Velocita in z;-3,9732317890863857
+ Velocita in z;-3,9732317890863857
+ T. Contatto in basics;0,07125020124999981
+ T. Volo in basics;0,19999980875000034
+ T. Contatto in x;0,09250020999999942
+ T. Volo in x;0,17874980000000074
+ T. Contatto in s_min;5,58000064125
+ T. Volo in s_min;-5,308750631249998
+ T. Contatto in f_max;0,05999994124999963
+ T. Volo in f_max;0,11124992500000053
+ T. Contatto in s_max;0,07625007749999968
+ T. Volo in s_max;0,09249997000000043
 
 0007 - (2) - ACC.json
 Lunghezza Passo;-2,6317960253856416
- T. Contatto in x;2,949999808750001
- T. Volo in x;-2,681249856250001
  T. Totale in x;2,5099983199999976
  Ritmo in x;3,9840664116460482
- T. Contatto in z;0,08499979749999964
- T. Volo in z;0,1737501650000004
-T. Totale in z;2,350000380000001
- Ritmo in z;4,25531846084212
-Velocita in z;-10,58986209661584
+ Velocita in z;-10,58986209661584
+ T. Contatto in basics;0,08625006999999929
+ T. Volo in basics;0,1824998825000006
+ T. Contatto in x;2,949999808750001
+ T. Volo in x;-2,681249856250001
+ T. Contatto in s_min;8,7574994575
+ T. Volo in s_min;-8,488749505000001
+ T. Contatto in f_max;0,05500006874999919
+ T. Volo in f_max;0,12249994125000052
+ T. Contatto in s_max;0,07374978374999941
+ T. Volo in s_max;0,1037502262500003
 
 0007 - (3) - ACC.json
 Lunghezza Passo;-1,0667872672800136
- T. Contatto in x;0,07625055500000055
- T. Volo in x;0,17624950249999927
  T. Totale in x;2,30000115
  Ritmo in x;4,347823913044565
- T. Contatto in z;0,10249996250000004
- T. Volo in z;0,15750002750000025
-T. Totale in z;2,350000380000001
- Ritmo in z;4,25531846084212
-Velocita in z;-4,671446373659712
+ Velocita in z;-4,671446373659712
+ T. Contatto in basics;0,06375026874999934
+ T. Volo in basics;0,18874978875000048
+ T. Contatto in x;0,07625055500000055
+ T. Volo in x;0,17624950249999927
+ T. Contatto in s_min;5,8375010512499985
+ T. Volo in s_min;-5,585000993749999
+ T. Contatto in f_max;0,06250047749999954
+ T. Volo in f_max;0,10499954125000022
+ T. Contatto in s_max;0,07000017249999946
+ T. Volo in s_max;0,0974998462500003
 
 0007 - (4) - ACC.json
 Lunghezza Passo;-0,06083284325164913
- T. Contatto in x;0,057499408750000924
- T. Volo in x;0,22500038124999922
  T. Totale in x;2,560001370000002
  Ritmo in x;3,906247909547014
- T. Contatto in z;0,08375000875000005
- T. Volo in z;0,1699998387499999
-T. Totale in z;2,440000539999996
- Ritmo in z;4,098359748723668
-Velocita in z;-0,6091037341694944
+ Velocita in z;-0,6091037341694944
+ T. Contatto in basics;0,04125023125000071
+ T. Volo in basics;0,24124955874999943
+ T. Contatto in x;0,057499408750000924
+ T. Volo in x;0,22500038124999922
+ T. Contatto in s_min;0,0750000462500009
+ T. Volo in s_min;0,20749974374999924
+ T. Contatto in f_max;0,06374979000000058
+ T. Volo in f_max;0,10000014249999944
+ T. Contatto in s_max;2,3974995612500005
+ T. Volo in s_max;-2,236249685
 
 0007 - (5) - ACC.json
 Lunghezza Passo;-0,3034632170644798
- T. Contatto in x;0,06625032250000107
- T. Volo in x;0,16874981124999877
  T. Totale in x;2,1500015299999973
  Ritmo in x;4,651159480802794
- T. Contatto in z;0,08249950250000104
- T. Volo in z;0,16000080249999904
-T. Totale in z;2,2000007600000018
- Ritmo in z;4,545452975207151
-Velocita in z;-1,7313772778519598
+ Velocita in z;-1,7313772778519598
+ T. Contatto in basics;0,047500132500000625
+ T. Volo in basics;0,18750000124999922
+ T. Contatto in x;0,06625032250000107
+ T. Volo in x;0,16874981124999877
+ T. Contatto in s_min;3,9387512212499995
+ T. Volo in s_min;-3,7037510874999997
+ T. Contatto in f_max;0,033750533750000145
+ T. Volo in f_max;0,11499977124999994
+ T. Contatto in s_max;0,061250208750000645
+ T. Volo in s_max;0,08750009624999944
 
 0008 - (1) - ACC.json
 Lunghezza Passo;-2,2401855868774323
- T. Contatto in x;0,10625004624999956
- T. Volo in x;0,15750003000000046
  T. Totale in x;2,41000176
  Ritmo in x;4,149374563112352
- T. Contatto in z;0,1024999612499995
- T. Volo in z;0,1787500387500005
-T. Totale in z;2,399999619999999
- Ritmo in z;4,166667326388995
-Velocita in z;-8,88247295818168
+ Velocita in z;-8,88247295818168
+ T. Contatto in basics;0,07750010499999993
+ T. Volo in basics;0,1862499712500001
+ T. Contatto in x;0,10625004624999956
+ T. Volo in x;0,15750003000000046
+ T. Contatto in s_min;0,10374975124999919
+ T. Volo in s_min;0,16000032500000083
+ T. Contatto in f_max;0,038750173750000005
+ T. Volo in f_max;0,13374996000000028
+ T. Contatto in s_max;0,040000440000000026
+ T. Volo in s_max;0,12999963625
 
 0008 - (2) - ACC.json
 Lunghezza Passo;-2,030964196873319
- T. Contatto in x;0,087500093750001
- T. Volo in x;0,193749906249999
  T. Totale in x;2,490001679999999
  Ritmo in x;4,016061547396227
- T. Contatto in z;0,09624958499999714
- T. Volo in z;0,18500041500000286
-T. Totale in z;2,38999939
- Ritmo in z;4,18410148631879
-Velocita in z;-8,087392182460341
+ Velocita in z;-8,087392182460341
+ T. Contatto in basics;0,06124925999999764
+ T. Volo in basics;0,22000074000000236
+ T. Contatto in x;0,087500093750001
+ T. Volo in x;0,193749906249999
+ T. Contatto in s_min;0,0962500562500006
+ T. Volo in s_min;0,1849999437499994
+ T. Contatto in f_max;0,03874874249999927
+ T. Volo in f_max;0,12375116250000051
+ T. Contatto in s_max;0,03249931499999903
+ T. Volo in s_max;0,13000059000000075
 
 0008 - (3) - ACC.json
 Lunghezza Passo;-2,444998248457688
- T. Contatto in x;0,08874988249999971
- T. Volo in x;0,15874982125000026
  T. Totale in x;2,1799983900000015
  Ritmo in x;4,587159351067224
- T. Contatto in z;0,09375000124999966
- T. Volo in z;0,15250015125000038
-T. Totale in z;2,6300010699999987
- Ritmo in z;3,8022798218861578
-Velocita in z;-8,567152419839521
+ Velocita in z;-8,567152419839521
+ T. Contatto in basics;0,05874943125000032
+ T. Volo in basics;0,18875027249999965
+ T. Contatto in x;0,08874988249999971
+ T. Volo in x;0,15874982125000026
+ T. Contatto in s_min;0,10124921499999973
+ T. Volo in s_min;0,14625048875000024
+ T. Contatto in f_max;0,03749942249999938
+ T. Volo in f_max;0,1250004812500003
+ T. Contatto in s_max;0,03749918499999927
+ T. Volo in s_max;0,12250066250000069
 
 0008 - (4) - ACC.json
 Lunghezza Passo;-2,3069764063666236
- T. Contatto in x;0,08499956374999851
- T. Volo in x;0,1475005125000015
  T. Totale in x;2,1599998499999984
  Ritmo in x;4,629629951131713
- T. Contatto in z;0,08500003500000197
- T. Volo in z;0,15625000249999843
-T. Totale in z;2,1900024400000007
- Ritmo in z;4,566204958200867
-Velocita in z;-9,846597831213893
+ Velocita in z;-9,846597831213893
+ T. Contatto in basics;0,0562496187499999
+ T. Volo in basics;0,17625045750000012
+ T. Contatto in x;0,08499956374999851
+ T. Volo in x;0,1475005125000015
+ T. Contatto in s_min;6,162499905
+ T. Volo in s_min;-5,92999982875
+ T. Contatto in f_max;0,0350003249999995
+ T. Volo in f_max;0,1212496750000005
+ T. Contatto in s_max;0,05000019124999966
+ T. Volo in s_max;0,10499954125000066
 
 0008 - (5) - ACC.json
 Lunghezza Passo;-1,7819307384427905
- T. Contatto in x;0,08375024750000026
- T. Volo in x;0,15249991499999993
  T. Totale in x;2,16000176
  Ritmo in x;4,629625857341893
- T. Contatto in z;0,0862498300000003
- T. Volo in z;0,1462500074999995
-T. Totale in z;2,1299991600000006
- Ritmo in z;4,694837532236397
-Velocita in z;-8,11688047704518
+ Velocita in z;-8,11688047704518
+ T. Contatto in basics;0,051249742499999584
+ T. Volo in basics;0,1850004200000006
+ T. Contatto in x;0,08375024750000026
+ T. Volo in x;0,15249991499999993
+ T. Contatto in s_min;9,74749994375
+ T. Volo in s_min;-9,51124978125
+ T. Contatto in f_max;0,038750172500000346
+ T. Volo in f_max;0,12249994249999974
+ T. Contatto in s_max;0,046249867499999375
+ T. Volo in s_max;0,11625027625000062
 
 0009 - (1) - ACC.json
 Lunghezza Passo;-3,917798529857393
- T. Contatto in x;0,08500099125000027
- T. Volo in x;0,17749881750000007
  T. Totale in x;2,3499984700000027
  Ritmo in x;4,255321919422351
- T. Contatto in z;4,98874998125
- T. Volo in z;-4,73999977125
-T. Totale in z;2,5200004599999986
- Ritmo in z;3,9682532438902833
-Velocita in z;-14,197950238468572
+ Velocita in z;-14,197950238468572
+ T. Contatto in basics;0,09124994250000018
+ T. Volo in basics;0,17124986625000016
+ T. Contatto in x;0,08500099125000027
+ T. Volo in x;0,17749881750000007
+ T. Contatto in s_min;2,7037501312500014
+ T. Volo in s_min;-2,441250322500001
+ T. Contatto in f_max;0,03875064750000057
+ T. Volo in f_max;0,12874937124999963
+ T. Contatto in s_max;0,046251297499999566
+ T. Volo in s_max;0,12124872125000064
 
 0009 - (2) - ACC.json
 Lunghezza Passo;-3,6205192333550826
- T. Contatto in x;0,08500003624999986
- T. Volo in x;0,17374992624999974
  T. Totale in x;2,3500003799999973
  Ritmo in x;4,255318460842126
- T. Contatto in z;0,14874959
- T. Volo in z;0,14375042875000021
-T. Totale in z;2,609998700000002
- Ritmo in z;3,831419532890952
-Velocita in z;-12,83419251577457
+ Velocita in z;-12,83419251577457
+ T. Contatto in basics;0,058749911250000064
+ T. Volo in basics;0,20000005124999953
+ T. Contatto in x;0,08500003624999986
+ T. Volo in x;0,17374992624999974
+ T. Contatto in s_min;0,10374998874999974
+ T. Volo in s_min;0,15499997374999985
+ T. Contatto in f_max;0,046249866249999716
+ T. Volo in f_max;0,12500023875000021
+ T. Contatto in s_max;2,8699996475
+ T. Volo in s_max;0,12250018124999995
 
 0009 - (3) - ACC.json
 Lunghezza Passo;-3,811650662020971
- T. Contatto in x;0,09375000374999765
- T. Volo in x;0,15124988250000193
  T. Totale in x;2,25
  Ritmo in x;4,444444444444445
- T. Contatto in z;2,9537496562500003
- T. Volo in z;-2,654999255000001
-T. Totale in z;2,680000309999997
- Ritmo in z;3,73134285197154
-Velocita in z;-13,010126048982618
+ Velocita in z;-13,010126048982618
+ T. Contatto in basics;0,06249952749999732
+ T. Volo in basics;0,18250035875000226
+ T. Contatto in x;0,09375000374999765
+ T. Volo in x;0,15124988250000193
+ T. Contatto in s_min;5,512500288749998
+ T. Volo in s_min;-5,267500402499999
+ T. Contatto in f_max;0,044999602499998126
+ T. Volo in f_max;0,12375020750000143
+ T. Contatto in s_max;0,04999971624999855
+ T. Volo in s_max;0,12125015000000161
 
 0009 - (4) - ACC.json
 Lunghezza Passo;-2,9210337561546638
- T. Contatto in x;0,08500003624999986
- T. Volo in x;0,1549999737500003
  T. Totale in x;2,2299995400000014
  Ritmo in x;4,484305857749187
- T. Contatto in z;0,12874960624999998
- T. Volo in z;0,11750054625000006
-T. Totale in z;2,230001450000003
- Ritmo in z;4,484302016933659
-Velocita in z;-11,891901487045851
+ Velocita in z;-11,891901487045851
+ T. Contatto in basics;0,056250098749999644
+ T. Volo in basics;0,1837499112500005
+ T. Contatto in x;0,08500003624999986
+ T. Volo in x;0,1549999737500003
+ T. Contatto in s_min;6,532500505
+ T. Volo in s_min;-6,292500495
+ T. Contatto in f_max;0,036250117499999845
+ T. Volo in f_max;0,12499999750000024
+ T. Contatto in s_max;0,05499959125000009
+ T. Volo in s_max;0,10750031374999969
 
 0009 - (5) - ACC.json
 Lunghezza Passo;-5,660495094038903
- T. Contatto in x;0,05875015250000004
- T. Volo in x;0,17875003874999962
  T. Totale in x;2,13999939
  Ritmo in x;4,672898528256123
- T. Contatto in z;0,12750053499999936
- T. Volo in z;0,20749950375000026
-T. Totale in z;2,9500007699999955
- Ritmo in z;3,389829623671595
-Velocita in z;-17,79195649937099
+ Velocita in z;-17,79195649937099
+ T. Contatto in basics;0,05374956125000008
+ T. Volo in basics;0,18375062999999958
+ T. Contatto in x;0,05875015250000004
+ T. Volo in x;0,17875003874999962
+ T. Contatto in s_min;8,481249811249999
+ T. Volo in s_min;-8,24374962
+ T. Contatto in f_max;0,043749332500000016
+ T. Volo in f_max;0,1150007249999998
+ T. Contatto in s_max;0,04999971375000012
+ T. Volo in s_max;0,10750055374999956
 
 0010 - (1) - ACC.json
 Lunghezza Passo;-2,37454347460353
- T. Contatto in x;0,09249973250000076
- T. Volo in x;0,17000007624999913
  T. Totale in x;2,3299999200000023
  Ritmo in x;4,291845640921735
- T. Contatto in z;0,08500051499999994
- T. Volo in z;0,15999936999999997
-T. Totale in z;2,5
- Ritmo in z;4,0
-Velocita in z;-8,710739891061662
+ Velocita in z;-8,710739891061662
+ T. Contatto in basics;0,07249998875000063
+ T. Volo in basics;0,18999981999999926
+ T. Contatto in x;0,09249973250000076
+ T. Volo in x;0,17000007624999913
+ T. Contatto in s_min;5,3499994275
+ T. Volo in s_min;-5,087499618750002
+ T. Contatto in f_max;0,052500010000000596
+ T. Volo in f_max;0,12499999999999956
+ T. Contatto in s_max;0,06249999875000034
+ T. Volo in s_max;0,10999989624999973
 
 0010 - (2) - ACC.json
 Lunghezza Passo;-4,065621566598153
- T. Contatto in x;0,09375047875000098
- T. Volo in x;0,15124964624999926
  T. Totale in x;2,2000007700000026
  Ritmo in x;4,545452954546006
- T. Contatto in z;0,09250045125000073
- T. Volo in z;0,27624964499999916
-T. Totale in z;3,2399997800000016
- Ritmo in z;3,086419962658144
-Velocita in z;-12,304812418129995
+ Velocita in z;-12,304812418129995
+ T. Contatto in basics;0,08500004250000037
+ T. Volo in basics;0,16000008249999986
+ T. Contatto in x;0,09375047875000098
+ T. Volo in x;0,15124964624999926
+ T. Contatto in s_min;8,141249902500002
+ T. Volo in s_min;-7,896249777500001
+ T. Contatto in f_max;0,04125094875000057
+ T. Volo in f_max;0,11999916624999951
+ T. Contatto in s_max;0,07500028875000053
+ T. Volo in s_max;0,09249973124999977
 
 0010 - (3) - ACC.json
 Lunghezza Passo;-3,058513445139874
- T. Contatto in x;0,05375027624999884
- T. Volo in x;0,20499992375000087
  T. Totale in x;2,340002059999996
  Ritmo in x;4,273500511362805
- T. Contatto in z;2,3437504762500003
- T. Volo in z;-2,0437507625
-T. Totale in z;2,689998629999998
- Ritmo in z;3,7174740122451317
-Velocita in z;-11,095945815062446
+ Velocita in z;-11,095945815062446
+ T. Contatto in basics;0,05750059999999957
+ T. Volo in basics;0,20124960000000014
+ T. Contatto in x;0,05375027624999884
+ T. Volo in x;0,20499992375000087
+ T. Contatto in s_min;2,5650005337499993
+ T. Volo in s_min;-2,3062503337499995
+ T. Contatto in f_max;0,038750172499998126
+ T. Volo in f_max;0,14124989375000174
+ T. Contatto in s_max;0,05874967624999883
+ T. Volo in s_max;0,125000237500001
 
 0010 - (4) - ACC.json
 Lunghezza Passo;-3,3668057005144947
- T. Contatto in x;0,07250022875000095
- T. Volo in x;0,17749977124999905
  T. Totale in x;2,2000007600000018
  Ritmo in x;4,545452975207151
- T. Contatto in z;0,07750034375000103
- T. Volo in z;0,3374996174999989
-T. Totale in z;3,600000380000001
- Ritmo in z;2,7777774845679315
-Velocita in z;-9,248289306548497
+ Velocita in z;-9,248289306548497
+ T. Contatto in basics;0,047500131250000965
+ T. Volo in basics;0,20249986874999903
+ T. Contatto in x;0,07250022875000095
+ T. Volo in x;0,17749977124999905
+ T. Contatto in s_min;7,1600005625000005
+ T. Volo in s_min;-6,9100005625000005
+ T. Contatto in f_max;0,04625010375000027
+ T. Volo in f_max;0,12374997249999975
+ T. Contatto in s_max;0,06375002625000059
+ T. Volo in s_max;0,11500001124999981
 
 0010 - (5) - ACC.json
 Lunghezza Passo;-2,249909580024175
- T. Contatto in x;0,0799999249999992
- T. Volo in x;0,13749980750000113
  T. Totale in x;1,9799957200000051
  Ritmo in x;5,050515967781978
- T. Contatto in z;0,0874996187499999
- T. Volo in z;0,18749999875000078
-T. Totale in z;2,569999690000003
- Ritmo in z;3,8910510530061537
-Velocita in z;-8,548603987503606
+ Velocita in z;-8,548603987503606
+ T. Contatto in basics;0,050001144999999525
+ T. Volo in basics;0,1674985875000008
+ T. Contatto in x;0,0799999249999992
+ T. Volo in x;0,13749980750000113
+ T. Contatto in s_min;6,16125011375
+ T. Volo in s_min;-5,94375038125
+ T. Contatto in f_max;3,086251259999999
+ T. Volo in f_max;-2,943751336249999
+ T. Contatto in s_max;0,06499958000000028
+ T. Volo in s_max;0,08374977124999994
 
 0011 - (1) - ACC.json
 Lunghezza Passo;-1,8198297874748142
- T. Contatto in x;0,1000003812500001
- T. Volo in x;0,13374948624999927
  T. Totale in x;2,13999939
  Ritmo in x;4,672898528256123
- T. Contatto in z;0,1150002499999987
- T. Volo in z;0,14624977000000072
-T. Totale in z;2,3800010699999987
- Ritmo in z;4,201678783278869
-Velocita in z;-7,130906028223531
+ Velocita in z;-7,130906028223531
+ T. Contatto in basics;0,07500028624999988
+ T. Volo in basics;0,1587495812499995
+ T. Contatto in x;0,1000003812500001
+ T. Volo in x;0,13374948624999927
+ T. Contatto in s_min;3,402500151250001
+ T. Volo in s_min;-3,1687502837500015
+ T. Contatto in f_max;0,04000091624999946
+ T. Volo in f_max;0,11374902749999993
+ T. Contatto in s_max;0,06000041999999972
+ T. Volo in s_max;0,09499931374999981
 
 0011 - (2) - ACC.json
 Lunghezza Passo;-1,2920364805601054
- T. Contatto in x;0,08749961749999935
- T. Volo in x;0,1587505350000007
  T. Totale in x;2,2700004499999977
  Ritmo in x;4,405285470317863
- T. Contatto in z;0,11124968749999908
- T. Volo in z;0,12875032250000062
-T. Totale in z;2,2199993199999994
- Ritmo in z;4,5045058842630645
-Velocita in z;-5,285726375648485
+ Velocita in z;-5,285726375648485
+ T. Contatto in basics;0,06875037874999945
+ T. Volo in basics;0,1774997737500006
+ T. Contatto in x;0,08749961749999935
+ T. Volo in x;0,1587505350000007
+ T. Contatto in s_min;4,892500161249998
+ T. Volo in s_min;-4,646250008749997
+ T. Contatto in f_max;0,04124998624999954
+ T. Volo in f_max;0,11875009875000053
+ T. Contatto in s_max;0,0437500437499998
+ T. Volo in s_max;0,11750007000000018
 
 0011 - (3) - ACC.json
 Lunghezza Passo;-1,8940293430753286
- T. Contatto in x;0,08000040124999952
- T. Volo in x;0,15874958000000028
  T. Totale in x;2,2000007599999982
  Ritmo in x;4,545452975207158
- T. Contatto in z;0,12500024000000076
- T. Volo in z;0,10374974999999953
-T. Totale in z;2,1300010700000023
- Ritmo in z;4,694833322313772
-Velocita in z;-7,978373031286776
+ Velocita in z;-7,978373031286776
+ T. Contatto in basics;0,05375003874999962
+ T. Volo in basics;0,18499994250000018
+ T. Contatto in x;0,08000040124999952
+ T. Volo in x;0,15874958000000028
+ T. Contatto in s_min;9,44874978125
+ T. Volo in s_min;-9,209999799999999
+ T. Contatto in f_max;3,17625045875
+ T. Volo in f_max;-3,0212504874999997
+ T. Contatto in s_max;3,2937502874999995
+ T. Volo in s_max;-3,1375002874999995
 
 0012 - (1) - ACC.json
 Lunghezza Passo;-4,3849516827993495
- T. Contatto in x;0,09625005874999903
- T. Volo in x;0,16875028500000067
  T. Totale in x;2,460002899999999
  Ritmo in x;4,065035858291063
- T. Contatto in z;0,12125062875000037
- T. Volo in z;0,15124940875000004
-T. Totale in z;2,490001679999999
- Ritmo in z;4,016061547396227
-Velocita in z;-15,902777822634938
+ Velocita in z;-15,902777822634938
+ T. Contatto in basics;0,08374977374999837
+ T. Volo in basics;0,18125057000000133
+ T. Contatto in x;0,09625005874999903
+ T. Volo in x;0,16875028500000067
+ T. Contatto in s_min;7,888749126249998
+ T. Volo in s_min;-7,623748782499998
+ T. Contatto in f_max;0,04250001999999942
+ T. Volo in f_max;0,12375020875000065
+ T. Contatto in s_max;0,04624986874999859
+ T. Volo in s_max;0,12250041750000129
 
 0012 - (2) - ACC.json
 Lunghezza Passo;-3,5200236221301084
- T. Contatto in x;0,10500026000000018
- T. Volo in x;0,1937496637499998
  T. Totale in x;2,6700000799999977
  Ritmo in x;3,7453182398406555
- T. Contatto in z;0,13499975250000062
- T. Volo in z;0,13000011374999954
-T. Totale in z;2,3999996200000027
- Ritmo in z;4,166667326388989
-Velocita in z;-13,53412779581053
+ Velocita in z;-13,53412779581053
+ T. Contatto in basics;0,07125068125000045
+ T. Volo in basics;0,22749924249999953
+ T. Contatto in x;0,10500026000000018
+ T. Volo in x;0,1937496637499998
+ T. Contatto in s_min;0,08125043250000008
+ T. Volo in s_min;0,2174994912499999
+ T. Contatto in f_max;0,031250239999999874
+ T. Volo in f_max;0,15624976000000013
+ T. Contatto in s_max;0,04250049875000039
+ T. Volo in s_max;0,1437494724999997
 
 0012 - (3) - ACC.json
 Lunghezza Passo;-2,188860036393788
- T. Contatto in x;0,08875060375000077
- T. Volo in x;0,15874933874999897
  T. Totale in x;2,310001379999999
  Ritmo in x;4,329001742847445
- T. Contatto in z;0,11624955750000021
- T. Volo in z;0,12250042249999948
-T. Totale in z;2,0499992299999974
- Ritmo in z;4,8780506127312115
-Velocita in z;-10,148973027190701
+ Velocita in z;-10,148973027190701
+ T. Contatto in basics;0,05625081499999984
+ T. Volo in basics;0,1912491274999999
+ T. Contatto in x;0,08875060375000077
+ T. Volo in x;0,15874933874999897
+ T. Contatto in s_min;0,07125092124999988
+ T. Volo in s_min;0,17624902124999986
+ T. Contatto in f_max;0,03125071874999952
+ T. Volo in f_max;0,1274993387500003
+ T. Contatto in s_max;0,046250586250000225
+ T. Volo in s_max;0,11624955749999977
 
 0013 - (1) - ACC.json
 Lunghezza Passo;-1,2539594277394062
- T. Contatto in x;0,08124971624999855
- T. Volo in x;0,1362504937500013
  T. Totale in x;1,9700012200000003
  Ritmo in x;5,07613898838093
- T. Contatto in z;0,08500003874999962
- T. Volo in z;0,1324996937500007
-T. Totale in z;1,9700012200000003
- Ritmo in z;5,07613898838093
-Velocita in z;-6,275657130214122
+ Velocita in z;-6,275657130214122
+ T. Contatto in basics;0,07874918124999919
+ T. Volo in basics;0,13875102875000067
+ T. Contatto in x;0,08124971624999855
+ T. Volo in x;0,1362504937500013
+ T. Contatto in s_min;7,8899989125
+ T. Volo in s_min;-7,6724987025
+ T. Contatto in f_max;0,05374908499999975
+ T. Volo in f_max;0,09125089625000005
+ T. Contatto in s_max;0,08249950499999947
+ T. Volo in s_max;0,07000064750000057
 
 0013 - (2) - ACC.json
 Lunghezza Passo;-0,46729790844530184
- T. Contatto in x;0,11125040250000096
- T. Volo in x;0,10374974999999909
  T. Totale in x;1,940000529999999
  Ritmo in x;5,154637767031953
- T. Contatto in z;0,0849997999999994
- T. Volo in z;0,13000035375000074
-T. Totale in z;1,950000769999999
- Ritmo in z;5,128203103222367
-Velocita in z;-2,5375864314907957
+ Velocita in z;-2,5375864314907957
+ T. Contatto in basics;0,07874965749999996
+ T. Volo in basics;0,13625049500000008
+ T. Contatto in x;0,11125040250000096
+ T. Volo in x;0,10374974999999909
+ T. Contatto in s_min;27,227500917500002
+ T. Volo in s_min;-27,012500765
+ T. Contatto in f_max;0,044999837499999806
+ T. Volo in f_max;0,09375023875000021
+ T. Contatto in s_max;0,06749987624999987
+ T. Volo in s_max;0,08000016125000009
 
 0013 - (3) - ACC.json
 Lunghezza Passo;-0,5037062715645766
- T. Contatto in x;0,09874987625000031
- T. Volo in x;0,13499998999999985
  T. Totale in x;2,109998700000002
  Ritmo in x;4,739339412863141
- T. Contatto in z;0,08875012500000112
- T. Volo in z;0,12249994124999919
-T. Totale in z;1,8999996199999991
- Ritmo in z;5,263158947368634
-Velocita in z;-2,772476495868586
+ Velocita in z;-2,772476495868586
+ T. Contatto in basics;0,07499957125000023
+ T. Volo in basics;0,15875029499999993
+ T. Contatto in x;0,09874987625000031
+ T. Volo in x;0,13499998999999985
+ T. Contatto in s_min;27,99499916625
+ T. Volo in s_min;-27,761249300000003
+ T. Contatto in f_max;0,05249977124999994
+ T. Volo in f_max;0,08625006625000031
+ T. Contatto in s_max;0,06374978999999925
+ T. Volo in s_max;0,07625007625000091
 
 0014 - (1) - ACC.json
 Lunghezza Passo;-0,4033608140966172
- T. Contatto in x;0,08500027375000085
- T. Volo in x;0,1562497637499991
  T. Totale in x;2,2099990799999993
  Ritmo in x;4,524888761492155
- T. Contatto in z;0,09125042500000013
- T. Volo in z;0,14124965124999989
-T. Totale in z;2,1300010699999987
- Ritmo in z;4,69483332231378
-Velocita in z;-1,807807795638599
+ Velocita in z;-1,807807795638599
+ T. Contatto in basics;0,056250570000000444
+ T. Volo in basics;0,18499946749999951
+ T. Contatto in x;0,08500027375000085
+ T. Volo in x;0,1562497637499991
+ T. Contatto in s_min;4,162500621249999
+ T. Volo in s_min;-3,9212505837500005
+ T. Contatto in f_max;0,037500378749999896
+ T. Volo in f_max;0,11999965000000001
+ T. Contatto in s_max;3,99875020875
+ T. Volo in s_max;0,09374976249999944
 
 0014 - (2) - ACC.json
 Lunghezza Passo;-0,6608846596077658
- T. Contatto in x;0,07749986374999907
- T. Volo in x;0,1537499462500005
  T. Totale in x;2,149999619999999
  Ritmo in x;4,651163612763804
- T. Contatto in z;0,09250021124999996
- T. Volo in z;0,1687498074999998
-T. Totale in z;2,3700008399999994
- Ritmo in z;4,219407787214118
-Velocita in z;-2,5462477833941035
+ Velocita in z;-2,5462477833941035
+ T. Contatto in basics;0,05499958749999889
+ T. Volo in basics;0,17625022250000066
+ T. Contatto in x;0,07749986374999907
+ T. Volo in x;0,1537499462500005
+ T. Contatto in s_min;6,178750037499998
+ T. Volo in s_min;-5,947500227499998
+ T. Contatto in f_max;0,037499664999999016
+ T. Volo in f_max;0,11250019250000065
+ T. Contatto in s_max;3,194999932499999
+ T. Volo in s_max;-3,0437500462499996
 
 0014 - (3) - ACC.json
 Lunghezza Passo;-0,038533253038885905
- T. Contatto in x;4,01124977875
- T. Volo in x;-3,79249977875
  T. Totale in x;2,039998999999998
  Ritmo in x;4,901963187236861
- T. Contatto in z;0,08500027874999994
- T. Volo in z;0,12749981749999995
-T. Totale in z;2,2600002299999993
- Ritmo in z;4,424778310752651
-Velocita in z;0,07119484319224495
+ Velocita in z;0,07119484319224495
+ T. Contatto in basics;0,05499982499999989
+ T. Volo in basics;0,1637501750000001
+ T. Contatto in x;4,01124977875
+ T. Volo in x;-3,79249977875
+ T. Contatto in s_min;0,09124994250000062
+ T. Volo in s_min;0,12750005749999938
+ T. Contatto in f_max;0,03874993124999948
+ T. Volo in f_max;0,1037499912500004
+ T. Contatto in s_max;4,138750075
+ T. Volo in s_max;-3,9937500949999993
 
 0015 - (1) - ACC.json
 Lunghezza Passo;-0,6612925044029327
- T. Contatto in x;0,07000017125000024
- T. Volo in x;0,17999982874999976
  T. Totale in x;2,2799987799999997
  Ritmo in x;4,38596725915792
- T. Contatto in z;0,10750007749999924
- T. Volo in z;0,16625022875000006
-T. Totale in z;2,479999549999995
- Ritmo in z;4,0322587961759995
-Velocita in z;-2,2004309017535935
+ Velocita in z;-2,2004309017535935
+ T. Contatto in basics;0,07125091749999868
+ T. Volo in basics;0,17874908250000132
+ T. Contatto in x;0,07000017125000024
+ T. Volo in x;0,17999982874999976
+ T. Contatto in s_min;0,08375024874999948
+ T. Volo in s_min;0,16624975125000052
+ T. Contatto in f_max;0,048750402499998735
+ T. Volo in f_max;0,10874986500000094
+ T. Contatto in s_max;0,050000192499998874
+ T. Volo in s_max;0,11124992250000076
 
 0015 - (2) - ACC.json
 Lunghezza Passo;-0,5310262275014745
- T. Contatto in x;0,061249733750000424
- T. Volo in x;0,18000006499999932
  T. Totale in x;2,189998620000001
  Ritmo in x;4,566212923001749
- T. Contatto in z;0,09999990499999933
- T. Volo in z;0,16374993250000047
-T. Totale in z;2,3799991600000006
- Ritmo in z;4,20168215521555
-Velocita in z;-1,9243708522690668
+ Velocita in z;-1,9243708522690668
+ T. Contatto in basics;0,062499761249999786
+ T. Volo in basics;0,17875003749999996
+ T. Contatto in x;0,061249733750000424
+ T. Volo in x;0,18000006499999932
+ T. Contatto in s_min;0,08124995249999944
+ T. Volo in s_min;0,1599998462500003
+ T. Contatto in f_max;0,0449998362499997
+ T. Volo in f_max;0,11249995374999999
+ T. Contatto in s_max;0,04999971249999913
+ T. Volo in s_max;0,11000013375000073
 
 0015 - (3) - ACC.json
 Lunghezza Passo;-0,36002848438301716
- T. Contatto in x;0,07999968499999888
- T. Volo in x;0,18000030625000107
  T. Totale in x;2,3299999299999996
  Ritmo in x;4,291845622501801
- T. Contatto in z;0,0974996099999994
- T. Volo in z;0,1225004187500005
-T. Totale in z;2,0200004599999986
- Ritmo in z;4,950493922164754
-Velocita in z;-1,4095042670840423
+ Velocita in z;-1,4095042670840423
+ T. Contatto in basics;0,057499644999999155
+ T. Volo in basics;0,2025003462500008
+ T. Contatto in x;0,07999968499999888
+ T. Volo in x;0,18000030625000107
+ T. Contatto in s_min;5,1162500374999995
+ T. Volo in s_min;-4,856250046250001
+ T. Contatto in f_max;0,04499959874999915
+ T. Volo in f_max;0,12875032500000083
+ T. Contatto in s_max;0,06499957999999939
+ T. Volo in s_max;0,10875034375000059
 
 0016 - (1) - ACC.json
 Lunghezza Passo;-3,3198559351614874
- T. Contatto in x;0,11500000999999971
- T. Volo in x;0,13124990375000012
  T. Totale in x;2,179998389999998
  Ritmo in x;4,587159351067231
- T. Contatto in z;0,10624980874999945
- T. Volo in z;0,14125013375000028
-T. Totale in z;2,479999539999998
- Ritmo in z;4,0322588124351055
-Velocita in z;-12,19677161435984
+ Velocita in z;-12,19677161435984
+ T. Contatto in basics;0,09124994124999963
+ T. Volo in basics;0,1549999725000002
+ T. Contatto in x;0,11500000999999971
+ T. Volo in x;0,13124990375000012
+ T. Contatto in s_min;28,271248102499996
+ T. Volo in s_min;-28,02499818875
+ T. Contatto in f_max;5,63624954
+ T. Volo in f_max;0,10249996375000014
+ T. Contatto in s_max;0,07499956875000002
+ T. Volo in s_max;0,0875003350000001
 
 0016 - (2) - ACC.json
 Lunghezza Passo;-2,9806416082910676
- T. Contatto in x;0,1399998649999996
- T. Volo in x;0,10875010625000048
  T. Totale in x;2,2399997700000007
  Ritmo in x;4,46428617267224
- T. Contatto in z;0,10500049500000008
- T. Volo in z;0,14499950499999992
-T. Totale in z;2,159999840000001
- Ritmo in z;4,629629972565181
-Velocita in z;-12,917489585478966
+ Velocita in z;-12,917489585478966
+ T. Contatto in basics;0,09875035624999962
+ T. Volo in basics;0,14999961500000047
+ T. Contatto in x;0,1399998649999996
+ T. Volo in x;0,10875010625000048
+ T. Contatto in s_min;34,453750135
+ T. Volo in s_min;-34,20500016375
+ T. Contatto in f_max;0,05250001249999947
+ T. Volo in f_max;0,1087498637500004
+ T. Contatto in s_max;0,07249999124999995
+ T. Volo in s_max;0,09375
 
 0016 - (3) - ACC.json
 Lunghezza Passo;-2,427279461470117
- T. Contatto in x;5,859999654999999
- T. Volo in x;-5,631249664999999
  T. Totale in x;2,0599994600000002
  Ritmo in x;4,854370204543645
- T. Contatto in z;0,10124993374999969
- T. Volo in z;0,13125014250000033
-T. Totale in z;2,1000003900000017
- Ritmo in z;4,76190387755118
-Velocita in z;-10,768638922763419
+ Velocita in z;-10,768638922763419
+ T. Contatto in basics;0,08999967374999995
+ T. Volo in basics;0,1387503162499999
+ T. Contatto in x;5,859999654999999
+ T. Volo in x;-5,631249664999999
+ T. Contatto in s_min;23,473750112500003
+ T. Volo in s_min;-23,245000122500002
+ T. Contatto in f_max;0,047499656249999855
+ T. Volo in f_max;0,10375022875000006
+ T. Contatto in s_max;0,07500004624999956
+ T. Volo in s_max;0,07874989625000017
 
 0017 - (1) - ACC.json
 Lunghezza Passo;-1,0144513616163562
- T. Contatto in x;0,1187496187499999
- T. Volo in x;0,1287508000000006
  T. Totale in x;2,200004579999998
  Ritmo in x;4,545445082664332
- T. Contatto in z;0,1150007249999998
- T. Volo in z;0,13374900750000052
-T. Totale in z;2,25
- Ritmo in z;4,444444444444445
-Velocita in z;-4,229182829881919
+ Velocita in z;-4,229182829881919
+ T. Contatto in basics;0,0775003437499997
+ T. Volo in basics;0,1700000750000008
+ T. Contatto in x;0,1187496187499999
+ T. Volo in x;0,1287508000000006
+ T. Contatto in s_min;19,591249465000004
+ T. Volo in s_min;-19,343749046249997
+ T. Contatto in f_max;0,046250344999998916
+ T. Volo in f_max;0,11875057000000133
+ T. Contatto in s_max;0,06999969624999913
+ T. Volo in s_max;0,10000038000000089
 
 0017 - (2) - ACC.json
 Lunghezza Passo;-1,1270563802546358
- T. Contatto in x;0,10249972249999972
- T. Volo in x;0,1312503825000002
  T. Totale in x;2,0599994699999975
  Ritmo in x;4,854370180978742
- T. Contatto in z;0,0962498200000006
- T. Volo in z;0,1862502087499993
-T. Totale in z;2,789998999999998
- Ritmo in z;3,584230675351499
-Velocita in z;-3,953298196962927
+ Velocita in z;-3,953298196962927
+ T. Contatto in basics;0,06875038125000099
+ T. Volo in basics;0,16499972374999894
+ T. Contatto in x;0,10249972249999972
+ T. Volo in x;0,1312503825000002
+ T. Contatto in s_min;19,439999815000004
+ T. Volo in s_min;-19,206249709999998
+ T. Contatto in f_max;0,0500001912500001
+ T. Volo in f_max;0,09999990374999967
+ T. Contatto in s_max;0,061250210000000305
+ T. Volo in s_max;0,0837497712499995
 
 0017 - (3) - ACC.json
 Lunghezza Passo;-0,44882176390030565
- T. Contatto in x;0,10999965499999931
- T. Volo in x;0,10875034500000069
  T. Totale in x;2,0299987799999997
  Ritmo in x;4,92611133490435
- T. Contatto in z;5,3624997125
- T. Volo in z;-5,106249807500001
-T. Totale in z;2,2199993099999986
- Ritmo in z;4,50450590455364
-Velocita in z;-2,1824496567436524
+ Velocita in z;-2,1824496567436524
+ T. Contatto in basics;0,09125017999999985
+ T. Volo in basics;0,12749982000000015
+ T. Contatto in x;0,10999965499999931
+ T. Volo in x;0,10875034500000069
+ T. Contatto in s_min;27,07749938625001
+ T. Volo in s_min;-26,858749386249997
+ T. Contatto in f_max;0,03250002874999991
+ T. Volo in f_max;0,11249995250000033
+ T. Contatto in s_max;0,06250023874999977
+ T. Volo in s_max;0,08374977125000038
 
 0018 - (1) - ACC.json
 Lunghezza Passo;-0,5318360383307773
- T. Contatto in x;0,08500051250000151
- T. Volo in x;0,1699996012499989
  T. Totale in x;2,2900009100000034
  Ritmo in x;4,366810491791457
- T. Contatto in z;0,12750053499999936
- T. Volo in z;0,11874914125000036
-T. Totale in z;2,2299995400000014
- Ritmo in z;4,484305857749187
-Velocita in z;-2,527602070117691
+ Velocita in z;-2,527602070117691
+ T. Contatto in basics;0,05874967250000207
+ T. Volo in basics;0,19625044124999835
+ T. Contatto in x;0,08500051250000151
+ T. Volo in x;0,1699996012499989
+ T. Contatto in s_min;0,10624980750000113
+ T. Volo in s_min;0,1487503062499993
+ T. Contatto in f_max;0,047500130000002194
+ T. Volo in f_max;0,11500025124999791
+ T. Contatto in s_max;0,02874946500000064
+ T. Volo in s_max;0,1287503249999995
 
 0018 - (2) - ACC.json
 Lunghezza Passo;0,21477116363956705
- T. Contatto in x;0,06499981875000005
- T. Volo in x;0,16500020000000015
  T. Totale in x;2,1199989300000013
  Ritmo in x;4,716983512817148
- T. Contatto in z;0,11999988374999937
- T. Volo in z;0,14000010625000048
-T. Totale in z;2,340000149999998
- Ritmo in z;4,273503999561713
-Velocita in z;0,7385871841350301
+ Velocita in z;0,7385871841350301
+ T. Contatto in basics;0,047499893749999966
+ T. Volo in basics;0,18250012500000024
+ T. Contatto in x;0,06499981875000005
+ T. Volo in x;0,16500020000000015
+ T. Contatto in s_min;0,0849997999999994
+ T. Volo in s_min;0,1450002187500008
+ T. Contatto in f_max;0,03999972374999938
+ T. Volo in f_max;0,11000013250000062
+ T. Contatto in s_max;0,06124973374999909
+ T. Volo in s_max;0,09625029500000126
 
 0018 - (3) - ACC.json
 Lunghezza Passo;0,4798941326819334
- T. Contatto in x;0,0775003449999998
- T. Volo in x;0,16874957000000013
  T. Totale in x;2,25
  Ritmo in x;4,444444444444445
- T. Contatto in z;0,11500024875000037
- T. Volo in z;0,11624979874999974
-T. Totale in z;2,2600002299999993
- Ritmo in z;4,424778310752651
-Velocita in z;2,1165658469473825
+ Velocita in z;2,1165658469473825
+ T. Contatto in basics;0,057500364999999665
+ T. Volo in basics;0,18874955000000027
+ T. Contatto in x;0,0775003449999998
+ T. Volo in x;0,16874957000000013
+ T. Contatto in s_min;3,6475000412499994
+ T. Volo in s_min;-3,4012501262499995
+ T. Contatto in f_max;0,03500008749999983
+ T. Volo in f_max;0,11874985625000001
+ T. Contatto in s_max;0,056250097499999985
+ T. Volo in s_max;0,10374974999999997
 
 0019 - (1) - ACC.json
 Lunghezza Passo;-1,507782041272201
- T. Contatto in x;4,482499838750002
- T. Volo in x;-4,2549996375
  T. Totale in x;2,05000115
  Ritmo in x;4,878046044022951
- T. Contatto in z;0,1374998112500001
- T. Volo in z;0,10000014124999979
-T. Totale in z;2,069999699999997
- Ritmo in z;4,830918574529269
-Velocita in z;-7,032480230647662
+ Velocita in z;-7,032480230647662
+ T. Contatto in basics;0,0574996487500008
+ T. Volo in basics;0,17000055249999946
+ T. Contatto in x;4,482499838750002
+ T. Volo in x;-4,2549996375
+ T. Contatto in s_min;13,542499781250003
+ T. Volo in s_min;-13,314999580000002
+ T. Contatto in f_max;0,051249743750000576
+ T. Volo in f_max;0,09875035249999975
+ T. Contatto in s_max;0,045000077500000124
+ T. Volo in s_max;0,1050000187500002
 
 0019 - (2) - ACC.json
 Lunghezza Passo;-1,086822752447339
- T. Contatto in x;0,09500002874999902
- T. Volo in x;0,11999988625000091
  T. Totale in x;1,9299983999999988
  Ritmo in x;5,181351445679958
- T. Contatto in z;0,10999965624999986
- T. Volo in z;0,10375046750000028
-T. Totale in z;1,9300003100000005
- Ritmo in z;5,181346318022093
-Velocita in z;-5,619213791088796
+ Velocita in z;-5,619213791088796
+ T. Contatto in basics;0,058749674999998724
+ T. Volo in basics;0,1562502400000012
+ T. Contatto in x;0,09500002874999902
+ T. Volo in x;0,11999988625000091
+ T. Contatto in s_min;15,567498207499998
+ T. Volo in s_min;-15,352498292499998
+ T. Contatto in f_max;0,04874992125000022
+ T. Volo in f_max;0,09874987874999963
+ T. Contatto in s_max;0,05874967499999917
+ T. Volo in s_max;0,08125019125000055
 
 0019 - (3) - ACC.json
 Lunghezza Passo;-0,5715916778084035
- T. Contatto in x;0,07249975249999974
- T. Volo in x;0,13875007625000002
  T. Totale in x;1,8999996199999991
  Ritmo in x;5,263158947368634
- T. Contatto in z;0,1174998287500002
- T. Volo in z;0,0937499987499999
-T. Totale in z;1,9300003000000032
- Ritmo in z;5,181346344868436
-Velocita in z;-3,1435276644544987
+ Velocita in z;-3,1435276644544987
+ T. Contatto in basics;0,07999992374999998
+ T. Volo in basics;0,13124990499999978
+ T. Contatto in x;0,07249975249999974
+ T. Volo in x;0,13875007625000002
+ T. Contatto in s_min;11,65500020875
+ T. Volo in s_min;-11,44375038
+ T. Contatto in f_max;0,04500007499999947
+ T. Volo in f_max;0,08749985875000021
+ T. Contatto in s_max;0,06875014374999955
+ T. Volo in s_max;0,07624983750000025
 
 0020 - (1) - ACC.json
 Lunghezza Passo;-1,9809190980239748
- T. Contatto in x;0,0924999699999991
- T. Volo in x;0,1362500200000012
  T. Totale in x;2,0900001500000016
  Ritmo in x;4,7846886518166
- T. Contatto in z;0,1325001724999999
- T. Volo in z;0,0999996649999999
-T. Totale in z;2,100000380000001
- Ritmo in z;4,761903900226911
-Velocita in z;-8,796446222340947
+ Velocita in z;-8,796446222340947
+ T. Contatto in basics;0,05625009375000012
+ T. Volo in basics;0,17249989625000017
+ T. Contatto in x;0,0924999699999991
+ T. Volo in x;0,1362500200000012
+ T. Contatto in s_min;16,0512511725
+ T. Volo in s_min;-15,8225011825
+ T. Contatto in f_max;0,046250343750000145
+ T. Volo in f_max;0,10249972250000017
+ T. Contatto in s_max;0,04625010374999983
+ T. Volo in s_max;0,10124993375000058
 
 0020 - (2) - ACC.json
 Lunghezza Passo;-2,980109760178676
- T. Contatto in x;0,09374976249999989
- T. Volo in x;0,12875032374999984
  T. Totale in x;2,0500011499999964
  Ritmo in x;4,87804604402296
- T. Contatto in z;0,12000012500000068
- T. Volo in z;0,13749956874999958
-T. Totale in z;2,3299980100000006
- Ritmo in z;4,291849159132972
-Velocita in z;-12,50092162089325
+ Velocita in z;-12,50092162089325
+ T. Contatto in basics;0,056249380000000127
+ T. Volo in basics;0,1662507062499996
+ T. Contatto in x;0,09374976249999989
+ T. Volo in x;0,12875032374999984
+ T. Contatto in s_min;15,685000420000001
+ T. Volo in s_min;-15,46250033375
+ T. Contatto in f_max;0,04500031499999979
+ T. Volo in f_max;0,09999990499999978
+ T. Contatto in s_max;0,04874992499999964
+ T. Volo in s_max;0,09500002750000025
 
 0020 - (3) - ACC.json
 Lunghezza Passo;-2,8970714445236907
- T. Contatto in x;0,07500004749999967
- T. Volo in x;0,1662499912500004
  T. Totale in x;2,149999619999999
  Ritmo in x;4,651163612763804
- T. Contatto in z;0,12625002874999902
- T. Volo in z;0,08875012375000102
-T. Totale in z;1,940000529999999
- Ritmo in z;5,154637767031953
-Velocita in z;-13,938604805117057
+ Velocita in z;-13,938604805117057
+ T. Contatto in basics;0,04750037124999995
+ T. Volo in basics;0,1937496675000001
+ T. Contatto in x;0,07500004749999967
+ T. Volo in x;0,1662499912500004
+ T. Contatto in s_min;5,499999522500001
+ T. Volo in s_min;-5,25874948375
+ T. Contatto in f_max;0,03125023750000011
+ T. Volo in f_max;0,1074995999999997
+ T. Contatto in s_max;0,038749932499999584
+ T. Volo in s_max;0,10124993375000013
 
 0021 - (1) - ACC.json
 Lunghezza Passo;-0,9680479098817939
- T. Contatto in x;0,12124991375000027
- T. Volo in x;0,10874986624999972
  T. Totale in x;2,099998469999999
  Ritmo in x;4,761908231295046
- T. Contatto in z;0,11249995124999979
- T. Volo in z;0,11875009625000033
-T. Totale in z;2,100000380000001
- Ritmo in z;4,761903900226911
-Velocita in z;-4,475226981825711
+ Velocita in z;-4,475226981825711
+ T. Contatto in basics;0,08249997999999925
+ T. Volo in basics;0,14749980000000074
+ T. Contatto in x;0,12124991375000027
+ T. Volo in x;0,10874986624999972
+ T. Contatto in s_min;38,50500059
+ T. Volo in s_min;-38,27500081000001
+ T. Contatto in f_max;0,06499981874999916
+ T. Volo in f_max;0,09249997125000053
+ T. Contatto in s_max;0,06875014374999999
+ T. Volo in s_max;0,0862498275000001
 
 0021 - (2) - ACC.json
 Lunghezza Passo;-0,9894562619415341
- T. Contatto in x;0,09874963749999965
- T. Volo in x;0,12500047625000033
  T. Totale in x;2,020000460000002
  Ritmo in x;4,950493922164745
- T. Contatto in z;0,12124967374999862
- T. Volo in z;0,1037502300000015
-T. Totale in z;1,940000529999999
- Ritmo in z;5,154637767031953
-Velocita in z;-4,988773394106611
+ Velocita in z;-4,988773394106611
+ T. Contatto in basics;0,07750010374999983
+ T. Volo in basics;0,14625001000000015
+ T. Contatto in x;0,09874963749999965
+ T. Volo in x;0,12500047625000033
+ T. Contatto in s_min;29,016249418750004
+ T. Volo in s_min;-28,792499305
+ T. Contatto in f_max;0,0624999987499999
+ T. Volo in f_max;0,08750009625000033
+ T. Contatto in s_max;0,06624984624999986
+ T. Volo in s_max;0,08250022000000046
 
 0021 - (3) - ACC.json
 Lunghezza Passo;-0,967255400065987
- T. Contatto in x;0,0924999725000002
- T. Volo in x;0,14499974124999992
  T. Totale in x;2,1599998499999984
  Ritmo in x;4,629629951131713
- T. Contatto in z;0,11624980000000029
- T. Volo in z;0,1262500274999998
-T. Totale in z;2,1399993800000026
- Ritmo in z;4,672898550092098
-Velocita in z;-4,323096124621247
+ Velocita in z;-4,323096124621247
+ T. Contatto in basics;0,06749963750000099
+ T. Volo in basics;0,17000007624999913
+ T. Contatto in x;0,0924999725000002
+ T. Volo in x;0,14499974124999992
+ T. Contatto in s_min;30,8237500225
+ T. Volo in s_min;-30,586250308750003
+ T. Contatto in f_max;0,058749913750000715
+ T. Volo in f_max;0,10875010499999949
+ T. Contatto in s_max;0,062499761249999786
+ T. Volo in s_max;0,10375022875000006
 
 0022 - (1) - ACC.json
 Lunghezza Passo;-7,944985246644308
- T. Contatto in x;18,171249864999997
- T. Volo in x;-17,815000056249996
  T. Totale in x;3,8699989299999977
  Ritmo in x;2,583980042599135
- T. Contatto in z;0,09624958000000028
- T. Volo in z;0,1462507249999998
-T. Totale in z;2,180000300000003
- Ritmo in z;4,587155332042838
-Velocita in z;-9,997148193448156
+ Velocita in z;-9,997148193448156
+ T. Contatto in basics;0,13499879749999888
+ T. Volo in basics;0,22125101125000102
+ T. Contatto in x;18,171249864999997
+ T. Volo in x;-17,815000056249996
+ T. Contatto in s_min;17,7200000275
+ T. Volo in s_min;-17,36375021875
+ T. Contatto in f_max;0,06624936999999953
+ T. Volo in f_max;0,20125055375
+ T. Contatto in s_max;0,09249973249999943
+ T. Volo in s_max;0,1750001912500001
 
 0022 - (2) - ACC.json
 Lunghezza Passo;-2,4997882329388412
- T. Contatto in x;0,11750006749999997
- T. Volo in x;0,12374997125000009
  T. Totale in x;2,1800003100000005
  Ritmo in x;4,587155311000849
- T. Contatto in z;0,10250044125000102
- T. Volo in z;0,13874959749999904
-T. Totale in z;2,2000007600000018
- Ritmo in z;4,545452975207151
-Velocita in z;-10,789339796090834
+ Velocita in z;-10,789339796090834
+ T. Contatto in basics;0,09250021125000041
+ T. Volo in basics;0,14874982749999965
+ T. Contatto in x;0,11750006749999997
+ T. Volo in x;0,12374997125000009
+ T. Contatto in s_min;29,96999764625
+ T. Volo in s_min;-29,728747607500004
+ T. Contatto in f_max;0,041250228750000506
+ T. Volo in f_max;0,11374974374999969
+ T. Contatto in s_max;0,07375025875000008
+ T. Volo in s_max;0,08749961750000024
 
 0022 - (3) - ACC.json
 Lunghezza Passo;-2,5979516065335297
- T. Contatto in x;0,0950000287500008
- T. Volo in x;0,13874983749999936
  T. Totale in x;2,13999939
  Ritmo in x;4,672898528256123
- T. Contatto in z;0,11124992500000053
- T. Volo in z;0,12999987374999922
-T. Totale in z;2,099998469999999
- Ritmo in z;4,761908231295046
-Velocita in z;-11,81337618328315
+ Velocita in z;-11,81337618328315
+ T. Contatto in basics;0,06375002750000025
+ T. Volo in basics;0,1699998387499999
+ T. Contatto in x;0,0950000287500008
+ T. Volo in x;0,13874983749999936
+ T. Contatto in s_min;12,833750726249997
+ T. Volo in s_min;-12,60000086
+ T. Contatto in f_max;0,0487501637500003
+ T. Volo in f_max;0,10999989374999997
+ T. Contatto in s_max;0,056250096250000325
+ T. Volo in s_max;0,09749984624999986
 
 0023 - (1) - ACC.json
 Lunghezza Passo;-5,380052711289156
- T. Contatto in x;0,09875011625000107
- T. Volo in x;0,16999983624999926
  T. Totale in x;2,4500007700000026
  Ritmo in x;4,081631370262789
- T. Contatto in z;0,11875057375000075
- T. Volo in z;0,14499950249999927
-T. Totale in z;2,38999939
- Ritmo in z;4,18410148631879
-Velocita in z;-20,857867141368533
+ Velocita in z;-20,857867141368533
+ T. Contatto in basics;0,09124994375000073
+ T. Volo in basics;0,1775000087499996
+ T. Contatto in x;0,09875011625000107
+ T. Volo in x;0,16999983624999926
+ T. Contatto in s_min;5,471250297500001
+ T. Volo in s_min;-5,202500345000001
+ T. Contatto in f_max;0,03249979000000014
+ T. Volo in f_max;0,13750028624999988
+ T. Contatto in s_max;0,059999943750000284
+ T. Volo in s_max;0,11500000875000005
 
 0023 - (2) - ACC.json
 Lunghezza Passo;-3,9739408594316834
- T. Contatto in x;0,09750032624999827
- T. Volo in x;0,15249991125000184
  T. Totale in x;2,250001900000001
  Ritmo in x;4,4444406913611925
- T. Contatto in z;0,09374975875000047
- T. Volo in z;0,14625025124999924
-T. Totale in z;2,1700000799999977
- Ritmo in z;4,6082947609845295
-Velocita in z;-16,9002734244215
+ Velocita in z;-16,9002734244215
+ T. Contatto in basics;0,0712504399999987
+ T. Volo in basics;0,17874979750000142
+ T. Contatto in x;0,09750032624999827
+ T. Volo in x;0,15249991125000184
+ T. Contatto in s_min;3,942500116249999
+ T. Volo in s_min;-3,6924998787499987
+ T. Contatto in f_max;0,03000044749999997
+ T. Volo in f_max;0,13374948500000006
+ T. Contatto in s_max;4,080000162499999
+ T. Volo in s_max;-3,9112501149999996
 
 0023 - (3) - ACC.json
 Lunghezza Passo;-3,4773547521595605
- T. Contatto in x;0,10249996250000004
- T. Volo in x;0,1150000087499996
  T. Totale in x;2,030000689999998
  Ritmo in x;4,926106699993294
- T. Contatto in z;0,08749985875000066
- T. Volo in z;0,1362500174999992
-T. Totale in z;2,0300006900000014
- Ritmo in z;4,926106699993285
-Velocita in z;-15,963621702039983
+ Velocita in z;-15,963621702039983
+ T. Contatto in basics;0,06874966625000001
+ T. Volo in basics;0,14875030499999964
+ T. Contatto in x;0,10249996250000004
+ T. Volo in x;0,1150000087499996
+ T. Contatto in s_min;15,081248997499998
+ T. Volo in s_min;-14,863749026250002
+ T. Contatto in f_max;5,107499838750001
+ T. Volo in f_max;-4,962499857500001
+ T. Contatto in s_max;0,06999993374999924
+ T. Volo in s_max;0,07750010500000037
 
 0024 - (1) - ACC.json
 Lunghezza Passo;-2,545154275752593
- T. Contatto in x;0,10625076374999942
- T. Volo in x;0,1462492937500004
  T. Totale in x;2,280002599999996
  Ritmo in x;4,385959910747478
- T. Contatto in z;0,10374975249999974
- T. Volo in z;0,13625049500000053
-T. Totale in z;2,2900009100000034
- Ritmo in z;4,366810491791457
-Velocita in z;-10,106240316782234
+ Velocita in z;-10,106240316782234
+ T. Contatto in basics;0,06874942750000024
+ T. Volo in basics;0,18375062999999958
+ T. Contatto in x;0,10625076374999942
+ T. Volo in x;0,1462492937500004
+ T. Contatto in s_min;13,9862499225
+ T. Volo in s_min;-13,733749865
+ T. Contatto in f_max;0,05750084124999866
+ T. Volo in f_max;0,11374950250000104
+ T. Contatto in s_max;0,062499998750000785
+ T. Volo in s_max;0,1062502874999991
 
 0024 - (2) - ACC.json
 Lunghezza Passo;-2,7096263566099594
- T. Contatto in x;0,09874987625000031
- T. Volo in x;0,15875005624999972
  T. Totale in x;2,3099994600000002
  Ritmo in x;4,329005340979603
- T. Contatto in z;4,6200003625
- T. Volo in z;-4,36375021875
-T. Totale in z;2,2200012200000003
- Ritmo in z;4,504502029057443
-Velocita in z;-11,478605281245398
+ Velocita in z;-11,478605281245398
+ T. Contatto in basics;0,06874966250000059
+ T. Volo in basics;0,18875026999999944
+ T. Contatto in x;0,09874987625000031
+ T. Volo in x;0,15875005624999972
+ T. Contatto in s_min;8,9275000075
+ T. Volo in s_min;-8,670000074999999
+ T. Contatto in f_max;0,05124997750000038
+ T. Volo in f_max;0,11625004124999982
+ T. Contatto in s_max;0,06249999750000024
+ T. Volo in s_max;0,10625004999999987
 
 0024 - (3) - ACC.json
 Lunghezza Passo;-3,0516793271444502
- T. Contatto in x;0,09750008874999994
- T. Volo in x;0,15125012125000037
  T. Totale in x;2,25
  Ritmo in x;4,444444444444445
- T. Contatto in z;0,08375048624999915
- T. Volo in z;0,16249942750000068
-T. Totale in z;2,2600002299999993
- Ritmo in z;4,424778310752651
-Velocita in z;-11,686725152850375
+ Velocita in z;-11,686725152850375
+ T. Contatto in basics;0,06374979000000103
+ T. Volo in basics;0,18500041999999928
+ T. Contatto in x;0,09750008874999994
+ T. Volo in x;0,15125012125000037
+ T. Contatto in s_min;3,2787499437500007
+ T. Volo in s_min;-3,0299997337500004
+ T. Contatto in f_max;0,046249866250000604
+ T. Volo in f_max;0,1087503437499997
+ T. Contatto in s_max;0,06125021125000041
+ T. Volo in s_max;0,09749984624999986
 
