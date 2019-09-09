@@ -62,7 +62,7 @@ def is_val_max(val_to_check, test_values):
             return False
     return True
 
-# Funzione ignoranta per trovare il primo minimo
+# Funzione ignoranta per trovare il primo massimo
 def _find_first_massimo(tempi, accuracy):
     accuracy_half = int(accuracy / 2)
     for x in range(accuracy_half, len(tempi) - accuracy_half):

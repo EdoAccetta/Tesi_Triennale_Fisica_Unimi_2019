@@ -1,5 +1,5 @@
-# grandezze_basics sono io che uso il vecchio sistema di ricerca dei massimi per testarli tutti e vedere quale funziona meglio
-# MASSIMO = Valore maggiore tra due minimi
+# grandezze_firstmax sono io che sfrutto un sistema disperato di trovare i massimi sperando che in qualche caso sia meglio degli altri
+# MASSIMO = secondo massimo locale
 import json
 import plotly.graph_objects as go
 import numpy as np
@@ -12,7 +12,7 @@ os.system('color')
 
 path_acc_data = "E:/Scuola/Università/Tesi/Python/data/acc"
 path_acc_data_json = path_acc_data + "/json/"
-path_acc_data_json_grandezze = path_acc_data + "/json_grandezze_basics/grandezze_x_basics/"
+path_acc_data_json_grandezze = path_acc_data + "/json_grandezze_secondmax/grandezze_x_secondmax/"
 list_files = [
     f for f in listdir(path_acc_data_json)
     if isfile(join(path_acc_data_json, f))
@@ -46,6 +46,7 @@ def _find_first_minimo(tempi, accuracy):
         val_to_check = tempi[x]
 
         if is_val_min(val_to_check, test_values):
+            print("Trovato in {}".format(x))
             return x
     return -1
 
@@ -53,7 +54,7 @@ def find_first_minimo(tempi):
     return _find_first_minimo(tempi, 27)
 
 def find_first_minimo_locale(tempi):
-    return _find_first_minimo(tempi, 3)
+    return _find_first_minimo(tempi, 5)
 
 def is_val_max(val_to_check, test_values):
     for value in test_values:
@@ -61,7 +62,7 @@ def is_val_max(val_to_check, test_values):
             return False
     return True
 
-# Funzione ignoranta per trovare il primo massimo
+# Funzione ignoranta per trovare il primo minimo
 def _find_first_massimo(tempi, accuracy):
     accuracy_half = int(accuracy / 2)
     for x in range(accuracy_half, len(tempi) - accuracy_half):
@@ -74,7 +75,7 @@ def _find_first_massimo(tempi, accuracy):
         val_to_control = tempi[x]
 
         if is_val_max(val_to_control, test_values):
-            # print("Trovato in {}".format(x))
+            print("Trovato in {}".format(x))
             return x
     return -1
 
@@ -131,32 +132,22 @@ def parse_file():
             # gfxs = gfxs[index_minimo:index_last_minimo]
 
             # Possiamo trovare i massimi come punto più alto tra due minimi
+            # Possiamo trovare i massimi come punto più alto tra due minimi
             for x in range(0, len(minimi_array_index) - 2):
+                loc_min = 0
+                second_loc_min = 0
                 massimo = 0
-                index_massimo = 0
-                # print("minimi_array_index {}, minimi_array_index + 1 {}".format(minimi_array_index[x], minimi_array_index[x+1]))
-                for j in range(minimi_array_index[x], minimi_array_index[x+1]):
-                    # if(massimo < gfxs[j]):
-                        # massimo = gfxs[j]
-                        # index_massimo = j
-                    
-                    # print("Min_array_index[x] {} ||| j {} ||| min_array_index + j {} ||| gfx(j) {} ||| gfx(min_array_index + j) {}".format(minimi_array_index[x], j, minimi_array_index[x] + j, gfxs[j], gfxs[minimi_array_index[x] + j]))
-                # massimi_array.append(tempi[steps[index_massimo] - 1])
-                    array_in_barone = gfxs[minimi_array_index[x]:minimi_array_index[x+1]]
-                    massimo = find_first_massimo_locale(array_in_barone)
-                # array_in_campione = gfxs[minimi_array_index[x]:minimi_array_index[x+1]]
-                # massimo = find_first_minimo_locale(array_in_campione)
-                # print("Index minimo: {}".format(index_minimo))
-                # print("minimi_array_index: {}".format(minimi_array_index))
-                # print("steps[minimi_array_index[x]]: {}".format(steps[minimi_array_index[x]]))
-                # print("steps[minimi_array_index[x+1]]: {}".format(steps[minimi_array_index[x+1]]))
-                # print("len(gfxs): {}".format(len(gfxs)))
-                # print("len(steps): {}".format(len(steps)))
-                # print("Nell'array: {}".format(array_in_campione))
-                # print("Massimo è: {}".format(massimo))
-                # print("Valore massimo è: {}".format(array_in_campione[massimo]))
-                # massimi_array.append(tempi[steps[minimi_array_index[x]]:][massimo])
+                # index_massimo = 0
+               
+                array_in_campione = gfxs[minimi_array_index[x]:minimi_array_index[x+1]]
+                loc_min = find_first_minimo_locale(array_in_campione)
+                array_in_barone = gfxs[minimi_array_index[x]+loc_min:minimi_array_index[x+1]]
+                second_loc_min = find_first_minimo_locale(array_in_barone)
+                array_in_prova = gfxs[minimi_array_index[x]+second_loc_min:minimi_array_index[x+1]]
+                massimo = find_first_massimo_locale(array_in_prova)
+                
                 massimi_array.append(tempi[steps[minimi_array_index[x]]:][massimo])
+                
                 
         # print("minimi_array: {}".format(minimi_array))
         # print("massimi_array: {}".format(massimi_array))
@@ -164,8 +155,8 @@ def parse_file():
         # Adesso che abbiamo tutta questa porcheria cerchiamo di calcolare altri tempi
         # print(colored("Calcolo tempo di contatto", "green"))
         tempo_contatto = 0
-        for x in range(0, len(minimi_array_index) - 2):
-            # print("Delta steps minimi veri {}".format(steps[minimi_array_index[x+1]] - steps[minimi_array_index[x]]))
+        for x in range(0, len(massimi_array) - 2):
+            #
             # print("Differenza tra: {} e {} fa {}".format(massimi_array[x]["time"], minimi_array[x]["time"], massimi_array[x]["time"] - minimi_array[x]["time"]))
             tempo_contatto += massimi_array[x]["time"] - minimi_array[x]["time"]
 
@@ -175,7 +166,7 @@ def parse_file():
 
         # print(colored("Calcolo tempo di volo", "green"))
         tempo_volo = 0
-        for x in range(1, len(minimi_array_index) - 1):
+        for x in range(1, len(massimi_array) - 2):
             # print("Differenza tra: {} e {} fa {}".format(minimi_array[x]["time"], massimi_array[x-1]["time"], minimi_array[x]["time"] - massimi_array[x-1]["time"]))
             tempo_volo += minimi_array[x]["time"] - massimi_array[x-1]["time"]
 
