@@ -73,13 +73,11 @@ def parse_file():
         # Calcolo la prima parte della formula
         jsello = {}
         velocita = []
+        # INTEGRAZIONE A RETTANGOLI
         for x in range(0, len(tempi) - 2):
-            velocita_z_no_step = ((tempi[x]["gFz"] + tempi[x + 1]["gFz"]) *
-                        (tempi[x + 1]["time"] - tempi[x]["time"])) / 2
-            velocita_x_no_step = ((tempi[x]["gFx"] + tempi[x + 1]["gFx"]) *
-                        (tempi[x + 1]["time"] - tempi[x]["time"])) / 2
-            velocita_y_no_step = ((tempi[x]["gFy"] + tempi[x + 1]["gFy"]) *
-                        (tempi[x + 1]["time"] - tempi[x]["time"])) / 2
+            velocita_z_no_step = tempi[x]["gFz"] * (tempi[x + 1]["time"] - tempi[x]["time"])
+            velocita_x_no_step = tempi[x]["gFx"] * (tempi[x + 1]["time"] - tempi[x]["time"])
+            velocita_y_no_step = tempi[x]["gFy"] * (tempi[x + 1]["time"] - tempi[x]["time"])
             node = {
                 "velocita_z_no_step": velocita_z_no_step,
                 "velocita_x_no_step": velocita_x_no_step,
@@ -95,6 +93,30 @@ def parse_file():
                 node["velocita_z_step"] = velocita_z_no_step
                 node["velocita_x_step"] = velocita_x_no_step
                 node["velocita_y_step"] = velocita_y_no_step
+
+        #  INTEGRAZIONE PER TRAPEZI
+        # for x in range(0, len(tempi) - 2):
+            # velocita_z_no_step = ((tempi[x]["gFz"] + tempi[x + 1]["gFz"]) *
+                        # (tempi[x + 1]["time"] - tempi[x]["time"])) / 2
+            # velocita_x_no_step = ((tempi[x]["gFx"] + tempi[x + 1]["gFx"]) *
+                        # (tempi[x + 1]["time"] - tempi[x]["time"])) / 2
+            # velocita_y_no_step = ((tempi[x]["gFy"] + tempi[x + 1]["gFy"]) *
+                        # (tempi[x + 1]["time"] - tempi[x]["time"])) / 2
+            # node = {
+                # "velocita_z_no_step": velocita_z_no_step,
+                # "velocita_x_no_step": velocita_x_no_step,
+                # "velocita_y_no_step": velocita_y_no_step,
+                # "time": tempi[x]["time"],
+                # "step": tempi[x]["step"]
+            # }
+            # if x > 0:
+                # node["velocita_z_step"] = node["velocita_z_no_step"] + velocita[x-1]["velocita_z_step"]
+                # node["velocita_x_step"] = node["velocita_x_no_step"] + velocita[x-1]["velocita_x_step"]
+                # node["velocita_y_step"] = node["velocita_y_no_step"] + velocita[x-1]["velocita_y_step"]
+            # else:
+                # node["velocita_z_step"] = velocita_z_no_step
+                # node["velocita_x_step"] = velocita_x_no_step
+                # node["velocita_y_step"] = velocita_y_no_step
 
             velocita.append(node)
 
