@@ -116,7 +116,7 @@ def parse_file():
                 #         index_massimo = j
                 # massimi_array.append(tempi[steps[index_massimo] - 1])
                 array_in_campione = gfxs[minimi_array_index[x]:minimi_array_index[x+1]]
-                print("Delta steps minimi veri {}".format(steps[minimi_array_index[x+1]] - steps[minimi_array_index[x]]))
+                # print("Delta steps minimi veri {}".format(steps[minimi_array_index[x+1]] - steps[minimi_array_index[x]]))
                 loc_min = find_first_minimo_locale(array_in_campione)
                 array_in_barone = gfxs[minimi_array_index[x]+loc_min:minimi_array_index[x+1]]
                 massimo = find_first_minimo_locale(array_in_barone)

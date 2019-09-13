@@ -75,7 +75,7 @@ def _find_first_massimo(tempi, accuracy):
         val_to_control = tempi[x]
 
         if is_val_max(val_to_control, test_values):
-            print("Trovato in {}".format(x))
+            # print("Trovato in {}".format(x))
             return x
     return -1
 

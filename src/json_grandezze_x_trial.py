@@ -46,7 +46,7 @@ def _find_first_minimo(tempi, accuracy):
         val_to_check = tempi[x]
 
         if is_val_min(val_to_check, test_values):
-            print("Trovato in {}".format(x))
+            # print("Trovato in {}".format(x))
             return x
     return -1
 
@@ -134,7 +134,7 @@ def parse_file():
                         check_value = 0
                         conto += 1
                 
-                print("Minimi trovati {}".format(conto))
+                # print("Minimi trovati {}".format(conto))
                 # Se non trovo minimi vado al prossimo
                 if conto == 0:
                     continue
