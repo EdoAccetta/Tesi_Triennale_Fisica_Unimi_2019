@@ -104,6 +104,71 @@ def parse_file():
             # steps = steps[index_minimo:index_last_minimo]
             # gfxs = gfxs[index_minimo:index_last_minimo]
 
+            # Certo la dimensione media degli step in un passo
+            step_medio = 0
+            for x in range(0, len(minimi_array_index) - 1):
+                step_medio += minimi_array_index[x+1] - minimi_array_index[x]
+
+            step_medio = int(step_medio / len(minimi_array_index))
+            print("Step medio= {}".format(step_medio))
+
+            # Creo dei vettori che abbiano tutti "step_medio" numero di step per poi mediarli
+            thankyou_next = []
+            new_array_to_mean = []
+            step_from = 0
+            step_to = 0
+            for y in range(0, len(minimi_array_index) - 1): # Ciclo su ogni passo
+                thankyou_next.append(step_medio * y)
+                # print(thankyou_next)
+                for x in range(minimi_array_index[y], minimi_array_index[y+1]): # Ciclo all'interno di ogni passo
+                    if x == minimi_array_index[y] or x == minimi_array_index[y+1]:
+                        new_array_to_mean.append(gfxs[x])
+                    else:
+                        rapporto = step_medio / (minimi_array_index[y+1] - minimi_array_index[y])
+                        step_from = int(rapporto * (x - minimi_array_index[y]))
+                        step_to = int((rapporto * (x - minimi_array_index[y])) + 1)
+                        # new_array_to_mean.append((gfxs[step_from] + gfxs[step_to]) / 2) # Così ho dei gradini nel caso step_med < step_original, devo pesare la media per risolvere la cosa
+                        peso = (rapporto * (x - minimi_array_index[y])) - step_from # Considero la parte decimale di step from non tagliato e la uso come percentuale ovvero come peso
+                        new_array_to_mean.append(( (gfxs[step_from] * peso) + (gfxs[step_to] * abs(1-peso)) / 2))
+
+            # Adesso ho "new_array_to_mean" che contiene i valori di ogni vettore stretchato e "thankyou_next" che contiene dove ogni passo finisce e inizia quello nuovo nel vettore valori
+            
+            mean_step = []
+
+            for n in range(0, step_medio):
+                mean_step.append(0)
+                for x in range(0, len(thankyou_next) - 1):
+                    # print("n= {} x= {} into= {} tkyn:lenght= {}".format(n, x, json_object["into"], len(thankyou_next)))
+                    # print("Thankyou_next[x]= {}".format(thankyou_next[x]))
+                    mean_step[n] += new_array_to_mean[thankyou_next[x] + n]
+
+                mean_step[n] /= len(thankyou_next) - 1
+
+            # mean_step è un singolo passo formato dalla media di tutti gli altri passi visualizzati
+
+            # Creo un vettore per il tempo nel grafico
+            tempistica = []
+            for x in range(0, step_medio):
+                tempistica.append(0.01*x)
+
+            plt = go.Figure()
+            plt.add_trace(
+                go.Scatter(x=np.array(tempistica),
+                           y=np.array(mean_step),
+                           mode='lines+markers'))
+
+            # Edit the layout
+            plt.update_layout(title='Test {0}'.format(
+                str.replace(file, ".json", "")),
+                              xaxis_title='Time',
+                              yaxis_title='Gfxs_medio')
+
+            # plt.show()
+            # input("Premere INVIO per passare al prossimo grafico...\n")
+            # break
+            plt.write_image(path_acc_data_graphics + str.replace(file, "json", "pdf"))
+
+            '''
             # Certo la dimensione minima in step di un passo (distanza più piccola tra minimi) (per non andare out of bound con gli indici)
             step_minore = 0
             for x in range(0, len(minimi_array_index) - 1):
@@ -149,6 +214,7 @@ def parse_file():
             # break
             plt.write_image(path_acc_data_graphics + str.replace(file, "json", "pdf"))
 
+            '''
             '''
             # Possiamo trovare i massimi come punto più alto tra due minimi
             for x in range(0, len(minimi_array_index) - 2):
