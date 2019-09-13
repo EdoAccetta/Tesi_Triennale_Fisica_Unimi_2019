@@ -11,7 +11,7 @@ os.system('color')
 path_acc_data = "E:/Scuola/Università/Tesi/Python/data/acc"
 path_acc_data_json = path_acc_data + "/json_speed/"
 path_acc_data_json_position = path_acc_data + "/json_position/"
-path_acc_data_json_grandezze = path_acc_data + "/json_grandezze/grandezze_z/"
+path_acc_data_json_grandezze = path_acc_data + "/json_grandezze/grandezze_x/"
 list_files = [
     f for f in listdir(path_acc_data_json)
     if isfile(join(path_acc_data_json, f))
@@ -25,17 +25,12 @@ def parse_file():
 
         # Calcolo la prima parte della formula
         jsello = { "positions" : []}
+         # INTEGRAZIONE A RETTANGOLI
         for x in range(0, len(tempi) - 2):
-            posizione_z_no_step = (
-                (tempi[x]["velocita_z_step"] + tempi[x + 1]["velocita_z_step"]) *
-                (tempi[x + 1]["time"] - tempi[x]["time"])) / 2
-            posizione_x_no_step = (
-                (tempi[x]["velocita_x_step"] + tempi[x + 1]["velocita_x_step"]) *
-                (tempi[x + 1]["time"] - tempi[x]["time"])) / 2
-            posizione_y_no_step = (
-                (tempi[x]["velocita_y_step"] + tempi[x + 1]["velocita_y_step"]) *
-                (tempi[x + 1]["time"] - tempi[x]["time"])) / 2
-            
+            posizione_z_no_step = tempi[x]["velocita_z_step"] * (tempi[x + 1]["time"] - tempi[x]["time"])
+            posizione_x_no_step = tempi[x]["velocita_x_step"] * (tempi[x + 1]["time"] - tempi[x]["time"])
+            posizione_y_no_step = tempi[x]["velocita_y_step"] * (tempi[x + 1]["time"] - tempi[x]["time"])
+
             node = {
                 "posizione_z_no_step": posizione_z_no_step,
                 "posizione_x_no_step": posizione_x_no_step,
@@ -60,6 +55,43 @@ def parse_file():
                 node["posizione_y_step"] = node["posizione_y_no_step"]
 
             jsello["positions"].append(node)
+
+        #  INTEGRAZIONE PER TRAPEZI
+        # for x in range(0, len(tempi) - 2):
+            # posizione_z_no_step = (
+                # (tempi[x]["velocita_z_step"] + tempi[x + 1]["velocita_z_step"]) *
+                # (tempi[x + 1]["time"] - tempi[x]["time"])) / 2
+            # posizione_x_no_step = (
+                # (tempi[x]["velocita_x_step"] + tempi[x + 1]["velocita_x_step"]) *
+                # (tempi[x + 1]["time"] - tempi[x]["time"])) / 2
+            # posizione_y_no_step = (
+                # (tempi[x]["velocita_y_step"] + tempi[x + 1]["velocita_y_step"]) *
+                # (tempi[x + 1]["time"] - tempi[x]["time"])) / 2
+            # 
+            # node = {
+                # "posizione_z_no_step": posizione_z_no_step,
+                # "posizione_x_no_step": posizione_x_no_step,
+                # "posizione_y_no_step": posizione_y_no_step,
+                # "time": tempi[x]["time"],
+                # "step": tempi[x]["step"],
+                # "posizione_z_step": 0,
+                # "posizione_x_step": 0,
+                # "posizione_y_step": 0
+            # }
+# 
+            # if x >= 1:
+                # node["posizione_z_step"] = node["posizione_z_no_step"] + jsello["positions"][
+                    # x - 1]["posizione_z_step"]
+                # node["posizione_x_step"] = node["posizione_x_no_step"] + jsello["positions"][
+                    # x - 1]["posizione_x_step"]
+                # node["posizione_y_step"] = node["posizione_y_no_step"] + jsello["positions"][
+                    # x - 1]["posizione_y_step"]
+            # else:
+                # node["posizione_z_step"] = node["posizione_z_no_step"]
+                # node["posizione_x_step"] = node["posizione_x_no_step"]
+                # node["posizione_y_step"] = node["posizione_y_no_step"]
+
+            # jsello["positions"].append(node)
 
         # Adesso analizziamo la differenza di posizioni tra minimi calcolati prima
         with open(path_acc_data_json_grandezze + file, "r") as file_min:
