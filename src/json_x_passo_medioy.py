@@ -52,6 +52,10 @@ def _find_first_minimo(tempi, accuracy):
 def find_first_minimo(tempi):
     return _find_first_minimo(tempi, 27)
 
+def find_first_minimo_red(tempi):
+    return _find_first_minimo(tempi, 19)
+
+
 def find_first_minimo_locale(tempi):
     return _find_first_minimo(tempi, 3)
 
@@ -83,8 +87,12 @@ def parse_file():
                     gfxs.append(gfx)
 
             # Una volta creati gli arrays escludiamo n minimi
+            latest_min_ind = 0
             for x in range(0, json_object["pre"]):
                 index_minimo = find_first_minimo(gfxs)
+                if index_minimo - latest_min_ind > 30:
+                    index_minimo = find_first_minimo_red(gfxs)
+                latest_min_ind = index_minimo 
                 if index_minimo > 0:
                     steps = steps[index_minimo:]
                     gfxs = gfxs[index_minimo:]
@@ -92,10 +100,13 @@ def parse_file():
                     break
 
             # Adesso conto solamente n minimi dopo quello che ho trovato
+            index_precedente = 0
             index_last_minimo = 0
             for x in range(0, json_object["into"]):
-                index_last_minimo += find_first_minimo(
-                    gfxs[index_last_minimo:])
+                index_last_minimo += find_first_minimo(gfxs[index_last_minimo:])
+                if index_last_minimo - index_precedente > 30:
+                    index_last_minimo = index_precedente + find_first_minimo_red(gfxs[index_precedente:])
+                index_precedente = index_last_minimo
                 minimi_array_index.append(index_last_minimo)
                 minimi_array.append(tempi[steps[index_last_minimo] - 1])
                 if index_last_minimo < 0:

@@ -12,7 +12,7 @@ list_files = [f for f in listdir(path_acc_data_json) if isfile(join(path_acc_dat
 for file in  list_files:
     print("Processing " + file)
     with open(path_acc_data_json + file,"r") as file_acc:
-        tempi = json.load(file_acc)
+        tempi = json.load(file_acc)["velocita"]
 
         steps = np.array([])
         speedz = np.array([])
