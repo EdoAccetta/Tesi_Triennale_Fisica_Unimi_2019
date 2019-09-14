@@ -55,7 +55,9 @@ for file in list_files:
 
             # Acc X	Acc Y	Acc Z	V ang X	V ang Y	V ang Z	Latitudine	Longitudine	Timestamp
             linea["step"] = i
-            linea["gFc"] = ((float(valori[0]) + 9.947830)**2 + (float(valori[2]) + 0.238222)**2)**0.5
+            gfx = float(valori[0]) + 9.947830
+            gfz = float(valori[2]) + 0.238222
+            linea["gFc"] = (gfx**2 + gfz**2)**0.5
             linea["time"] = float(valori[8].replace("\n", ""))
 
             tempi.append(linea)

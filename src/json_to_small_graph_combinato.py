@@ -28,10 +28,9 @@ def is_val_min(val_to_check, test_values):
 
 
 # Funzione ignoranta per trovare il primo minimo
-def find_first_minimo(tempi):
-    accuracy = 27
+def _find_first_minimo(tempi, accuracy):
     accuracy_half = int(accuracy / 2)
-    for x in range(accuracy_half, len(tempi) - 1):
+    for x in range(accuracy_half, len(tempi) - accuracy_half):
         test_values = []
         for j in range(accuracy_half, 0, -1):
             test_values.append(tempi[x - j])
@@ -43,6 +42,17 @@ def find_first_minimo(tempi):
         if is_val_min(val_to_check, test_values):
             return x
     return -1
+
+def find_first_minimo(tempi):
+    return _find_first_minimo(tempi, 27)
+
+def find_first_minimo_red(tempi):
+    return _find_first_minimo(tempi, 11)
+
+def find_first_minimo_locale(tempi):
+    return _find_first_minimo(tempi, 3)
+
+
 
 def parse_file():
     omino = 0
@@ -61,16 +71,24 @@ def parse_file():
                 step = int(tempo["step"])
                 gfc = float(tempo["gFc"])
 
-                start_keep = start_keep or (step > values_to_skip[omino]
-                                            and gfc < -3)
+                start_keep = start_keep or (step > values_to_skip[omino])
 
                 if start_keep:
                     steps.append(step)
                     gfcs.append(gfc)
 
             # Una volta creati gli arrays escludiamo n minimi
+            latest_min_ind = 0
             for x in range(0, json_object["pre"]):
                 index_minimo = find_first_minimo(gfcs)
+                for y in range(25, 9, -1):
+                    if y % 2 == 0:
+                        continue
+                    if index_minimo - latest_min_ind > 30:
+                        index_minimo = _find_first_minimo(gfcs, y)
+                    else:
+                        break
+                latest_min_ind = index_minimo
                 if index_minimo > 0:
                     steps = steps[index_minimo:]
                     gfcs = gfcs[index_minimo:]
@@ -78,10 +96,23 @@ def parse_file():
                     break
 
             # Adesso conto solamente n minimi dopo quello che ho trovato
+            index_precedente = 0
             index_last_minimo = 0
             for x in range(0, json_object["into"]):
-                index_last_minimo += find_first_minimo(
-                    gfcs[index_last_minimo:])
+                index_last_minimo += find_first_minimo(gfcs[index_last_minimo:])
+                for y in range(25, 9, -1):
+                    # print("y= {}".format(y))
+                    # print("Deltadiff = {}".format(index_last_minimo - index_precedente))
+                    if y%2 == 0:
+                        # print("BALZO")
+                        continue
+                    if index_last_minimo - index_precedente > 30:
+                        # print("NO")
+                        index_last_minimo = index_precedente + _find_first_minimo(gfcs[index_precedente:], y)
+                    else:
+                        # print("YES")
+                        break
+                index_precedente = index_last_minimo
                 if index_last_minimo < 0:
                     break
 
