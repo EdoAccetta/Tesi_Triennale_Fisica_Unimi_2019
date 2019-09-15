@@ -170,28 +170,22 @@ def parse_file():
         # print("massimi_array: {}".format(massimi_array))
         
         # Adesso che abbiamo tutta questa porcheria cerchiamo di calcolare altri tempi
-        # print(colored("Calcolo tempo di contatto", "green"))
         tempo_contatto = 0
         for x in range(0, len(massimi_array) - 2):
-            #
-            # print("Differenza tra: {} e {} fa {}".format(massimi_array[x]["time"], minimi_array[x]["time"], massimi_array[x]["time"] - minimi_array[x]["time"]))
             tempo_contatto += massimi_array[x]["time"] - minimi_array[x]["time"]
 
         tempo_contatto /= len(massimi_array)
 
         print(colored("Tempo di contatto: {}".format(tempo_contatto), "yellow"))
 
-        # print(colored("Calcolo tempo di volo", "green"))
         tempo_volo = 0
         for x in range(1, len(massimi_array) - 2):
-            # print("Differenza tra: {} e {} fa {}".format(minimi_array[x]["time"], massimi_array[x-1]["time"], minimi_array[x]["time"] - massimi_array[x-1]["time"]))
             tempo_volo += minimi_array[x]["time"] - massimi_array[x-1]["time"]
 
         tempo_volo /= len(massimi_array)
 
         print(colored("Tempo di volo: {}".format(tempo_volo), "yellow"))
 
-        # print(colored("Calcolo tempo totale e ritmo", "green"))
         tempo_totale = minimi_array[len(minimi_array) - 1]["time"] - minimi_array[0]["time"]
         ritmo = len(minimi_array) / tempo_totale
 
