@@ -80,9 +80,18 @@ def parse_file():
                     steps.append(step)
                     gfys.append(gfy)
 
-            # Una volta creati gli arrays escludiamo n minimi
+            ## Una volta creati gli arrays escludiamo n minimi
+            latest_min_ind = 0
             for x in range(0, json_object["pre"]):
                 index_minimo = find_first_minimo(gfys)
+                for j in range (25, 9, -1):
+                    if j % 2 == 0:
+                        continue
+                    if index_minimo - latest_min_ind > 30:
+                        index_minimo = _find_first_minimo(gfys, j)
+                    else:
+                        break
+                latest_min_ind = index_minimo
                 if index_minimo > 0:
                     steps = steps[index_minimo:]
                     gfys = gfys[index_minimo:]
@@ -90,10 +99,18 @@ def parse_file():
                     break
 
             # Adesso conto solamente n minimi dopo quello che ho trovato
+            index_precedente = 0
             index_last_minimo = 0
             for x in range(0, json_object["into"]):
-                index_last_minimo += find_first_minimo(
-                    gfys[index_last_minimo:])
+                index_last_minimo += find_first_minimo(gfys[index_last_minimo:])
+                for j in range (25, 9, -1):
+                    if j%2 == 0:
+                        continue
+                    if index_last_minimo - index_precedente > 30:
+                        index_last_minimo = index_precedente + _find_first_minimo(gfys[index_precedente:], j)
+                    else:
+                        break
+                index_precedente = index_last_minimo
                 minimi_array_index.append(index_last_minimo)
                 minimi_array.append(tempi[steps[index_last_minimo] - 1])
                 if index_last_minimo < 0:
