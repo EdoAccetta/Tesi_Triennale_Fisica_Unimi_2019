@@ -111,8 +111,7 @@ def parse_file():
                 step = int(tempo["step"])
                 gfx = float(tempo["gFx"])
 
-                start_keep = start_keep or (step > values_to_skip[omino]
-                                            and gfx < -3)
+                start_keep = start_keep or (step > values_to_skip[omino])
 
                 if start_keep:
                     steps.append(step)
@@ -345,7 +344,7 @@ def parse_file():
         jsello_sma["minimi"] = minimi_array
         jsello_sma["massimi"] = massimi_array_sma
         jsello_sma["tempo_contatto"] = tempo_contatto_sma
-        jsello_sma["tempo_volo"] = tempo_volo_sma
+        jsello_sma["tempo_volo"] = tempo_volo_sma 
         jsello_sma["tempo_totale"] = tempo_totale
         jsello_sma["ritmo"] = ritmo
 

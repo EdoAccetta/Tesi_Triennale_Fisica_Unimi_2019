@@ -90,9 +90,14 @@ def parse_file():
             latest_min_ind = 0
             for x in range(0, json_object["pre"]):
                 index_minimo = find_first_minimo(gfxs)
-                if index_minimo - latest_min_ind > 30:
-                    index_minimo = find_first_minimo_red(gfxs)
-                latest_min_ind = index_minimo 
+                for y in range (25, 9, -1):
+                    if y % 2 == 0:
+                        continue
+                    if index_minimo - latest_min_ind > 30:
+                        index_minimo = _find_first_minimo(gfxs, y)
+                    else:
+                        break
+                latest_min_ind = index_minimo
                 if index_minimo > 0:
                     steps = steps[index_minimo:]
                     gfxs = gfxs[index_minimo:]
@@ -104,8 +109,13 @@ def parse_file():
             index_last_minimo = 0
             for x in range(0, json_object["into"]):
                 index_last_minimo += find_first_minimo(gfxs[index_last_minimo:])
-                if index_last_minimo - index_precedente > 30:
-                    index_last_minimo = index_precedente + find_first_minimo_red(gfxs[index_precedente:])
+                for y in range (25, 9, -1):
+                    if y%2 == 0:
+                        continue
+                    if index_last_minimo - index_precedente > 30:
+                        index_last_minimo = index_precedente + _find_first_minimo(gfxs[index_precedente:], y)
+                    else:
+                        break
                 index_precedente = index_last_minimo
                 minimi_array_index.append(index_last_minimo)
                 minimi_array.append(tempi[steps[index_last_minimo] - 1])
