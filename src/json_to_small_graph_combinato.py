@@ -63,17 +63,20 @@ def parse_file():
 
             tempi = json_object["tempi"]
 
+            times = []
             steps = []
             gfcs = []
 
             start_keep = False
             for tempo in tempi:
+                time = float(tempo["time"])
                 step = int(tempo["step"])
                 gfc = float(tempo["gFc"])
 
                 start_keep = start_keep or (step > values_to_skip[omino])
 
                 if start_keep:
+                    times.append(time)
                     steps.append(step)
                     gfcs.append(gfc)
 
@@ -90,6 +93,7 @@ def parse_file():
                         break
                 latest_min_ind = index_minimo
                 if index_minimo > 0:
+                    times = times[index_minimo:]
                     steps = steps[index_minimo:]
                     gfcs = gfcs[index_minimo:]
                 else:
@@ -116,19 +120,20 @@ def parse_file():
                 if index_last_minimo < 0:
                     break
 
+            times = times[index_minimo:index_last_minimo]
             steps = steps[index_minimo:index_last_minimo]
             gfcs = gfcs[index_minimo:index_last_minimo]
 
             plt = go.Figure()
             plt.add_trace(
-                go.Scatter(x=np.array(steps),
+                go.Scatter(x=np.array(times),
                            y=np.array(gfcs),
                            mode='lines+markers'))
 
             # Edit the layout
             plt.update_layout(title='Test {0}'.format(
                 str.replace(file, ".json", "")),
-                              xaxis_title='Steps',
+                              xaxis_title='Time',
                               yaxis_title='Gf_comb_s')
 
             # plt.show()

@@ -14,22 +14,24 @@ for file in  list_files:
     with open(path_acc_data_json + file,"r") as file_acc:
         tempi = json.load(file_acc)["tempi"]
 
+        times = np.array([])
         steps = np.array([])
         gfcs = np.array([])
 
         for tempo in tempi:
+            times = np.append(times, tempo["time"])
             steps = np.append(steps, tempo["step"])
             gfcs = np.append(gfcs, float(tempo["gFc"]))
 
         plt = go.Figure()
         plt.add_trace(go.Scatter(
-            x=steps, 
+            x=times, 
             y=gfcs,
             mode='lines+markers'))
 
         # Edit the layout
         plt.update_layout(title='Test {0}'.format(str.replace(file, ".json", "")),
-                        xaxis_title='Steps',
+                        xaxis_title='Time',
                         yaxis_title='Gf_comb_s')
 
         # plt.show()
