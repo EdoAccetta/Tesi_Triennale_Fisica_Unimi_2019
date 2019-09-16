@@ -10,7 +10,7 @@ os.system('color')
 
 path_acc_data = "E:/Scuola/Università/Tesi/Python/data/acc"
 path_grandezze_x = path_acc_data + "/json_grandezze/grandezze_x/"
-path_grandezze_trial = path_acc_data + "/json_grandezze_trial/grandezze_x_trial/"
+path_grandezze_combinato = path_acc_data + "/json_grandezze_combinato/"
 path_grandezze_firstmax = path_acc_data + "/json_grandezze_firstmax/grandezze_x_firstmax/"
 path_grandezze_basics = path_acc_data + "/json_grandezze_basics/grandezze_x_basics/"
 path_grandezze_second_min = path_acc_data + "/json_grandezze_second_min/grandezze_x_second_min/"
@@ -32,12 +32,12 @@ def output_all():
     with open(path_results + "grandezze_check.csv", "w") as file_results:
 
         for file in list_files_grandezze:
-            with open(path_grandezze_basics + file, "r") as file_basics, open(path_grandezze_x + file, "r") as file_grandezze_x, open(path_grandezze_firstmax + file, "r") as file_firstmax, open(path_grandezze_trial + file, "r") as file_trial, open(path_grandezze_second_min + file, "r") as file_second_min, open(path_grandezze_secondmax + file, "r") as file_secondmax:
+            with open(path_grandezze_basics + file, "r") as file_basics, open(path_grandezze_x + file, "r") as file_grandezze_x, open(path_grandezze_firstmax + file, "r") as file_firstmax, open(path_grandezze_combinato + file, "r") as file_combinato, open(path_grandezze_second_min + file, "r") as file_second_min, open(path_grandezze_secondmax + file, "r") as file_secondmax:
             
                 json_great_x = json.load(file_grandezze_x)   # Qui dovrei trovare un modo per non caricare anche "minimi", che è lungo e non mi serve a nulla
                 json_great_firstmax = json.load(file_firstmax)
                 json_great_basics = json.load(file_basics)
-                json_great_trial = json.load(file_trial)
+                json_great_combinato = json.load(file_combinato)
                 json_great_second_min = json.load(file_second_min)
                 json_great_secondmax = json.load(file_secondmax)
 
@@ -52,20 +52,10 @@ def output_all():
                     "Volo_firstmax": json_great_firstmax["tempo_volo"],
                     "Contatto_secondmax": json_great_secondmax["tempo_contatto"],
                     "Volo_secondmax": json_great_secondmax["tempo_volo"],
-                    "Contatto_Trial": json_great_trial["tempo_contatto"],
-                    "Volo_Trial": json_great_trial["tempo_volo"],
-                    "Tempo_basics": json_great_basics["tempo_totale"],
-                    "Ritmo_basics": json_great_basics["ritmo"],
+                    "Contatto_cc": json_great_combinato["tempo_contatto"],
+                    "Volo_cc": json_great_combinato["tempo_volo"],
                     "Tempo_x": json_great_x["tempo_totale"],
                     "Ritmo_x": json_great_x["ritmo"],
-                    "Tempo_second_min": json_great_second_min["tempo_totale"],
-                    "Ritmo_second_min": json_great_second_min["ritmo"],
-                    "Tempo_firstmax": json_great_firstmax["tempo_totale"],
-                    "Ritmo_firstmax": json_great_firstmax["ritmo"],
-                    "Tempo_secondmax": json_great_secondmax["tempo_totale"],
-                    "Ritmo_secondmax": json_great_secondmax["ritmo"],
-                    "Tempo_trial": json_great_trial["tempo_totale"],
-                    "Ritmo_trial": json_great_trial["ritmo"],
                 }
 
                 # file_results.write("{}\nLunghezza Passo;{}\n T. Contatto in x;{}\n T. Volo in x;{}\n T. Totale in x;{}\n Ritmo in x;{}\n T. Contatto in z;{}\n T. Volo in z;{}\n""T. Totale in z;{}\n Ritmo in z;{}\nVelocita in z;{}\n\n".format(
