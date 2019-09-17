@@ -22,6 +22,9 @@ path_acc_data_json_grandezze_basics = path_acc_data + "/json_grandezze_basics/gr
 path_acc_data_json_grandezze_firstmax = path_acc_data + "/json_grandezze_firstmax/grandezze_x_firstmax/"
 path_acc_data_json_grandezze_secondmin = path_acc_data + "/json_grandezze_second_min/grandezze_x_second_min/"
 path_acc_data_json_grandezze_secondmax = path_acc_data + "/json_grandezze_secondmax/grandezze_x_secondmax/"
+path_acc_data_json_grandezze_PMR = path_acc_data + "/json_grandezze_pmr/"
+path_acc_data_json_grandezze_SMR = path_acc_data + "/json_grandezze_smr/"
+
 
 
 # Carico in values_to_skip il numero di valori da saltare per ogni tipello
@@ -98,6 +101,8 @@ def parse_file():
         massimi_array_fma = []
         massimi_array_smi = []
         massimi_array_sma = []
+        massimi_array_pmr = []
+        massimi_array_smr = []
         with open(path_acc_data_json + file, "r") as file_acc:
             json_object = json.load(file_acc)
 
@@ -121,6 +126,13 @@ def parse_file():
             latest_min_ind = 0
             for x in range(0, json_object["pre"]):
                 index_minimo = find_first_minimo(gfxs)
+                for j in range (37, 27, -1):
+                    if j % 2 == 0:
+                        continue
+                    if index_minimo - latest_min_ind < 15:
+                        index_minimo = _find_first_minimo(gfxs, j)
+                    else:
+                        break
                 for y in range (25, 9, -1):
                     if y % 2 == 0:
                         continue
@@ -140,6 +152,13 @@ def parse_file():
             index_last_minimo = 0
             for x in range(0, json_object["into"]):
                 index_last_minimo += find_first_minimo(gfxs[index_last_minimo:])
+                for j in range (39, 27, -1):
+                    if j%2 == 0:
+                        continue
+                    if index_last_minimo - index_precedente < 17:
+                        index_last_minimo = index_precedente + _find_first_minimo(gfxs[index_precedente:], j)
+                    else:
+                        break
                 for y in range (25, 9, -1):
                     if y%2 == 0:
                         continue
@@ -160,6 +179,19 @@ def parse_file():
                 
                 array_in_campione = gfxs[minimi_array_index[x]:minimi_array_index[x+1]]
                 massimo = find_first_minimo_locale(array_in_campione)
+                j = 0
+                while minimi_array_index[x] - massimo < 7:  # Condizione di larghezza minima (7centesimi di secondo)
+                    massimo = find_first_minimo_locale(array_in_campione[massimo:])     # Cerca di nuovo il massimo nella seconda porzione
+                    if massimo == -1:   # Se non trovi il massimo prendi l'ultimo trovato
+                        massimo = one_before
+                        break
+                    one_before  = massimo
+                    if j == 100:
+                            print("MaleMale_1")
+                            break
+                    j += 1
+                
+
                 
                 massimi_array.append(tempi[steps[minimi_array_index[x]]:][massimo])
 
@@ -167,14 +199,25 @@ def parse_file():
             for x in range(0, len(minimi_array_index) - 2):
                 massimo = 0
 
-                for j in range(minimi_array_index[x], minimi_array_index[x+1]):
+                # for j in range(minimi_array_index[x], minimi_array_index[x+1]): # Perchè dovrebbe servirmi???
 
-                    array_in_barone = gfxs[minimi_array_index[x]:minimi_array_index[x+1]]
-                    massimo = find_first_massimo_locale(array_in_barone)
+                array_in_barone = gfxs[minimi_array_index[x]:minimi_array_index[x+1]]
+                massimo = find_first_massimo_locale(array_in_barone)
+                j = 0
+                while minimi_array_index[x] - massimo < 7:  # Condizione di larghezza minima (7centesimi di secondo)
+                    massimo = find_first_minimo_locale(array_in_campione[massimo:])     # Cerca di nuovo il massimo nella seconda porzione
+                    if massimo == -1:   # Se non trovi il massimo prendi l'ultimo trovato
+                        massimo = one_before
+                        break
+                    one_before  = massimo
+                    if j == 100:
+                            print("MaleMale_2")
+                            break
+                    j += 1
                 
                 massimi_array_b.append(tempi[steps[minimi_array_index[x]]:][massimo])
 
-            # Possiamo trovare i massimi come FIRSTMAX
+            # Possiamo trovare i massimi come FIRSTMAX (che poi è il secondo ma vabbeh)
             for x in range(0, len(minimi_array_index) - 2):
                 loc_min = 0
                 massimo = 0
@@ -182,8 +225,24 @@ def parse_file():
                 array_in_campione = gfxs[minimi_array_index[x]:minimi_array_index[x+1]]
                 loc_min = find_first_minimo_locale(array_in_campione)
                 array_in_barone = gfxs[minimi_array_index[x]+loc_min:minimi_array_index[x+1]]
+                lunghezza_vera = len(array_in_campione) - len(array_in_barone)
                 massimo = find_first_massimo_locale(array_in_barone)
+
+                if massimo == -1:   # Se non trovo un secondo massimo, mi accontento del primo (BASICS)
+                    massimo = find_first_massimo_locale(array_in_campione)
+                    j = 0
+                    while minimi_array_index[x] - massimo < 7:  # Condizione di larghezza minima (7centesimi di secondo)
+                        massimo = find_first_minimo_locale(array_in_campione[massimo:])     # Cerca di nuovo il massimo nella seconda porzione
+                        if massimo == -1:   # Se non trovi il massimo prendi l'ultimo trovato
+                            massimo = one_before
+                            break
+                        one_before  = massimo
+                        if j == 100:
+                            print("MaleMale_3")
+                            break
+                        j += 1
                 
+                massimo += lunghezza_vera
                 massimi_array_fma.append(tempi[steps[minimi_array_index[x]]:][massimo])
 
             # Possiamo trovare i massimi come SECONDMIN
@@ -195,8 +254,23 @@ def parse_file():
                 
                 loc_min = find_first_minimo_locale(array_in_campione)
                 array_in_barone = gfxs[minimi_array_index[x]+loc_min:minimi_array_index[x+1]]
+                # lunghezza_vera = len(array_in_campione) - len(array_in_barone)
                 massimo = find_first_minimo_locale(array_in_barone)
-                    
+                if massimo == -1:   # Se non trovo il secondo minimo, mi accontento del primo STD
+                    massimo = find_first_massimo_locale(array_in_campione)
+                    j = 0
+                    while minimi_array_index[x] - massimo < 7:  # Condizione di larghezza minima (7centesimi di secondo)
+                        massimo = find_first_minimo_locale(array_in_campione[massimo:])     # Cerca di nuovo il massimo nella seconda porzione
+                        if massimo == -1:   # Se non trovi il massimo prendi l'ultimo trovato
+                            massimo = one_before
+                            break
+                        one_before  = massimo
+                        if j == 100:
+                            print("MaleMale_4")
+                            break
+                        j += 1
+                
+                # massimo += lunghezza_vera    
                 massimi_array_smi.append(tempi[steps[minimi_array_index[x]]:][massimo])
 
             # Possiamo trovare i massimi come SECONDMAX
@@ -210,10 +284,65 @@ def parse_file():
                 array_in_barone = gfxs[minimi_array_index[x]+loc_min:minimi_array_index[x+1]]
                 second_loc_min = find_first_minimo_locale(array_in_barone)
                 array_in_prova = gfxs[minimi_array_index[x]+second_loc_min:minimi_array_index[x+1]]
+                # lunghezza_vera = len(array_in_campione) - len(array_in_prova)
                 massimo = find_first_massimo_locale(array_in_prova)
-                
+                if massimo == -1:   # Se non trovo il secondo masimo (che poi è il terzo) mi accontento del secondo (FIRSTMAX)
+                    massimo = find_first_massimo_locale(array_in_barone)
+                    if massimo == -1:    # Se non trovo il primo massimo (che poi è il secondo) mi accontento di quello prima (BASICS)
+                        massimo = find_first_massimo_locale(array_in_barone)
+                        j = 0
+                        while minimi_array_index[x] - massimo < 7:  # Condizione di larghezza minima (7centesimi di secondo)
+                            massimo = find_first_minimo_locale(array_in_campione[massimo:])     # Cerca di nuovo il massimo nella seconda porzione
+                            if massimo == -1:   # Se non trovi il massimo prendi l'ultimo trovato
+                                massimo = one_before
+                                break
+                            one_before  = massimo
+                            if j == 100:
+                                print("MaleMale_5")
+                                break
+                            j += 1
+                # massimo += lunghezza_vera
                 massimi_array_sma.append(tempi[steps[minimi_array_index[x]]:][massimo])
-        
+
+            '''
+            # Possiamo trovare i massimi come PMR = Prima Meta Reverse
+            for x in range(0, len(minimi_array_index) - 2):
+                massimo = 0
+               
+                array_in_campione = gfxs[minimi_array_index[x]:minimi_array_index[x+1]]
+                array_in_barone = array_in_campione[0 : int(len(array_in_campione) / 2)] #Prima metà dell'array in campione
+                reverse_array = []
+                for y in range (0, len(array_in_barone) - 1):
+                    reverse_array.append(array_in_barone[len(array_in_barone) - 1 - y])
+                
+                reverse_max = find_first_minimo_locale(reverse_array)
+                massimo = len(array_in_barone) - reverse_max
+
+                if massimo == -1:
+                    print("MaleMale_PMR")
+                    continue
+
+                massimi_array_pmr.append(tempi[steps[minimi_array_index[x]]:][massimo])
+
+            # Possiamo trovare i massimi come SMR = Seconda Meta Reverse
+            for x in range(0, len(minimi_array_index) - 2):
+                massimo = 0
+               
+                array_in_campione = gfxs[minimi_array_index[x]:minimi_array_index[x+1]]
+                array_in_barone = array_in_campione[int(len(array_in_campione) / 2) :] #Seconda metà dell'array in campione
+                reverse_array = []
+                for y in range (0, len(array_in_barone) - 1):
+                    reverse_array.append(array_in_barone[len(array_in_barone) - 1 - y])
+                
+                reverse_max = find_first_minimo_locale(reverse_array)
+                massimo = len(array_in_barone) - reverse_max
+
+                if massimo == -1:
+                    print("MaleMale_PMR")
+                    continue
+
+                massimi_array_smr.append(tempi[steps[minimi_array_index[x]]:][massimo])
+            '''
 
         # CALCOLO GRANDEZZE ALL
 
@@ -247,11 +376,27 @@ def parse_file():
             tempo_contatto_sma += massimi_array_sma[x]["time"] - minimi_array[x]["time"]
         tempo_contatto_sma /= len(massimi_array_sma)
 
+        '''
+        # PMR
+        tempo_contatto_pmr = 0
+        for x in range(0, len(massimi_array_pmr) - 2):
+            tempo_contatto_pmr += massimi_array_pmr[x]["time"] - minimi_array[x]["time"]
+        tempo_contatto_pmr /= len(massimi_array_pmr)
+
+        # SMR
+        tempo_contatto_smr = 0
+        for x in range(0, len(massimi_array_smr) - 2):
+            tempo_contatto_smr += massimi_array_smr[x]["time"] - minimi_array[x]["time"]
+        tempo_contatto_smr /= len(massimi_array_smr)
+        '''
+
         print(colored("Tempo di contatto_STD: {}".format(tempo_contatto), "yellow"))
         print(colored("Tempo di contatto_B: {}".format(tempo_contatto_b), "yellow"))
         print(colored("Tempo di contatto_FMA: {}".format(tempo_contatto_fma), "yellow"))
         print(colored("Tempo di contatto_SMI: {}".format(tempo_contatto_smi), "yellow"))
         print(colored("Tempo di contatto_SMA: {}".format(tempo_contatto_sma), "yellow"))
+        # print(colored("Tempo di contatto_PMRev: {}".format(tempo_contatto_pmr), "yellow"))
+        # print(colored("Tempo di contatto_SMRev: {}".format(tempo_contatto_smr), "yellow"))
 
         # STANDARD
         tempo_volo = 0
@@ -266,10 +411,12 @@ def parse_file():
         tempo_volo_b /= len(massimi_array_b)
 
         # FIRSTMAX
+        # A QUANTO PARE NON FUNZIONA BENE, ALTRO MODO SOTTO
         tempo_volo_fma = 0
         for x in range(1, len(massimi_array_fma) - 2):
             tempo_volo_fma += minimi_array[x]["time"] - massimi_array_fma[x-1]["time"]
         tempo_volo_fma /= len(massimi_array_fma)
+       
 
         # SECONDMIN
         tempo_volo_smi = 0
@@ -279,16 +426,47 @@ def parse_file():
         tempo_volo_smi /= len(massimi_array_smi)
 
         # SECONDMAX
+        # NON FUNZIONA BENE
         tempo_volo_sma = 0
         for x in range(1, len(massimi_array_sma) - 2):
             tempo_volo_sma += minimi_array[x]["time"] - massimi_array_sma[x-1]["time"]
         tempo_volo_sma /= len(massimi_array_sma)
 
+        '''
+        #PMR
+        tempo_volo_pmr = 0
+        for x in range(1, len(massimi_array_pmr) - 2):
+            tempo_volo_pmr += minimi_array[x]["time"] - massimi_array_pmr[x-1]["time"]
+        tempo_volo_pmr /= len(massimi_array_pmr)
+
+        #SMR
+        tempo_volo_smr = 0
+        for x in range(1, len(massimi_array_smr) - 2):
+            tempo_volo_smr += minimi_array[x]["time"] - massimi_array_smr[x-1]["time"]
+        tempo_volo_smr /= len(massimi_array_smr)
+        '''
+
         print(colored("Tempo di volo_STD: {}".format(tempo_volo), "yellow"))
         print(colored("Tempo di volo_B: {}".format(tempo_volo_b), "yellow"))
         print(colored("Tempo di volo_FMA: {}".format(tempo_volo_fma), "yellow"))
         print(colored("Tempo di volo_SMI: {}".format(tempo_volo_smi), "yellow"))
-        print(colored("Tempo di volo_SMA: {}".format(tempo_volo_sma), "yellow"))        
+        print(colored("Tempo di volo_SMA: {}".format(tempo_volo_sma), "yellow"))
+        # print(colored("Tempo di volo_PMRev: {}".format(tempo_volo_pmr), "yellow"))
+        # print(colored("Tempo di volo_SMRev: {}".format(tempo_volo_smr), "yellow"))
+
+        # ZONA DI VERIFICA
+        delta = 0
+        for x in range (0, len(minimi_array_index) - 2):
+            delta += minimi_array_index[x + 1] - minimi_array_index[x]
+        delta /= len(minimi_array_index) - 2
+        delta *= 0.01
+
+        print("Somma STD = {}".format(tempo_contatto+tempo_volo))
+        print("Somma B = {}".format(tempo_contatto_b+tempo_volo_b))
+        print("Somma FMA = {}".format(tempo_contatto_fma+tempo_volo_fma))
+        print("Somma SMI = {}".format(tempo_contatto_smi+tempo_volo_smi))
+        print("Somma SMA = {}".format(tempo_contatto_sma+tempo_volo_sma))     
+        print("Delta Passo = {}".format(delta))
 
         tempo_totale = minimi_array[len(minimi_array) - 1]["time"] - minimi_array[0]["time"]
         ritmo = len(minimi_array) / tempo_totale
@@ -350,6 +528,30 @@ def parse_file():
 
         with open(path_acc_data_json_grandezze_secondmax + file, "w") as file_grandezze_sma:
             json.dump(jsello_sma, file_grandezze_sma)
+
+        '''
+        jsello_pmr = {}
+        jsello_pmr["minimi"] = minimi_array
+        jsello_pmr["massimi"] = massimi_array_pmr
+        jsello_pmr["tempo_contatto"] = tempo_contatto_pmr
+        jsello_pmr["tempo_volo"] = tempo_volo_pmr 
+        jsello_pmr["tempo_totale"] = tempo_totale
+        jsello_pmr["ritmo"] = ritmo
+
+        with open(path_acc_data_json_grandezze_PMR + file, "w") as file_grandezze_pmr:
+            json.dump(jsello_pmr, file_grandezze_pmr)
+
+        jsello_smr = {}
+        jsello_smr["minimi"] = minimi_array
+        jsello_smr["massimi"] = massimi_array_smr
+        jsello_smr["tempo_contatto"] = tempo_contatto_smr
+        jsello_smr["tempo_volo"] = tempo_volo_smr 
+        jsello_smr["tempo_totale"] = tempo_totale
+        jsello_smr["ritmo"] = ritmo
+
+        with open(path_acc_data_json_grandezze_secondmax + file, "w") as file_grandezze_smr:
+            json.dump(jsello_smr, file_grandezze_smr)
+        '''
 
         print(colored("End processing " + file, "red"))
         omino += 1
