@@ -19,9 +19,12 @@ for file in  list_files:
         posz = np.array([])
 
         for pos in positions["positions"]:
+            time = pos["time"]
             times = np.append(times, pos["time"])
             steps = np.append(steps, pos["step"])
             posz = np.append(posz, float(pos["posizione_z_step"]))
+            if time - times[0] > 10:
+                break
 
         plt = go.Figure()
         plt.add_trace(go.Scatter(

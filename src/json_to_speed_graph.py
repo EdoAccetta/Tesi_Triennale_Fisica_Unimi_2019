@@ -19,9 +19,12 @@ for file in  list_files:
         speedz = np.array([])
 
         for tempo in tempi:
+            time = tempo["time"]
             times = np.append(times, tempo["time"])
             steps = np.append(steps, tempo["step"])
             speedz = np.append(speedz, float(tempo["velocita_z_step"]))
+            if time - times[0] > 10:
+                break
 
         plt = go.Figure()
         plt.add_trace(go.Scatter(
