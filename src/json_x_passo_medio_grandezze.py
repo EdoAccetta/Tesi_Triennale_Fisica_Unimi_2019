@@ -152,7 +152,7 @@ def parse_file():
             # Certo la dimensione media degli step in un passo
             step_medio = 0
             for x in range(0, len(minimi_array_index) - 1):
-                step_medio += minimi_array_index[x+1] - minimi_array_index[x]
+                step_medio += (minimi_array_index[x+1] - minimi_array_index[x]) # la sottrazione mi da sempre un valore in meno perchè esclude il primo
 
             step_medio = int(step_medio / len(minimi_array_index))
             # print("Step medio= {}".format(step_medio))
@@ -169,12 +169,16 @@ def parse_file():
                     if x == minimi_array_index[y] or x == minimi_array_index[y+1]:
                         new_array_to_mean.append(gfxs[x])
                     else:
-                        rapporto = step_medio / (minimi_array_index[y+1] - minimi_array_index[y])
+                        rapporto = (minimi_array_index[y+1] - minimi_array_index[y]) / step_medio #La sottrazione mi toglie un valore
                         step_from = int(rapporto * (x - minimi_array_index[y]))
                         step_to = int((rapporto * (x - minimi_array_index[y])) + 1)
                         # new_array_to_mean.append((gfxs[step_from] + gfxs[step_to]) / 2) # Così ho dei gradini nel caso step_med < step_original, devo pesare la media per risolvere la cosa
-                        peso = (rapporto * (x - minimi_array_index[y])) - step_from # Considero la parte decimale di step from non tagliato e la uso come percentuale ovvero come peso
-                        new_array_to_mean.append(( (gfxs[step_from] * peso) + (gfxs[step_to] * abs(1-peso)) / 2))
+                        decimale = (rapporto * (x - minimi_array_index[y])) - step_from
+                        if decimale > 0.5:
+                            peso = 1 - decimale
+                        else:
+                            peso = decimale
+                        new_array_to_mean.append(( (gfxs[step_from] * peso) + (gfxs[step_to] * (1-peso)) / 2))
 
             # Adesso ho "new_array_to_mean" che contiene i valori di ogni vettore stretchato e "thankyou_next" che contiene dove ogni passo finisce e inizia quello nuovo nel vettore valori
             
@@ -191,33 +195,47 @@ def parse_file():
 
             # mean_step è un singolo passo formato dalla media di tutti gli altri passi visualizzati
 
+            # Definisco una valore grap_t che è il campionamento dello strumento
+            gap_t = 0.01
+
             # Creo un vettore per il tempo nel passo medio
             tempistica = []
             for x in range(0, step_medio):
-                tempistica.append(0.01*x)
+                tempistica.append(gap_t * x)
 
             # Calcolo delle grandezze
 
             # METODO DEL MASSIMO LOCALE NEL MEZZO
-            # Cerco il massimo all'interno del passo medio escludendo una prima parte di lunghezza 0.05 e cerco il massimo locale
+            # Cerco il massimo all'interno del passo medio escludendo una prima parte di lunghezza 0.05 e cerco il valore maggiore
             wait_time = 0.05
-            cast_away = int((wait_time/0.01))
+            cast_away = int((wait_time/gap_t))
 
             analisi = mean_step[cast_away:]
 
-            the_max = 0
+            the_max = -50
+            where_max = 0
+            for x in range(0, len(analisi) - 1):
+                if analisi[x] > the_max:
+                    the_max = analisi[x]
+                    where_max = x + cast_away
+                    continue
+                if the_max > 0:
+                    break
+            '''
+            where_max = 0 # PESSIMO RIPENSALO
             for x in range(13, 3, -1):
-                the_max = _find_first_massimo(analisi, x)
+                where_max = _find_first_massimo(analisi, x)
                 if x % 2 == 0 or the_max < 0:
                     continue
                 if the_max > 0:
                     break
+            '''
             
             print("tempistica[0]= {}, tempistica[step_medio-1] = {}, len(minimi_array)= {}".format(tempistica[0], tempistica[step_medio-1], len(minimi_array)))
-            tempo_contatto = tempistica[the_max]
-            tempo_volo = tempistica[step_medio - 1] - tempistica[the_max]
+            tempo_contatto = tempistica[where_max]
+            tempo_volo = tempistica[step_medio - 1] - tempistica[where_max]
 
-            tempo_totale = tempistica[step_medio - 1] * len(minimi_array)
+            tempo_totale = ((step_medio - 1) * gap_t) * len(minimi_array_index)
             ritmo = len(minimi_array) / tempo_totale
 
             jsello = {}
