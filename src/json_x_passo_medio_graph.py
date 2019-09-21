@@ -79,8 +79,7 @@ def parse_file():
                 step = int(tempo["step"])
                 gfx = float(tempo["gFx"])
 
-                start_keep = start_keep or (step > values_to_skip[omino]
-                                            and gfx < -3)
+                start_keep = start_keep or (step > values_to_skip[omino])
 
                 if start_keep:
                     steps.append(step)

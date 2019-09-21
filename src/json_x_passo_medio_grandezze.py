@@ -103,8 +103,7 @@ def parse_file():
                 step = int(tempo["step"])
                 gfx = float(tempo["gFx"])
 
-                start_keep = start_keep or (step > values_to_skip[omino]
-                                            and gfx < -3)
+                start_keep = start_keep or (step > values_to_skip[omino])
 
                 if start_keep:
                     steps.append(step)
@@ -205,9 +204,9 @@ def parse_file():
 
             # Calcolo delle grandezze
 
-            # METODO DEL MASSIMO LOCALE NEL MEZZO
-            # Cerco il massimo all'interno del passo medio escludendo una prima parte di lunghezza 0.05 e cerco il valore maggiore
-            wait_time = 0.05
+             # METODO DEL MASSIMO VALORE NEL MEZZO
+            # Cerco il massimo all'interno del passo medio escludendo una prima parte di lunghezza 0.08 e cerco il valore maggiore
+            wait_time = 0.08
             cast_away = int((wait_time/gap_t))
 
             analisi = mean_step[cast_away:]
@@ -221,19 +220,24 @@ def parse_file():
                     continue
                 if the_max > 0:
                     break
-            '''
-            where_max = 0 # PESSIMO RIPENSALO
+
+            # METODO DEL MASSIMO LOCALE NEL MEZZO
+            # Cerco il massimo all'interno del passo medio escludendo una prima parte di lunghezza 0.08 e cerco il massimo locale
+            where_max_loc = 0
             for x in range(13, 3, -1):
-                where_max = _find_first_massimo(analisi, x)
-                if x % 2 == 0 or the_max < 0:
+                where_max_loc = _find_first_massimo(mean_step[cast_away:], x)
+                if x % 2 == 0 or where_max_loc < 0:
                     continue
-                if the_max > 0:
+                if where_max_loc > 0:
+                    where_max_loc += cast_away
                     break
-            '''
             
             print("tempistica[0]= {}, tempistica[step_medio-1] = {}, len(minimi_array)= {}".format(tempistica[0], tempistica[step_medio-1], len(minimi_array)))
             tempo_contatto = tempistica[where_max]
             tempo_volo = tempistica[step_medio - 1] - tempistica[where_max]
+
+            tempo_contatto_loc = tempistica[where_max_loc]
+            tempo_volo_loc = tempistica[step_medio - 1] - tempistica[where_max_loc]
 
             tempo_totale = ((step_medio - 1) * gap_t) * len(minimi_array_index)
             ritmo = len(minimi_array) / tempo_totale
@@ -241,11 +245,15 @@ def parse_file():
             jsello = {}
             jsello["tempo_contatto"] = tempo_contatto
             jsello["tempo_volo"] = tempo_volo
+            jsello["tempo_contatto_loc"] = tempo_contatto_loc
+            jsello["tempo_volo_loc"] = tempo_volo_loc
             jsello["tempo_totale"] = tempo_totale
             jsello["ritmo"] = ritmo
 
             print(colored("Tempo di contatto: {}".format(tempo_contatto), "yellow"))
             print(colored("Tempo di volo: {}".format(tempo_volo), "yellow"))
+            print(colored("Tempo di contatto_loc: {}".format(tempo_contatto_loc), "yellow"))
+            print(colored("Tempo di volo_loc: {}".format(tempo_volo_loc), "yellow"))
             print(colored("Tempo totale: {}".format(tempo_totale), "yellow"))
             print(colored("Ritmo: {}".format(ritmo), "yellow"))
 
