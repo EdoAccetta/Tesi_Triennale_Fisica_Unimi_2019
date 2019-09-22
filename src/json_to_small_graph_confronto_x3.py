@@ -152,7 +152,7 @@ def parse_file():
                 go.Scatter(x=np.array(times),
                            y=np.array(gfcs),
                            mode='lines+markers',
-                           name="Gf_comb"),
+                           name="Gf_Sum"),
                 secondary_y=False,)
             # Aggiungo grafico delle x insieme               
             plt.add_trace(
@@ -160,17 +160,17 @@ def parse_file():
                     x = np.array(times),
                     y = np.array(gfxs),
                     mode='lines+markers',
-                    name="Gfx"),
+                    name="Gf_x"),
                 secondary_y=True,)
 
             # Add figure title
-            plt.update_layout( title_text="Double Y Axis: Gfx and Gf_comb")
+            plt.update_layout(title_text="Double Y Axis: Gf_Sum and Gf_x - {0}".format(str.replace(file, ".json", "")))
 
             # Set x-axis title
-            plt.update_xaxes(title_text="xaxis title")
+            plt.update_xaxes(title_text="Time")
 
             # Set y-axes titles
-            plt.update_yaxes(title_text="Gf_comb axis", secondary_y=False)
+            plt.update_yaxes(title_text="Gf_Sum axis", secondary_y=False)
             plt.update_yaxes(title_text="Gf_x axis", secondary_y=True)
 
             # plt.show()

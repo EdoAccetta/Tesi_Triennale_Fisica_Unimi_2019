@@ -205,7 +205,7 @@ def parse_file():
                 massimo = find_first_massimo_locale(array_in_barone)
                 j = 0
                 while minimi_array_index[x] - massimo < 7:  # Condizione di larghezza minima (7centesimi di secondo)
-                    massimo = find_first_minimo_locale(array_in_campione[massimo:])     # Cerca di nuovo il massimo nella seconda porzione
+                    massimo = find_first_massimo_locale(array_in_campione[massimo:])     # Cerca di nuovo il massimo nella seconda porzione
                     if massimo == -1:   # Se non trovi il massimo prendi l'ultimo trovato
                         massimo = one_before
                         break
@@ -232,7 +232,7 @@ def parse_file():
                     massimo = find_first_massimo_locale(array_in_campione)
                     j = 0
                     while minimi_array_index[x] - massimo < 7:  # Condizione di larghezza minima (7centesimi di secondo)
-                        massimo = find_first_minimo_locale(array_in_campione[massimo:])     # Cerca di nuovo il massimo nella seconda porzione
+                        massimo = find_first_massimo_locale(array_in_campione[massimo:])     # Cerca di nuovo il massimo nella seconda porzione
                         if massimo == -1:   # Se non trovi il massimo prendi l'ultimo trovato
                             massimo = one_before
                             break
@@ -257,7 +257,7 @@ def parse_file():
                 # lunghezza_vera = len(array_in_campione) - len(array_in_barone)
                 massimo = find_first_minimo_locale(array_in_barone)
                 if massimo == -1:   # Se non trovo il secondo minimo, mi accontento del primo STD
-                    massimo = find_first_massimo_locale(array_in_campione)
+                    massimo = find_first_minimo_locale(array_in_campione)
                     j = 0
                     while minimi_array_index[x] - massimo < 7:  # Condizione di larghezza minima (7centesimi di secondo)
                         massimo = find_first_minimo_locale(array_in_campione[massimo:])     # Cerca di nuovo il massimo nella seconda porzione
@@ -292,7 +292,7 @@ def parse_file():
                         massimo = find_first_massimo_locale(array_in_barone)
                         j = 0
                         while minimi_array_index[x] - massimo < 7:  # Condizione di larghezza minima (7centesimi di secondo)
-                            massimo = find_first_minimo_locale(array_in_campione[massimo:])     # Cerca di nuovo il massimo nella seconda porzione
+                            massimo = find_first_massimo_locale(array_in_campione[massimo:])     # Cerca di nuovo il massimo nella seconda porzione
                             if massimo == -1:   # Se non trovi il massimo prendi l'ultimo trovato
                                 massimo = one_before
                                 break
