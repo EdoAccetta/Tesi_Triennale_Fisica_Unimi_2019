@@ -28,11 +28,12 @@ def parse_file():
         # Calcolo la prima parte della formula
         jsello = { "positions" : []}
 
-         # INTEGRAZIONE A RETTANGOLI
+         # INTEGRAZIONE A RETTANGOLI ## gap_t = tempi[x + 1]["time"] - tempi[x]["time"]
+        gap_t = 0.01
         for x in range(0, len(tempi) - 2):
-            posizione_z_no_step = tempi[x]["velocita_z_step"] * (tempi[x + 1]["time"] - tempi[x]["time"])
-            posizione_x_no_step = tempi[x]["velocita_x_step"] * (tempi[x + 1]["time"] - tempi[x]["time"])
-            posizione_y_no_step = tempi[x]["velocita_y_step"] * (tempi[x + 1]["time"] - tempi[x]["time"])
+            posizione_z_no_step = tempi[x]["velocita_z_step"] * (gap_t)
+            posizione_x_no_step = tempi[x]["velocita_x_step"] * (gap_t)
+            posizione_y_no_step = tempi[x]["velocita_y_step"] * (gap_t)
 
             node = {
                 "posizione_z_no_step": posizione_z_no_step,

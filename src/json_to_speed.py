@@ -73,11 +73,12 @@ def parse_file():
         # Calcolo la prima parte della formula
         jsello = {}
         velocita = []
+        gap_t = 0.01
         # INTEGRAZIONE A RETTANGOLI
         for x in range(0, len(tempi) - 2):
-            velocita_z_no_step = tempi[x]["gFz"] * (tempi[x + 1]["time"] - tempi[x]["time"])
-            velocita_x_no_step = tempi[x]["gFx"] * (tempi[x + 1]["time"] - tempi[x]["time"])
-            velocita_y_no_step = tempi[x]["gFy"] * (tempi[x + 1]["time"] - tempi[x]["time"])
+            velocita_z_no_step = tempi[x]["gFz"] * (gap_t)
+            velocita_x_no_step = tempi[x]["gFx"] * (gap_t)
+            velocita_y_no_step = tempi[x]["gFy"] * (gap_t)
             node = {
                 "velocita_z_no_step": velocita_z_no_step,
                 "velocita_x_no_step": velocita_x_no_step,
